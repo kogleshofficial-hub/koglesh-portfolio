@@ -18,6 +18,11 @@ An evidence-first claim investigation tool that combines web evidence retrieval 
 - **Live:** https://truth-checker-app.vercel.app/
 - **Source:** https://github.com/kogleshofficial-hub/truth-checker
 
+### 🎬 AERO
+A challenge-driven creative project built around learning difficult skills, experimenting with formats, editing, and documenting progress.
+
+- **YouTube:** https://www.youtube.com/@ItsAero_Official
+
 ## What I build
 
 - Modern web applications
@@ -25,6 +30,7 @@ An evidence-first claim investigation tool that combines web evidence retrieval 
 - Focused, minimal interfaces
 - Evidence-aware AI workflows
 - Creative digital projects
+- Small experiments that become usable products
 
 ## Core stack
 
@@ -38,7 +44,7 @@ I learn by building. I turn ideas into working products, test them, find what br
 IDEA → BUILD → TEST → LEARN → IMPROVE → SHIP
 ```
 
-The goal of this portfolio is not to show everything I've ever tried. It is to show the projects that best represent how I think, build, design, and improve.
+The portfolio is intentionally focused on work that represents how I think, build, design, and improve.
 
 ## Live portfolio
 
@@ -48,6 +54,22 @@ The goal of this portfolio is not to show everything I've ever tried. It is to s
 
 - **GitHub:** https://github.com/kogleshofficial-hub
 - **YouTube / AERO:** https://www.youtube.com/@ItsAero_Official
+
+## SEO and web identity
+
+The portfolio includes a canonical URL, index/follow directives, `robots.txt`, `sitemap.xml`, a web app manifest, a favicon, Open Graph/Twitter metadata, and structured person data for clearer discovery and sharing.
+
+## Development checks
+
+Before committing changes:
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
+
+Never commit `.env.local`, API keys, credentials, or other secrets.
 
 ## Author
 
