@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 
 const projects = [
   { number: "01", title: "One Next Step", label: "AI PRODUCT", description: "A focused decision experience that turns mental noise into one clear action.", tags: ["Next.js", "TypeScript", "AI"], href: "https://one-next-step.vercel.app", cta: "Try it live" },
-  { number: "02", title: "AERO", label: "CONTENT", description: "A challenge-driven content project built around learning difficult skills and documenting the journey.", tags: ["YouTube", "Editing", "Storytelling"], href: "https://www.youtube.com/@ItsAero_Official", cta: "Watch AERO" },
-  { number: "03", title: "Next idea", label: "IN PROGRESS", description: "The next experiment is already taking shape. This portfolio grows with the work.", tags: ["Build", "Learn", "Experiment"], href: "#contact", cta: "Follow the journey" },
+  { number: "02", title: "FoodLoop", label: "SOCIAL IMPACT", description: "A real food-rescue platform connecting surplus food with people who can use it, powered by real accounts, listings and requests.", tags: ["Next.js", "Supabase", "PostgreSQL", "Vercel"], href: "https://food-loop-app.vercel.app", cta: "Open FoodLoop" },
+  { number: "03", title: "Truth Checker", label: "WEB PRODUCT", description: "A practical web experience designed to help people examine information with a clearer, more structured approach.", tags: ["Next.js", "TypeScript", "Web App"], href: "https://github.com/kogleshofficial-hub/truth-checker", cta: "View project" },
+  { number: "04", title: "AERO", label: "CONTENT", description: "A challenge-driven content project built around learning difficult skills, experimenting, and documenting the journey.", tags: ["YouTube", "Editing", "Storytelling"], href: "https://www.youtube.com/@ItsAero_Official", cta: "Watch AERO" },
 ];
 
-const skills = ["Next.js", "React", "TypeScript", "Tailwind CSS", "AI products", "UI design", "Video editing", "Content creation", "Git & GitHub"];
+const skills = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "AI products", "UI design", "Video editing", "Content creation", "Git & GitHub", "Vercel"];
 
 const principles = ["Find the real problem", "Reduce the noise", "Build the useful thing", "Learn from the result", "Repeat — better than before"];
 
@@ -65,10 +66,10 @@ export default function Home() {
           <div className="mb-8 flex items-center gap-3 animate-[fadeIn_.8s_ease-out_both]"><span className="h-px w-12 bg-white/35" /><span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">Independent builder · Malaysia</span></div>
           <h1 className="max-w-5xl text-[clamp(4rem,11vw,10.5rem)] font-semibold leading-[0.82] tracking-[-0.085em] animate-[rise_.9s_ease-out_both]">I make<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">ideas real.</span></h1>
           <div className="mt-12 grid max-w-5xl gap-10 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="max-w-2xl text-base leading-8 text-white/42 sm:text-lg">I&apos;m Koglesh R. Murugan. I build software, AI experiences, visual ideas, and content while learning in public.</p>
+            <p className="max-w-2xl text-base leading-8 text-white/42 sm:text-lg">I&apos;m Koglesh R. Murugan. I build software, AI experiences, useful digital products, visual ideas, and content while learning in public.</p>
             <div className="flex flex-wrap items-center gap-3">
               <button onClick={() => scrollTo("work")} className="group flex w-fit items-center gap-3 text-sm text-white/70 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/30">↓</span>See the work</button>
-              <a href="https://one-next-step.vercel.app" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-white/55 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Try my latest build ↗</a>
+              <a href="https://food-loop-app.vercel.app" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-white/55 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Explore FoodLoop ↗</a>
             </div>
           </div>
         </div>
