@@ -51,6 +51,9 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/favicon.ico" },
   robots: { index: true, follow: true },
+  verification: {
+    google: "LI6z3Avdq6RsVP2faZ6nlhcbRwvnMIdjJkrSBygvnZM",
+  },
 };
 
 const personJsonLd = {
