@@ -1,63 +1,73 @@
 # Koglesh R. Murugan
 
-> **Developer · AI builder · Designer · Content creator**
+> **Independent Developer & Builder**
 
-Personal portfolio for **Koglesh R. Murugan** — an independent builder exploring software, AI, product design, and creative work through real projects.
+Official portfolio and public project hub for **Koglesh R. Murugan** — building real-world web products, AI experiences, and creative digital projects.
 
-## Featured projects
+## Featured work
+
+### 🌍 FoodLoop
+A real food-rescue platform connecting surplus food with people who can use it.
+
+- **Live:** https://food-loop-app.vercel.app/
+- **Source:** https://github.com/kogleshofficial-hub/FoodLoop
 
 ### 🧠 One Next Step
-A focused AI decision experience designed to turn uncertainty into **one useful next action** instead of an overwhelming list of possibilities.
+A focused AI decision experience designed to turn uncertainty into one useful next action.
 
 - **Live:** https://one-next-step.vercel.app/
 - **Source:** https://github.com/kogleshofficial-hub/one-next-step
 
 ### 🔎 Truth Checker
-An evidence-first claim investigation tool that combines web evidence retrieval with AI analysis to produce a clear verdict, confidence level, reasoning, context, and sources.
+An evidence-first claim investigation tool built around evidence, reasoning, context, and sources.
 
 - **Live:** https://truth-checker-app.vercel.app/
 - **Source:** https://github.com/kogleshofficial-hub/truth-checker
 
 ### 🎬 AERO
-A challenge-driven creative project built around learning difficult skills, experimenting with formats, editing, and documenting progress.
+A challenge-driven creative project documenting experiments, learning, editing, and progress.
 
 - **YouTube:** https://www.youtube.com/@ItsAero_Official
 
 ## What I build
 
-- Modern web applications
+- Real-world web applications
 - AI-powered product experiences
-- Focused, minimal interfaces
-- Evidence-aware AI workflows
+- Focused, usable interfaces
+- Evidence-aware workflows
 - Creative digital projects
-- Small experiments that become usable products
+- Small experiments that become useful products
 
 ## Core stack
 
-`Next.js` · `React` · `TypeScript` · `JavaScript` · `Tailwind CSS` · `AI APIs` · `GitHub` · `Vercel`
+`Next.js` · `React` · `TypeScript` · `Tailwind CSS` · `Supabase` · `PostgreSQL` · `AI APIs` · `GitHub` · `Vercel`
 
 ## Build philosophy
 
-I learn by building. I turn ideas into working products, test them, find what breaks, improve them, and ship the next version.
+I learn by building. I start with a problem, create a useful version, test it, improve what breaks, and ship the next version.
 
 ```text
-IDEA → BUILD → TEST → LEARN → IMPROVE → SHIP
+PROBLEM → IDEA → BUILD → TEST → LEARN → IMPROVE → SHIP
 ```
 
-The portfolio is intentionally focused on work that represents how I think, build, design, and improve.
-
-## Live portfolio
+## Official website
 
 **https://koglesh-portfolio.vercel.app**
 
-## Find my work
+A dedicated About page provides a concise, factual overview of Koglesh R. Murugan and links to public work:
+
+**https://koglesh-portfolio.vercel.app/about**
+
+## Public profiles
 
 - **GitHub:** https://github.com/kogleshofficial-hub
 - **YouTube / AERO:** https://www.youtube.com/@ItsAero_Official
 
-## SEO and web identity
+## Search-friendly web identity
 
-The portfolio includes a canonical URL, index/follow directives, `robots.txt`, `sitemap.xml`, a web app manifest, a favicon, Open Graph/Twitter metadata, and structured person data for clearer discovery and sharing.
+The site uses a canonical URL, index/follow directives, `robots.txt`, `sitemap.xml`, Open Graph metadata, and Schema.org `Person`/`WebSite` structured data to help search engines understand the site's identity and content.
+
+Structured data is used to describe information that is genuinely present on the site; it is not intended to guarantee a Knowledge Panel or a particular Search appearance.
 
 ## Development checks
 
