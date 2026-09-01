@@ -41,5 +41,5 @@ const websiteJsonLd = { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: s
 const graphJsonLd = { "@context": "https://schema.org", "@graph": [personJsonLd, websiteJsonLd, ...portfolioProjects] };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${geistSans.variable} ${geistMono.variable} antialiased`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graphJsonLd) }} />{children}</body></html>;
+  return <html lang="en"><body className={`${Geist({ variable: "--font-geist-sans" }).variable} ${Geist_Mono({ variable: "--font-geist-mono" }).variable} antialiased`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graphJsonLd) }} />{children}</body></html>;
 }
