@@ -92,10 +92,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = projects[slug as ProjectSlug];
   if (!project) return { title: "Project" };
-  return {
-    title: `${project.title} — Case Study`,
-    description: project.summary,
-  };
+  return { title: `${project.title} — Case Study`, description: project.summary };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -103,15 +100,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = projects[slug as ProjectSlug];
 
   if (!project) {
-    return (
-      <main className="min-h-screen bg-[#050505] px-6 py-24 text-white">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.25em] text-white/30">404 · Project not found</p>
-          <h1 className="mt-5 text-5xl font-semibold tracking-[-0.06em]">That case study doesn&apos;t exist.</h1>
-          <Link href="/" className="mt-8 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm text-white/70 hover:border-white/30 hover:text-white">Back to portfolio</Link>
-        </div>
-      </main>
-    );
+    return <main className="min-h-screen bg-[#050505] px-6 py-24 text-white"><div className="mx-auto max-w-3xl"><p className="text-xs uppercase tracking-[0.25em] text-white/30">404 · Project not found</p><h1 className="mt-5 text-5xl font-semibold tracking-[-0.06em]">That case study doesn&apos;t exist.</h1><Link href="/" className="mt-8 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm text-white/70 hover:border-white/30 hover:text-white">Back to portfolio</Link></div></main>;
   }
 
   return (
@@ -127,91 +116,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-20 lg:px-10 lg:pb-32 lg:pt-28">
         <div className="max-w-5xl">
           <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/30">{project.eyebrow}</p>
-          <h1 className="mt-7 text-[clamp(4rem,10vw,8.5rem)]] font-semibold leading-[.86] tracking-[-0.085em]">{project.title}</h1>
+          <h1 className="mt-7 text-[clamp(4rem,10vw,8.5rem)] font-semibold leading-[.86] tracking-[-0.085em]">{project.title}</h1>
           <p className="mt-10 max-w-3xl text-xl leading-9 text-white/45 sm:text-2xl">{project.summary}</p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:scale-[1.02]">Open live project ↗</a>
-            <a href={project.source} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/12 bg-white/[0.04] px-6 py-3 text-sm text-white/65 transition hover:border-white/25 hover:text-white">View source ↗</a>
-          </div>
+          <div className="mt-10 flex flex-wrap gap-3"><a href={project.demo} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:scale-[1.02]">Open live project ↗</a><a href={project.source} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/12 bg-white/[0.04] px-6 py-3 text-sm text-white/65 transition hover:border-white/25 hover:text-white">View source ↗</a></div>
         </div>
       </section>
 
-      <section className="relative z-10 border-y border-white/[0.07]">
-        <div className="mx-auto grid max-w-7xl gap-px bg-white/[0.07] md:grid-cols-2">
-          <div className="bg-[#050505] p-8 sm:p-12 lg:p-16">
-            <p className="text-[10px] uppercase tracking-[0.25em] text-white/25">The problem</p>
-            <p className="mt-7 text-base leading-8 text-white/50">{project.problem}</p>
-          </div>
-          <div className="bg-[#050505] p-8 sm:p-12 lg:p-16">
-            <p className="text-[10px] uppercase tracking-[0.25em] text-white/25">The approach</p>
-            <p className="mt-7 text-base leading-8 text-white/50">{project.approach}</p>
-          </div>
-        </div>
-      </section>
+      <section className="relative z-10 border-y border-white/[0.07]"><div className="mx-auto grid max-w-7xl gap-px bg-white/[0.07] md:grid-cols-2"><div className="bg-[#050505] p-8 sm:p-12 lg:p-16"><p className="text-[10px] uppercase tracking-[0.25em] text-white/25">The problem</p><p className="mt-7 text-base leading-8 text-white/50">{project.problem}</p></div><div className="bg-[#050505] p-8 sm:p-12 lg:p-16"><p className="text-[10px] uppercase tracking-[0.25em] text-white/25">The approach</p><p className="mt-7 text-base leading-8 text-white/50">{project.approach}</p></div></div></section>
 
-      <section className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
-        <div className="grid gap-14 lg:grid-cols-[.7fr_1.3fr]">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Architecture</p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">How it fits together.</h2>
-            <p className="mt-6 max-w-md text-sm leading-7 text-white/30">A deliberately simple architecture view. Only technologies and product behavior represented by the project are listed here.</p>
-          </div>
-          <div className="space-y-3">
-            {project.architecture.map((item, index) => (
-              <div key={item} className="flex items-center gap-5 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
-                <span className="font-mono text-[10px] text-white/20">0{index + 1}</span>
-                <span className="text-sm text-white/60">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36"><div className="grid gap-14 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Architecture</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">How it fits together.</h2><p className="mt-6 max-w-md text-sm leading-7 text-white/30">A deliberately simple architecture view. Only technologies and product behavior represented by the project are listed here.</p></div><div className="space-y-3">{project.architecture.map((item, index) => <div key={item} className="flex items-center gap-5 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5"><span className="font-mono text-[10px] text-white/20">0{index + 1}</span><span className="text-sm text-white/60">{item}</span></div>)}</div></div></section>
 
-      <section className="relative z-10 border-y border-white/[0.07]">
-        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-28 lg:grid-cols-[.7fr_1.3fr] lg:px-10 lg:py-36">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Engineering notes</p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">What had to be solved.</h2>
-          </div>
-          <div className="space-y-5">
-            {project.engineering.map((item, index) => (
-              <div key={item} className="flex gap-5 border-b border-white/[0.07] pb-5">
-                <span className="font-mono text-[10px] text-white/20">0{index + 1}</span>
-                <p className="text-base leading-7 text-white/50">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="relative z-10 border-y border-white/[0.07]"><div className="mx-auto grid max-w-7xl gap-14 px-6 py-28 lg:grid-cols-[.7fr_1.3fr] lg:px-10 lg:py-36"><div><p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Engineering notes</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">What had to be solved.</h2></div><div className="space-y-5">{project.engineering.map((item, index) => <div key={item} className="flex gap-5 border-b border-white/[0.07] pb-5"><span className="font-mono text-[10px] text-white/20">0{index + 1}</span><p className="text-base leading-7 text-white/50">{item}</p></div>)}</div></div></section>
 
-      <section className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
-        <div className="grid gap-14 lg:grid-cols-[.7fr_1.3fr]">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Lessons</p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">What I took forward.</h2>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {project.lessons.map((lesson, index) => (
-              <article key={lesson} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
-                <span className="font-mono text-[10px] text-white/20">0{index + 1}</span>
-                <p className="mt-8 text-sm leading-7 text-white/45">{lesson}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36"><div className="grid gap-14 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Lessons</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">What I took forward.</h2></div><div className="grid gap-4 sm:grid-cols-3">{project.lessons.map((lesson, index) => <article key={lesson} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6"><span className="font-mono text-[10px] text-white/20">0{index + 1}</span><p className="mt-8 text-sm leading-7 text-white/45">{lesson}</p></article>)}</div></div></section>
 
-      <section className="relative z-10 border-t border-white/[0.07]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Stack</p>
-            <div className="mt-5 flex max-w-2xl flex-wrap gap-2">
-              {project.stack.map((item) => <span key={item} className="rounded-full border border-white/[0.08] px-4 py-2 text-[10px] text-white/35">{item}</span>)}
-            </div>
-          </div>
-          <Link href="/" className="text-sm text-white/45 hover:text-white">Explore the rest of the work →</Link>
-        </div>
-      </section>
+      <section className="relative z-10 border-t border-white/[0.07]"><div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10"><div><p className="text-[10px] uppercase tracking-[0.25em] text-white/25">Stack</p><div className="mt-5 flex max-w-2xl flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="rounded-full border border-white/[0.08] px-4 py-2 text-[10px] text-white/35">{item}</span>)}</div></div><Link href="/" className="text-sm text-white/45 hover:text-white">Explore the rest of the work →</Link></div></section>
     </main>
   );
 }
