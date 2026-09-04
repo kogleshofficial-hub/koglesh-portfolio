@@ -74,6 +74,30 @@ const principles = [
   ["04", "Improve relentlessly", "Every project is a chance to become a better builder."],
 ];
 
+const presence = [
+  {
+    title: "GitHub",
+    label: "CODE / PROJECTS",
+    description: "Source code, experiments and the products behind the portfolio.",
+    href: "https://github.com/kogleshofficial-hub",
+    action: "View GitHub",
+  },
+  {
+    title: "LinkedIn",
+    label: "PROFESSIONAL",
+    description: "A professional profile for projects, learning and builder updates.",
+    href: "https://www.linkedin.com/in/koglesh-r-murugan-020450430/",
+    action: "View LinkedIn",
+  },
+  {
+    title: "YouTube",
+    label: "AERO / CREATOR",
+    description: "Challenge videos, experiments and the process behind AERO.",
+    href: "https://www.youtube.com/@ItsAero_Official",
+    action: "Watch AERO",
+  },
+];
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -122,7 +146,7 @@ export default function Home() {
             <button onClick={() => scrollTo("work")} className="text-xs text-white/40 transition hover:text-white">Work</button>
             <button onClick={() => scrollTo("about")} className="text-xs text-white/40 transition hover:text-white">About</button>
             <button onClick={() => scrollTo("stack")} className="text-xs text-white/40 transition hover:text-white">Stack</button>
-            <a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noopener noreferrer" className="text-xs text-white/40 transition hover:text-white">GitHub</a>
+            <button onClick={() => scrollTo("presence")} className="text-xs text-white/40 transition hover:text-white">Elsewhere</button>
             <button onClick={() => scrollTo("contact")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/70 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</button>
           </div>
         </div>
@@ -165,7 +189,9 @@ export default function Home() {
 
       <section id="stack" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-36"><div className="grid gap-12 md:grid-cols-[.7fr_1.3fr] md:items-start"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Toolkit</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">Tools I use<br /><span className="text-white/30">to ship.</span></h2></div><div className="flex flex-wrap gap-3">{skills.map((skill) => <span key={skill} className="rounded-full border border-white/[0.09] bg-white/[0.02] px-5 py-3 text-xs text-white/45 transition hover:border-white/20 hover:bg-white/[0.05] hover:text-white">{skill}</span>)}</div></div></section>
 
-      <section id="contact" className="relative z-10 border-t border-white/[0.07] scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-40"><p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Contact</p><h2 className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a problem worth<br /><span className="text-white/30">building around?</span></h2><div className="mt-12 flex flex-wrap items-center gap-4"><button onClick={copyEmail} className="rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 text-sm text-white/75 transition hover:border-white/30 hover:bg-white/[0.1] hover:text-white">{copied ? "Email copied ✓" : "Copy my email"}</button><a href="mailto:koglesh.official@gmail.com" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">koglesh.official@gmail.com</a><a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">GitHub ↗</a><a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">LinkedIn ↗</a></div></div></section>
+      <section id="presence" className="relative z-10 border-y border-white/[0.07] scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36"><div className="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Elsewhere</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">The work<br /><span className="text-white/30">continues outside here.</span></h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Code, professional updates and creator work — kept separate from the portfolio so each space can do its job.</p></div><div className="grid gap-4 md:grid-cols-3">{presence.map((item) => <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className="group rounded-[1.75rem] border border-white/[0.08] bg-white/[0.02] p-7 transition duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.04]"><div className="flex items-center justify-between"><span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-sm font-semibold">{item.title.slice(0, 1)}</span><span className="text-xs text-white/20 transition group-hover:translate-x-1 group-hover:text-white/60">↗</span></div><p className="mt-8 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/20">{item.label}</p><h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white/80 group-hover:text-white">{item.title}</h3><p className="mt-3 min-h-[48px] text-sm leading-6 text-white/30">{item.description}</p><span className="mt-7 block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/25 transition group-hover:text-white/60">{item.action} ↗</span></a>)}<div className="group rounded-[1.75rem] border border-dashed border-white/[0.1] bg-white/[0.012] p-7 transition duration-500 hover:border-white/20"><div className="flex items-center justify-between"><span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-sm font-semibold">T</span><span className="rounded-full border border-white/10 px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.16em] text-white/25">Not linked yet</span></div><p className="mt-8 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/20">Twitch · Live building</p><h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white/80">Twitch</h3><p className="mt-3 min-h-[48px] text-sm leading-6 text-white/30">A place for future live builds, experiments and behind-the-scenes sessions. No channel link is claimed here until there is a real public profile to point to.</p><span className="mt-7 block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/25">Real link coming later</span></div></div></div></section>
+
+      <section id="contact" className="relative z-10 scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-40"><p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Contact</p><h2 className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a problem worth<br /><span className="text-white/30">building around?</span></h2><div className="mt-12 flex flex-wrap items-center gap-4"><button onClick={copyEmail} className="rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 text-sm text-white/75 transition hover:border-white/30 hover:bg-white/[0.1] hover:text-white">{copied ? "Email copied ✓" : "Copy my email"}</button><a href="mailto:koglesh.official@gmail.com" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">koglesh.official@gmail.com</a><a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">GitHub ↗</a><a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">LinkedIn ↗</a></div></div></section>
 
       <footer className="relative z-10 border-t border-white/[0.07] px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col gap-4 text-[9px] font-medium uppercase tracking-[0.22em] text-white/20 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Koglesh R. Murugan</span><span>Developer · Builder · Creator</span><span>Built with Next.js · Deployed on Vercel</span></div></footer>
     </main>
