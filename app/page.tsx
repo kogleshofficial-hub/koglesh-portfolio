@@ -3,66 +3,12 @@
 import { useEffect, useState } from "react";
 
 const projects = [
-  {
-    number: "01",
-    title: "QueueWise",
-    label: "LIVE · CIVIC TECH",
-    description: "A real-time community queue tracker for clinics, banks, government offices, schools and other public services. Fresh reports, transparent estimates and no invented queue numbers.",
-    tags: ["Next.js", "Supabase", "PostgreSQL", "OpenStreetMap", "Vercel"],
-    href: "https://queuewise-app.vercel.app",
-    source: "https://github.com/kogleshofficial-hub/queuewise",
-    cta: "Open QueueWise",
-  },
-  {
-    number: "02",
-    title: "BeforeYouGo",
-    label: "LIVE · UTILITY",
-    description: "A practical preparation tool that lets people build unlimited independent checklists before they visit, travel or handle an important task — with private browser-based workspaces and a focused completion flow.",
-    tags: ["Next.js", "TypeScript", "Local Storage", "SEO", "Vercel"],
-    href: "https://beforeyougo-gray.vercel.app",
-    source: "https://github.com/kogleshofficial-hub/beforeyougo",
-    cta: "Open BeforeYouGo",
-  },
-  {
-    number: "03",
-    title: "FoodLoop",
-    label: "SOCIAL IMPACT",
-    description: "A real food-rescue platform connecting surplus food with people who can use it, built around real accounts, listings and request workflows.",
-    tags: ["Next.js", "Supabase", "PostgreSQL", "Vercel"],
-    href: "https://food-loop-app.vercel.app",
-    source: "https://github.com/kogleshofficial-hub/FoodLoop",
-    cta: "Open FoodLoop",
-  },
-  {
-    number: "04",
-    title: "One Next Step",
-    label: "AI PRODUCT",
-    description: "A focused decision experience designed to turn an overwhelming situation into one clear, useful next action.",
-    tags: ["Next.js", "TypeScript", "AI"],
-    href: "https://one-next-step.vercel.app",
-    source: "https://github.com/kogleshofficial-hub/one-next-step",
-    cta: "Try it live",
-  },
-  {
-    number: "05",
-    title: "Truth Checker",
-    label: "WEB PRODUCT",
-    description: "An evidence-first claim investigation experience built to make online information easier to examine, understand and question.",
-    tags: ["Next.js", "TypeScript", "AI", "Evidence"],
-    href: "https://truth-checker-app.vercel.app",
-    source: "https://github.com/kogleshofficial-hub/truth-checker",
-    cta: "Open Truth Checker",
-  },
-  {
-    number: "06",
-    title: "AERO",
-    label: "CREATIVE PROJECT",
-    description: "A challenge-driven content project built around learning difficult skills, experimenting, storytelling and documenting progress.",
-    tags: ["YouTube", "Editing", "Storytelling"],
-    href: "https://www.youtube.com/@ItsAero_Official",
-    source: "https://github.com/kogleshofficial-hub",
-    cta: "Watch AERO",
-  },
+  { number: "01", title: "QueueWise", label: "LIVE · CIVIC TECH", description: "A community-powered queue tracker for everyday public services, built around fresh reports and transparent estimates.", tags: ["Next.js", "Supabase", "PostgreSQL", "OpenStreetMap", "Vercel"], href: "https://queuewise-app.vercel.app", source: "https://github.com/kogleshofficial-hub/queuewise", slug: "queuewise", cta: "Open QueueWise" },
+  { number: "02", title: "BeforeYouGo", label: "LIVE · UTILITY", description: "A practical preparation tool for building independent checklists before visits, travel and important tasks.", tags: ["Next.js", "TypeScript", "Local Storage", "SEO", "Vercel"], href: "https://beforeyougo-gray.vercel.app", source: "https://github.com/kogleshofficial-hub/beforeyougo", slug: "beforeyougo", cta: "Open BeforeYouGo" },
+  { number: "03", title: "FoodLoop", label: "LIVE · SOCIAL IMPACT", description: "A food-rescue platform connecting surplus food with people who can use it through real accounts, listings and request workflows.", tags: ["Next.js", "Supabase", "PostgreSQL", "Vercel"], href: "https://food-loop-app.vercel.app", source: "https://github.com/kogleshofficial-hub/FoodLoop", slug: "foodloop", cta: "Open FoodLoop" },
+  { number: "04", title: "One Next Step", label: "AI PRODUCT", description: "A focused decision experience designed to turn a situation into one clear, useful next action.", tags: ["Next.js", "TypeScript", "AI"], href: "https://one-next-step.vercel.app", source: "https://github.com/kogleshofficial-hub/one-next-step", slug: "one-next-step", cta: "Try it live" },
+  { number: "05", title: "Truth Checker", label: "WEB PRODUCT", description: "An evidence-first claim investigation experience built to make online information easier to examine and question.", tags: ["Next.js", "TypeScript", "AI", "Evidence"], href: "https://truth-checker-app.vercel.app", source: "https://github.com/kogleshofficial-hub/truth-checker", slug: "truth-checker", cta: "Open Truth Checker" },
+  { number: "06", title: "AERO", label: "CREATIVE PROJECT", description: "A challenge-driven creator project built around learning difficult skills, experimenting, storytelling and documenting progress.", tags: ["YouTube", "Editing", "Storytelling"], href: "https://www.youtube.com/@ItsAero_Official", source: "https://github.com/kogleshofficial-hub", slug: "aero", cta: "Watch AERO" },
 ];
 
 const skills = ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS", "Supabase", "PostgreSQL", "AI products", "UI design", "OpenStreetMap", "Git & GitHub", "Vercel"];
@@ -74,28 +20,17 @@ const principles = [
   ["04", "Improve relentlessly", "Every project is a chance to become a better builder."],
 ];
 
+const buildLog = [
+  ["04 SEP 2026", "Portfolio", "Upgraded the portfolio around proof of work, case studies and an active build log."],
+  ["04 SEP 2026", "FoodLoop", "Relaunch work continues with a focus on making the product more useful and dependable."],
+  ["03 SEP 2026", "AERO", "Shipped a new challenge stream and short-form content experiment."],
+  ["01 SEP 2026", "Building", "Continuing to turn small ideas into deployed, testable products."],
+];
+
 const presence = [
-  {
-    title: "GitHub",
-    label: "CODE / PROJECTS",
-    description: "Source code, experiments and the products behind the portfolio.",
-    href: "https://github.com/kogleshofficial-hub",
-    action: "View GitHub",
-  },
-  {
-    title: "LinkedIn",
-    label: "PROFESSIONAL",
-    description: "A professional profile for projects, learning and builder updates.",
-    href: "https://www.linkedin.com/in/koglesh-r-murugan-020450430/",
-    action: "View LinkedIn",
-  },
-  {
-    title: "YouTube",
-    label: "AERO / CREATOR",
-    description: "Challenge videos, experiments and the process behind AERO.",
-    href: "https://www.youtube.com/@ItsAero_Official",
-    action: "Watch AERO",
-  },
+  { title: "GitHub", label: "CODE / PROJECTS", description: "Source code, experiments and the products behind the portfolio.", href: "https://github.com/kogleshofficial-hub", action: "View GitHub" },
+  { title: "LinkedIn", label: "PROFESSIONAL", description: "A professional profile for projects, learning and builder updates.", href: "https://www.linkedin.com/in/koglesh-r-murugan-020450430/", action: "View LinkedIn" },
+  { title: "YouTube", label: "AERO / CREATOR", description: "Challenge videos, experiments and the process behind AERO.", href: "https://www.youtube.com/@ItsAero_Official", action: "Watch AERO" },
 ];
 
 export default function Home() {
@@ -113,8 +48,7 @@ export default function Home() {
     };
     const onMove = (event: MouseEvent) => setSpotlight({ x: (event.clientX / window.innerWidth) * 100, y: (event.clientY / window.innerHeight) * 100 });
     const updateTime = () => setTime(new Intl.DateTimeFormat("en-MY", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false, timeZone: "Asia/Kuala_Lumpur" }).format(new Date()));
-    onScroll();
-    updateTime();
+    onScroll(); updateTime();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", onMove, { passive: true });
     const clock = window.setInterval(updateTime, 1000);
@@ -123,11 +57,8 @@ export default function Home() {
 
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("koglesh.official@gmail.com");
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 1800);
-    } catch { window.location.href = "mailto:koglesh.official@gmail.com"; }
+    try { await navigator.clipboard.writeText("koglesh.official@gmail.com"); setCopied(true); window.setTimeout(() => setCopied(false), 1800); }
+    catch { window.location.href = "mailto:koglesh.official@gmail.com"; }
   };
 
   return (
@@ -138,60 +69,31 @@ export default function Home() {
 
       <nav className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-white/[0.08] bg-[#050505]/75 backdrop-blur-2xl" : ""}`}>
         <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-6 lg:px-10">
-          <button onClick={() => scrollTo("home")} className="group flex items-center gap-3" aria-label="Back to top">
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.045] text-sm font-semibold transition group-hover:border-white/30 group-hover:bg-white/[0.08]">K</span>
-            <span className="hidden text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:block">Koglesh R. Murugan</span>
-          </button>
-          <div className="hidden items-center gap-7 md:flex">
-            <button onClick={() => scrollTo("work")} className="text-xs text-white/40 transition hover:text-white">Work</button>
-            <button onClick={() => scrollTo("about")} className="text-xs text-white/40 transition hover:text-white">About</button>
-            <button onClick={() => scrollTo("stack")} className="text-xs text-white/40 transition hover:text-white">Stack</button>
-            <button onClick={() => scrollTo("presence")} className="text-xs text-white/40 transition hover:text-white">Elsewhere</button>
-            <button onClick={() => scrollTo("contact")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/70 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</button>
-          </div>
+          <button onClick={() => scrollTo("home")} className="group flex items-center gap-3" aria-label="Back to top"><span className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.045] text-sm font-semibold transition group-hover:border-white/30">K</span><span className="hidden text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:block">Koglesh R. Murugan</span></button>
+          <div className="hidden items-center gap-7 md:flex"><button onClick={() => scrollTo("work")} className="text-xs text-white/40 transition hover:text-white">Work</button><button onClick={() => scrollTo("about")} className="text-xs text-white/40 transition hover:text-white">About</button><button onClick={() => scrollTo("stack")} className="text-xs text-white/40 transition hover:text-white">Stack</button><button onClick={() => scrollTo("log")} className="text-xs text-white/40 transition hover:text-white">Build log</button><button onClick={() => scrollTo("presence")} className="text-xs text-white/40 transition hover:text-white">Elsewhere</button><button onClick={() => scrollTo("contact")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/70 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</button></div>
         </div>
       </nav>
 
       <section id="home" className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-20 pt-28 lg:px-10">
-        <div className="max-w-6xl">
-          <div className="mb-8 flex items-center gap-3 animate-[fadeIn_.8s_ease-out_both]"><span className="h-px w-12 bg-white/35" /><span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">Independent builder · Malaysia</span></div>
-          <h1 className="max-w-5xl text-[clamp(4rem,11vw,10.5rem)] font-semibold leading-[0.82] tracking-[-0.085em] animate-[rise_.9s_ease-out_both]">I make<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">ideas real.</span></h1>
-          <div className="mt-12 grid max-w-5xl gap-10 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="max-w-2xl text-base leading-8 text-white/42 sm:text-lg">I&apos;m Koglesh R. Murugan. I build real-world web products, AI experiences and creative digital projects — from idea to working software.</p>
-            <div className="flex flex-wrap items-center gap-3">
-              <button onClick={() => scrollTo("work")} className="group flex w-fit items-center gap-3 text-sm text-white/70 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/30">↓</span>See the work</button>
-              <a href="https://beforeyougo-gray.vercel.app" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-white/55 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Try BeforeYouGo ↗</a>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-8 left-6 right-6 flex items-center justify-between border-t border-white/[0.07] pt-5 text-[9px] font-medium uppercase tracking-[0.24em] text-white/20 lg:left-10 lg:right-10"><span>Portfolio / 2026</span><span className="hidden sm:block">Build · Learn · Repeat</span><span>{time || "MY · 00:00:00"}</span></div>
+        <div className="max-w-6xl"><div className="mb-8 flex items-center gap-3 animate-[fadeIn_.8s_ease-out_both]"><span className="h-px w-12 bg-white/35" /><span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">Independent builder · Malaysia</span></div><h1 className="max-w-5xl text-[clamp(4rem,11vw,10.5rem)] font-semibold leading-[0.82] tracking-[-0.085em] animate-[rise_.9s_ease-out_both]">I make<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">ideas real.</span></h1><div className="mt-12 grid max-w-5xl gap-10 md:grid-cols-[1fr_auto] md:items-end"><p className="max-w-2xl text-base leading-8 text-white/42 sm:text-lg">I&apos;m Koglesh R. Murugan. I build real-world web products, AI experiences and creative digital projects — from idea to working software.</p><div className="flex flex-wrap items-center gap-3"><button onClick={() => scrollTo("work")} className="group flex w-fit items-center gap-3 text-sm text-white/70 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/30">↓</span>See the work</button><button onClick={() => scrollTo("log")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-white/55 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">See what&apos;s being built</button></div></div></div><div className="absolute bottom-8 left-6 right-6 flex items-center justify-between border-t border-white/[0.07] pt-5 text-[9px] font-medium uppercase tracking-[0.24em] text-white/20 lg:left-10 lg:right-10"><span>Portfolio / 2026</span><span className="hidden sm:block">Build · Learn · Repeat</span><span>{time || "MY · 00:00:00"}</span></div>
       </section>
 
-      <section id="work" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-40">
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Selected work</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Built, not imagined.</h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Real products, experiments and creative work. Each project starts with a problem, gets shipped, and becomes a feedback loop.</p></div>
+      <section className="relative z-10 border-y border-white/[0.07]"><div className="mx-auto grid max-w-7xl gap-px bg-white/[0.07] sm:grid-cols-3">{[["06", "Featured projects", "Shipped work and experiments"], ["03", "Case studies", "Problem-solving, not just screenshots"], ["01", "Active build log", "A portfolio that keeps moving"]].map(([value, title, text]) => <div key={title} className="bg-[#050505] px-6 py-8 lg:px-10"><p className="font-mono text-2xl tracking-[-0.05em] text-white/80">{value}</p><p className="mt-4 text-xs font-medium text-white/55">{title}</p><p className="mt-2 text-[10px] leading-5 text-white/25">{text}</p></div>)}</div></section>
 
-        <a href={projects[0].href} target="_blank" rel="noopener noreferrer" className="group relative mb-6 block overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.025] transition duration-500 hover:-translate-y-1 hover:border-white/20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(255,255,255,.08),transparent_35%)] opacity-70 transition duration-700 group-hover:scale-110" />
-          <div className="relative grid min-h-[590px] lg:grid-cols-[1.05fr_.95fr]">
-            <div className="flex flex-col justify-between border-b border-white/[0.07] p-8 sm:p-12 lg:border-b-0 lg:border-r">
-              <div className="flex items-center justify-between"><span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/25">Featured / QueueWise</span><span className="rounded-full border border-white/10 px-3 py-1.5 text-[9px] text-white/30">01</span></div>
-              <div className="py-14"><div className="mb-6 flex items-center gap-3"><span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-lg font-semibold">Q</span><span className="text-[10px] uppercase tracking-[0.22em] text-white/30">Live civic-tech product</span></div><h3 className="max-w-xl text-5xl font-semibold tracking-[-0.065em] sm:text-7xl">Know the queue<br /><span className="text-white/30">before you go.</span></h3><p className="mt-7 max-w-xl text-sm leading-7 text-white/40 sm:text-base">A real community-powered queue tracker for everyday services. People report what they genuinely observe, and fresh reports create transparent live estimates.</p></div>
-              <div className="flex flex-wrap gap-2">{projects[0].tags.map((tag) => <span key={tag} className="rounded-full border border-white/[0.08] bg-black/20 px-3 py-1.5 text-[10px] text-white/30">{tag}</span>)}</div>
-            </div>
-            <div className="relative flex min-h-[460px] flex-col justify-between p-8 sm:p-12"><div className="absolute right-12 top-16 h-64 w-64 rounded-full border border-white/[0.07] opacity-60 transition duration-700 group-hover:scale-110 group-hover:rotate-12" /><div className="absolute right-28 top-32 h-32 w-32 rounded-full border border-white/[0.09] opacity-70 transition duration-700 group-hover:scale-125" /><div className="relative"><p className="mb-8 text-[10px] uppercase tracking-[0.22em] text-white/25">What makes it real</p><div className="space-y-5">{["Real places", "Fresh community reports", "Transparent estimates"].map((item, index) => <div key={item} className="flex gap-5 border-b border-white/[0.06] pb-5"><span className="font-mono text-[9px] text-white/20">0{index + 1}</span><span className="text-sm text-white/55">{item}</span></div>)}</div></div><div className="relative flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition group-hover:bg-white/[0.06]"><div><span className="block text-xs text-white/70">Open live product</span><span className="mt-1 block text-[10px] text-white/25">queuewise-app.vercel.app</span></div><span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition group-hover:translate-x-1 group-hover:border-white/25">↗</span></div></div>
-          </div>
-        </a>
-
-        <div className="grid gap-6 md:grid-cols-2">{projects.slice(1).map((project) => <a key={project.number} href={project.href} target="_blank" rel="noopener noreferrer" className="group relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/[0.07] bg-white/[0.02] p-8 transition duration-500 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.035] sm:p-10"><div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/[0.035] blur-3xl transition duration-700 group-hover:scale-150" /><div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/20">{project.label}</span><span className="text-[10px] text-white/20">{project.number}</span></div><div className="py-12"><h3 className="text-4xl font-semibold tracking-[-0.055em] text-white/85 group-hover:text-white">{project.title}</h3><p className="mt-5 max-w-lg text-sm leading-7 text-white/30">{project.description}</p></div><div className="flex items-end justify-between gap-4"><div className="flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-white/[0.07] px-3 py-1.5 text-[9px] text-white/25">{tag}</span>)}</div><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 text-xs text-white/30 transition group-hover:translate-x-1 group-hover:border-white/25 group-hover:text-white">↗</span></div><span className="mt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/25 transition group-hover:text-white/60">{project.cta} ↗</span></div></a>)}</div>
+      <section id="work" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-40"><div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Selected work</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Built, not imagined.</h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Real products, experiments and creative work. Each project starts with a problem, gets shipped, and becomes a feedback loop.</p></div>
+        <div className="group relative mb-6 overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.025] transition duration-500 hover:-translate-y-1 hover:border-white/20"><div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(255,255,255,.08),transparent_35%)] opacity-70 transition duration-700 group-hover:scale-110" /><div className="relative grid min-h-[590px] lg:grid-cols-[1.05fr_.95fr]"><div className="flex flex-col justify-between border-b border-white/[0.07] p-8 sm:p-12 lg:border-b-0 lg:border-r"><div className="flex items-center justify-between"><span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/25">Featured / QueueWise</span><span className="rounded-full border border-white/10 px-3 py-1.5 text-[9px] text-white/30">01</span></div><div className="py-14"><div className="mb-6 flex items-center gap-3"><span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-lg font-semibold">Q</span><span className="text-[10px] uppercase tracking-[0.22em] text-white/30">Live civic-tech product</span></div><h3 className="max-w-xl text-5xl font-semibold tracking-[-0.065em] sm:text-7xl">Know the queue<br /><span className="text-white/30">before you go.</span></h3><p className="mt-7 max-w-xl text-sm leading-7 text-white/40 sm:text-base">A community-powered queue tracker for everyday services. People report what they genuinely observe, and fresh reports create transparent live estimates.</p></div><div className="flex flex-wrap gap-2">{projects[0].tags.map((tag) => <span key={tag} className="rounded-full border border-white/[0.08] bg-black/20 px-3 py-1.5 text-[10px] text-white/30">{tag}</span>)}</div></div><div className="relative flex min-h-[460px] flex-col justify-between p-8 sm:p-12"><div className="absolute right-12 top-16 h-64 w-64 rounded-full border border-white/[0.07] opacity-60 transition duration-700 group-hover:scale-110 group-hover:rotate-12" /><div className="absolute right-28 top-32 h-32 w-32 rounded-full border border-white/[0.09] opacity-70 transition duration-700 group-hover:scale-125" /><div className="relative"><p className="mb-8 text-[10px] uppercase tracking-[0.22em] text-white/25">Engineering proof</p><div className="space-y-5">{["Real places", "Fresh community reports", "Transparent estimates", "Live deployed product"].map((item, index) => <div key={item} className="flex gap-5 border-b border-white/[0.06] pb-5"><span className="font-mono text-[9px] text-white/20">0{index + 1}</span><span className="text-sm text-white/55">{item}</span></div>)}</div></div><div className="relative flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition group-hover:bg-white/[0.06]"><div><span className="block text-xs text-white/70">Explore the build</span><span className="mt-1 block text-[10px] text-white/25">Case study + live product + source</span></div><div className="flex gap-2"><a href="/work/queuewise" className="rounded-full border border-white/10 px-4 py-2 text-[10px] text-white/50 hover:border-white/25 hover:text-white">Case study</a><a href={projects[0].href} target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-xs text-white/30 transition group-hover:translate-x-1 group-hover:border-white/25 group-hover:text-white" aria-label="Open QueueWise">↗</a></div></div></div></div></div>
+        <div className="grid gap-6 md:grid-cols-2">{projects.slice(1).map((project) => <article key={project.number} className="group relative min-h-[380px] overflow-hidden rounded-[2rem] border border-white/[0.07] bg-white/[0.02] p-8 transition duration-500 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.035] sm:p-10"><div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/[0.035] blur-3xl transition duration-700 group-hover:scale-150" /><div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/20">{project.label}</span><span className="text-[10px] text-white/20">{project.number}</span></div><div className="py-12"><h3 className="text-4xl font-semibold tracking-[-0.055em] text-white/85 group-hover:text-white">{project.title}</h3><p className="mt-5 max-w-lg text-sm leading-7 text-white/30">{project.description}</p></div><div><div className="flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-white/[0.07] px-3 py-1.5 text-[9px] text-white/25">{tag}</span>)}</div><div className="mt-6 flex flex-wrap gap-2"><a href={project.href} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/[0.035] px-4 py-2.5 text-[10px] text-white/55 transition hover:border-white/25 hover:text-white">{project.cta} ↗</a>{["queuewise", "beforeyougo", "foodloop"].includes(project.slug) && <a href={`/work/${project.slug}`} className="rounded-full border border-white/[0.08] px-4 py-2.5 text-[10px] text-white/30 transition hover:border-white/20 hover:text-white">Case study →</a>}</div></div></div></article>)}</div>
       </section>
 
-      <section id="about" className="relative z-10 border-y border-white/[0.07] scroll-mt-20"><div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 lg:grid-cols-[.9fr_1.1fr] lg:px-10 lg:py-36"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">About the builder</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Curiosity<br /><span className="text-white/30">with execution.</span></h2></div><div className="space-y-8"><p className="text-lg leading-8 text-white/50">I&apos;m Koglesh R. Murugan, a developer and product builder focused on turning real problems into useful digital experiences.</p><p className="text-sm leading-7 text-white/30">I learn by shipping. That means building the interface, connecting the database, testing the uncomfortable parts, fixing what breaks, and putting the result in front of real people.</p><div className="grid gap-3 sm:grid-cols-2">{principles.map(([n, t, d]) => <div key={n} className="rounded-2xl border border-white/[0.07] bg-white/[0.018] p-5"><span className="font-mono text-[9px] text-white/20">{n}</span><h3 className="mt-5 text-sm font-medium text-white/65">{t}</h3><p className="mt-2 text-xs leading-5 text-white/25">{d}</p></div>)}</div></div></div></section>
+      <section id="log" className="relative z-10 border-y border-white/[0.07] scroll-mt-20"><div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-36"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Build log</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Still<br /><span className="text-white/30">building.</span></h2><p className="mt-7 max-w-sm text-sm leading-7 text-white/30">A small public record of what is being shipped, learned and improved. No inflated milestones — just the work.</p></div><div className="divide-y divide-white/[0.07]">{buildLog.map(([date, title, text]) => <div key={`${date}-${title}`} className="grid gap-4 py-7 sm:grid-cols-[120px_120px_1fr]"><span className="font-mono text-[9px] text-white/20">{date}</span><span className="text-xs font-medium text-white/55">{title}</span><p className="text-sm leading-6 text-white/30">{text}</p></div>)}</div></div></section>
+
+      <section id="about" className="relative z-10 scroll-mt-20"><div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 lg:grid-cols-[.9fr_1.1fr] lg:px-10 lg:py-36"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">About the builder</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Curiosity<br /><span className="text-white/30">with execution.</span></h2></div><div className="space-y-8"><p className="text-lg leading-8 text-white/50">I&apos;m Koglesh R. Murugan, a developer and product builder focused on turning real problems into useful digital experiences.</p><p className="text-sm leading-7 text-white/30">I learn by shipping. That means building the interface, connecting the data layer, testing the uncomfortable parts, fixing what breaks, and putting the result in front of real people.</p><div className="grid gap-3 sm:grid-cols-2">{principles.map(([n, t, d]) => <div key={n} className="rounded-2xl border border-white/[0.07] bg-white/[0.018] p-5"><span className="font-mono text-[9px] text-white/20">{n}</span><h3 className="mt-5 text-sm font-medium text-white/65">{t}</h3><p className="mt-2 text-xs leading-5 text-white/25">{d}</p></div>)}</div></div></div></section>
 
       <section id="stack" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-36"><div className="grid gap-12 md:grid-cols-[.7fr_1.3fr] md:items-start"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Toolkit</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">Tools I use<br /><span className="text-white/30">to ship.</span></h2></div><div className="flex flex-wrap gap-3">{skills.map((skill) => <span key={skill} className="rounded-full border border-white/[0.09] bg-white/[0.02] px-5 py-3 text-xs text-white/45 transition hover:border-white/20 hover:bg-white/[0.05] hover:text-white">{skill}</span>)}</div></div></section>
 
-      <section id="presence" className="relative z-10 border-y border-white/[0.07] scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36"><div className="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Elsewhere</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">The work<br /><span className="text-white/30">continues outside here.</span></h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Code, professional updates and creator work — kept separate from the portfolio so each space can do its job.</p></div><div className="grid gap-4 md:grid-cols-3">{presence.map((item) => <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className="group rounded-[1.75rem] border border-white/[0.08] bg-white/[0.02] p-7 transition duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.04]"><div className="flex items-center justify-between"><span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-sm font-semibold">{item.title.slice(0, 1)}</span><span className="text-xs text-white/20 transition group-hover:translate-x-1 group-hover:text-white/60">↗</span></div><p className="mt-8 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/20">{item.label}</p><h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white/80 group-hover:text-white">{item.title}</h3><p className="mt-3 min-h-[48px] text-sm leading-6 text-white/30">{item.description}</p><span className="mt-7 block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/25 transition group-hover:text-white/60">{item.action} ↗</span></a>)}<div className="group rounded-[1.75rem] border border-dashed border-white/[0.1] bg-white/[0.012] p-7 transition duration-500 hover:border-white/20"><div className="flex items-center justify-between"><span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-sm font-semibold">T</span><span className="rounded-full border border-white/10 px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.16em] text-white/25">Not linked yet</span></div><p className="mt-8 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/20">Twitch · Live building</p><h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white/80">Twitch</h3><p className="mt-3 min-h-[48px] text-sm leading-6 text-white/30">A place for future live builds, experiments and behind-the-scenes sessions. No channel link is claimed here until there is a real public profile to point to.</p><span className="mt-7 block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/25">Real link coming later</span></div></div></div></section>
+      <section id="presence" className="relative z-10 border-t border-white/[0.07] scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36"><div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Elsewhere</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">The work<br /><span className="text-white/30">continues outside here.</span></h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Code, professional updates and creator experiments — all connected to the same builder journey.</p></div><div className="grid gap-4 md:grid-cols-3">{presence.map((item) => <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className="group rounded-[1.5rem] border border-white/[0.07] bg-white/[0.018] p-7 transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.035]"><div className="flex items-center justify-between"><span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/20">{item.label}</span><span className="text-white/20 transition group-hover:translate-x-1 group-hover:text-white">↗</span></div><h3 className="mt-12 text-3xl font-semibold tracking-[-0.05em] text-white/80 group-hover:text-white">{item.title}</h3><p className="mt-4 text-xs leading-6 text-white/30">{item.description}</p><span className="mt-8 block text-[10px] font-semibold uppercase tracking-[0.18em] text-white/25 group-hover:text-white/60">{item.action} ↗</span></a>)}</div></div></section>
 
-      <section id="contact" className="relative z-10 scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-40"><p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Contact</p><h2 className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a problem worth<br /><span className="text-white/30">building around?</span></h2><div className="mt-12 flex flex-wrap items-center gap-4"><button onClick={copyEmail} className="rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 text-sm text-white/75 transition hover:border-white/30 hover:bg-white/[0.1] hover:text-white">{copied ? "Email copied ✓" : "Copy my email"}</button><a href="mailto:koglesh.official@gmail.com" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">koglesh.official@gmail.com</a><a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">GitHub ↗</a><a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">LinkedIn ↗</a></div></div></section>
+      <section id="contact" className="relative z-10 border-t border-white/[0.07] scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-40"><p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Contact</p><h2 className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a problem worth<br /><span className="text-white/30">building around?</span></h2><div className="mt-12 flex flex-wrap items-center gap-4"><button onClick={copyEmail} className="rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 text-sm text-white/75 transition hover:border-white/30 hover:bg-white/[0.1] hover:text-white">{copied ? "Email copied ✓" : "Copy my email"}</button><a href="mailto:koglesh.official@gmail.com" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">koglesh.official@gmail.com</a><a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">GitHub ↗</a><a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-sm text-white/40 transition hover:border-white/20 hover:text-white">LinkedIn ↗</a></div></div></section>
 
       <footer className="relative z-10 border-t border-white/[0.07] px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col gap-4 text-[9px] font-medium uppercase tracking-[0.22em] text-white/20 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Koglesh R. Murugan</span><span>Developer · Builder · Creator</span><span>Built with Next.js · Deployed on Vercel</span></div></footer>
     </main>
