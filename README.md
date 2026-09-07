@@ -6,6 +6,28 @@ Official portfolio and public project hub for **Koglesh R. Murugan** — buildin
 
 ## Featured work
 
+### ⚡ PACE
+Academic workload, made realistic.
+
+A multi-user student workload planner that combines deadlines, estimated effort, priority, study capacity, and workload pressure into an explainable seven-day plan and next action.
+
+- **Live:** https://pace-nu-seven.vercel.app/
+- **Source:** https://github.com/kogleshofficial-hub/PACE
+- **Competition:** CSC Back-to-School Hackathon
+- **Stack:** Next.js · React · TypeScript · Appwrite · Vercel
+
+### 🧠 SYNAPSE
+A local-first workload planner that turns deadlines, effort, priority, and realistic available time into a deterministic seven-day plan.
+
+- **Live:** https://synapse-7ldp5tfhy-kogleshofficial-hubs-projects.vercel.app
+- **Source:** https://github.com/kogleshofficial-hub/synapse
+
+### 🌍 GRIDPULSE
+An evidence-first infrastructure control plane that correlates distributed telemetry, validates corroboration, and prepares bounded AI risk intelligence.
+
+- **Live:** https://gridpulse-three.vercel.app
+- **Source:** https://github.com/kogleshofficial-hub/GRIDPULSE
+
 ### 🌍 FoodLoop
 A real food-rescue platform connecting surplus food with people who can use it.
 
@@ -35,12 +57,13 @@ A challenge-driven creative project documenting experiments, learning, editing, 
 - AI-powered product experiences
 - Focused, usable interfaces
 - Evidence-aware workflows
+- Multi-user database-backed products
 - Creative digital projects
 - Small experiments that become useful products
 
 ## Core stack
 
-`Next.js` · `React` · `TypeScript` · `Tailwind CSS` · `Supabase` · `PostgreSQL` · `AI APIs` · `GitHub` · `Vercel`
+`Next.js` · `React` · `TypeScript` · `Tailwind CSS` · `Supabase` · `Appwrite` · `PostgreSQL` · `AI APIs` · `GitHub` · `Vercel`
 
 ## Build philosophy
 
