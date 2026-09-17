@@ -2,45 +2,250 @@
 
 import { useEffect, useState } from "react";
 
-const projects = [
-  { number: "01", title: "MIRROR", label: "LIVE · DETERMINISTIC SIMULATION", description: "A deterministic simulation engine that turns real-world situations into structured models and shows how queues, capacity, throughput, utilization, events, and bottlenecks change under what-if conditions.", tags: ["Next.js", "React", "TypeScript", "Simulation", "Vercel"], href: "https://mirror-simulation-engine.vercel.app", source: "https://github.com/kogleshofficial-hub/mirror-simulation-engine", slug: "mirror", cta: "Open MIRROR" },
-  { number: "02", title: "PACE", label: "LIVE · ACADEMIC WORKLOAD", description: "An academic workload planner that turns deadlines, effort, priority, and realistic capacity into an actionable seven-day study plan.", tags: ["Next.js", "React", "TypeScript", "Appwrite", "Vercel"], href: "https://pace-nu-seven.vercel.app", source: "https://github.com/kogleshofficial-hub/PACE", slug: "pace", cta: "Open PACE" },
-  { number: "03", title: "SYNAPSE", label: "LIVE · WORKLOAD INTELLIGENCE", description: "A local-first workload planner that turns deadlines, effort, priority, and realistic available time into a deterministic seven-day plan.", tags: ["Next.js", "React", "TypeScript", "Local Storage", "Vercel"], href: "https://synapse-7ldp5tfhy-kogleshofficial-hubs-projects.vercel.app", source: "https://github.com/kogleshofficial-hub/synapse", slug: "synapse", cta: "Open SYNAPSE" },
-  { number: "04", title: "GRIDPULSE", label: "LIVE · INFRASTRUCTURE INTELLIGENCE", description: "An evidence-first infrastructure control plane that correlates distributed telemetry, validates corroboration, and prepares bounded AI risk intelligence.", tags: ["Next.js", "PostgreSQL", "Azure ML", "Microsoft Foundry", "Vercel"], href: "https://gridpulse-three.vercel.app", source: "https://github.com/kogleshofficial-hub/GRIDPULSE", slug: "gridpulse", cta: "Open GRIDPULSE" },
-  { number: "05", title: "QueueWise", label: "LIVE · CIVIC TECH", description: "A community-powered queue tracker for everyday public services, built around fresh reports and transparent estimates.", tags: ["Next.js", "Supabase", "PostgreSQL", "OpenStreetMap"], href: "https://queuewise-app.vercel.app", source: "https://github.com/kogleshofficial-hub/queuewise", slug: "queuewise", cta: "Open QueueWise" },
-  { number: "06", title: "BeforeYouGo", label: "LIVE · UTILITY", description: "A practical preparation tool for building independent checklists before visits, travel and important tasks.", tags: ["Next.js", "TypeScript", "Local Storage", "SEO"], href: "https://beforeyougo-gray.vercel.app", source: "https://github.com/kogleshofficial-hub/beforeyougo", slug: "beforeyougo", cta: "Open BeforeYouGo" },
-  { number: "07", title: "FoodLoop", label: "LIVE · SOCIAL IMPACT", description: "A food-rescue platform connecting surplus food with people who can use it through database-backed workflows.", tags: ["Next.js", "Supabase", "PostgreSQL", "Vercel"], href: "https://food-loop-app.vercel.app", source: "https://github.com/kogleshofficial-hub/FoodLoop", slug: "foodloop", cta: "Open FoodLoop" },
-  { number: "08", title: "One Next Step", label: "AI PRODUCT", description: "A focused decision experience designed to turn a situation into one clear, useful next action.", tags: ["Next.js", "TypeScript", "AI"], href: "https://one-next-step.vercel.app", source: "https://github.com/kogleshofficial-hub/one-next-step", slug: "one-next-step", cta: "Try it live" },
-  { number: "09", title: "Truth Checker", label: "WEB PRODUCT", description: "An evidence-first claim investigation experience built to make online information easier to examine and question.", tags: ["Next.js", "TypeScript", "AI", "Evidence"], href: "https://truth-checker-app.vercel.app", source: "https://github.com/kogleshofficial-hub/truth-checker", slug: "truth-checker", cta: "Open Truth Checker" },
-  { number: "10", title: "AERO", label: "CREATIVE PROJECT", description: "A challenge-driven creator project built around learning, experimenting, storytelling and documenting progress.", tags: ["YouTube", "Editing", "Storytelling"], href: "https://www.youtube.com/@ItsAero_Official", source: "https://github.com/kogleshofficial-hub", slug: "aero", cta: "Watch AERO" },
+type Project = {
+  number: string;
+  title: string;
+  label: string;
+  description: string;
+  architecture: string[];
+  tradeoff: string;
+  tags: string[];
+  href: string;
+  source: string;
+  featured?: boolean;
+};
+
+const projects: Project[] = [
+  {
+    number: "01",
+    title: "MIRROR",
+    label: "LIVE · DETERMINISTIC SIMULATION",
+    description:
+      "A deterministic decision-simulation engine for measurable, resource-constrained situations. It converts explicit scenario inputs into a structured model, runs a discrete-time simulation locally, and exposes queues, capacity, utilization, events and what-if consequences.",
+    architecture: ["Scenario", "Structured model", "Discrete-time engine", "State + metrics", "What-if diff"],
+    tradeoff:
+      "MIRROR deliberately keeps the current model deterministic and local. That makes runs reproducible and assumptions visible, while limiting the engine to variables the model explicitly represents.",
+    tags: ["Next.js", "React", "TypeScript", "Simulation", "Vercel"],
+    href: "https://mirror-simulation-engine.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/mirror-simulation-engine",
+    featured: true,
+  },
+  {
+    number: "02",
+    title: "GRIDPULSE",
+    label: "LIVE · INFRASTRUCTURE INTELLIGENCE",
+    description:
+      "An evidence-first infrastructure intelligence control plane that separates observed telemetry, validation, prediction and explanation. PostgreSQL stores the evidence layer while optional Azure ML and Microsoft Foundry services provide bounded intelligence.",
+    architecture: ["Human telemetry", "Next.js API + Zod", "PostgreSQL evidence", "Azure ML", "Foundry explanation"],
+    tradeoff:
+      "The system keeps prediction separate from confirmation. If configured AI services are unavailable or return invalid data, the intelligence path fails closed rather than fabricating a result.",
+    tags: ["Next.js", "PostgreSQL", "Zod", "Azure ML", "Microsoft Foundry", "Vercel"],
+    href: "https://gridpulse-three.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/GRIDPULSE",
+    featured: true,
+  },
+  {
+    number: "03",
+    title: "PACE",
+    label: "LIVE · ACADEMIC WORKLOAD",
+    description:
+      "A multi-user academic workload planner that combines deadlines, effort, priority and available capacity into a realistic seven-day plan, with automatic rebalancing as work changes.",
+    architecture: ["Capture", "Understand", "Allocate", "Act", "Recalculate"],
+    tradeoff:
+      "PACE uses Appwrite for authentication, database storage and per-user row permissions, keeping the multi-user foundation straightforward while the planning logic stays explainable in the product layer.",
+    tags: ["Next.js", "React", "TypeScript", "Appwrite", "Vercel"],
+    href: "https://pace-nu-seven.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/PACE",
+    featured: true,
+  },
+  {
+    number: "04",
+    title: "SYNAPSE",
+    label: "LIVE · WORKLOAD INTELLIGENCE",
+    description:
+      "A local-first workload planner that turns deadlines, effort, priority and available time into a deterministic seven-day plan.",
+    architecture: ["Tasks", "Local state", "Planning rules", "Seven-day allocation", "Next action"],
+    tradeoff:
+      "The local-first approach keeps the core planning experience fast and simple without requiring a backend for the foundational workflow.",
+    tags: ["Next.js", "React", "TypeScript", "Local Storage", "Vercel"],
+    href: "https://synapse-7ldp5tfhy-kogleshofficial-hubs-projects.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/synapse",
+  },
+  {
+    number: "05",
+    title: "QueueWise",
+    label: "LIVE · CIVIC TECH",
+    description:
+      "A community-powered queue tracker for everyday public services, built around fresh reports and transparent estimates rather than opaque waiting-time guesses.",
+    architecture: ["Community report", "Supabase", "PostgreSQL", "Location context", "Queue estimate"],
+    tradeoff:
+      "Fresh user reports are treated as signals. The product focuses on transparent estimates instead of presenting a queue estimate as guaranteed ground truth.",
+    tags: ["Next.js", "Supabase", "PostgreSQL", "OpenStreetMap"],
+    href: "https://queuewise-app.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/queuewise",
+  },
+  {
+    number: "06",
+    title: "FoodLoop",
+    label: "LIVE · SOCIAL IMPACT",
+    description:
+      "A food-rescue platform connecting surplus food with people who can use it through database-backed listings, requests and practical product workflows.",
+    architecture: ["Food listing", "Database", "Availability", "Request", "Rescue workflow"],
+    tradeoff:
+      "The workflow is built around structured listings and database state so the product can represent availability changes instead of relying on static content.",
+    tags: ["Next.js", "Supabase", "PostgreSQL", "Vercel"],
+    href: "https://food-loop-app.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/FoodLoop",
+  },
+  {
+    number: "07",
+    title: "BeforeYouGo",
+    label: "LIVE · UTILITY",
+    description:
+      "A practical preparation tool for building independent checklists before visits, travel and important tasks.",
+    architecture: ["Context", "Checklist rules", "Local state", "Review", "Ready state"],
+    tradeoff:
+      "The product keeps preparation data lightweight and local, prioritizing immediate usability over unnecessary infrastructure.",
+    tags: ["Next.js", "TypeScript", "Local Storage", "SEO"],
+    href: "https://beforeyougo-gray.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/beforeyougo",
+  },
+  {
+    number: "08",
+    title: "One Next Step",
+    label: "LIVE · AI PRODUCT",
+    description:
+      "A focused decision experience designed to turn a situation into one clear, useful next action instead of an overwhelming full plan.",
+    architecture: ["Situation", "Context", "AI reasoning", "Next action", "User decision"],
+    tradeoff:
+      "The interface intentionally narrows the output to one actionable step, reducing cognitive load rather than presenting a long generated plan.",
+    tags: ["Next.js", "TypeScript", "AI"],
+    href: "https://one-next-step.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/one-next-step",
+  },
+  {
+    number: "09",
+    title: "Truth Checker",
+    label: "LIVE · WEB PRODUCT",
+    description:
+      "An evidence-first claim investigation experience built to make online information easier to examine, question and trace back to supporting web evidence.",
+    architecture: ["Claim", "Evidence search", "Source context", "Assessment", "Explanation"],
+    tradeoff:
+      "The product emphasizes evidence and source context so an assessment can be examined instead of being treated as an unexplained verdict.",
+    tags: ["Next.js", "TypeScript", "AI", "Evidence"],
+    href: "https://truth-checker-app.vercel.app",
+    source: "https://github.com/kogleshofficial-hub/truth-checker",
+  },
+  {
+    number: "10",
+    title: "AERO",
+    label: "CREATIVE · CHALLENGE PROJECT",
+    description:
+      "A challenge-driven creator project built around learning, experimenting, storytelling and documenting progress through real attempts.",
+    architecture: ["Challenge", "Attempt", "Setback", "Progress", "Payoff"],
+    tradeoff:
+      "AERO treats the attempt itself as the story: real constraints, mistakes and progression matter more than pretending every experiment succeeds immediately.",
+    tags: ["YouTube", "Editing", "Storytelling"],
+    href: "https://www.youtube.com/@ItsAero_Official",
+    source: "https://github.com/kogleshofficial-hub",
+  },
 ];
 
-const skills = ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Azure", "Appwrite", "AI products", "UI design", "Git & GitHub", "Vercel"];
+const skills = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "JavaScript",
+  "Tailwind CSS",
+  "Supabase",
+  "PostgreSQL",
+  "Appwrite",
+  "Azure",
+  "AI products",
+  "Git & GitHub",
+  "Vercel",
+];
 
 const principles = [
-  ["01", "Find the real problem", "Start with something people genuinely experience."],
-  ["02", "Build the useful thing", "Prefer working products over impressive-looking demos."],
-  ["03", "Make the reasoning visible", "Good product decisions should be understandable, not mysterious."],
-  ["04", "Ship, learn, improve", "Every release is a new feedback loop."],
+  ["01", "Model the problem", "Start with the system, constraints and the actual user need."],
+  ["02", "Make the data trustworthy", "Keep state, permissions, evidence and assumptions explicit."],
+  ["03", "Expose the trade-offs", "A useful system should make important engineering decisions understandable."],
+  ["04", "Ship and iterate", "Production feedback is part of the engineering loop, not the end of it."],
 ];
 
 const buildLog = [
-  ["08 SEP 2026", "MIRROR", "Finished MIRROR, a deterministic decision-simulation engine built around transparent what-if consequences without AI or hidden inference."],
-  ["07 SEP 2026", "PACE", "Shipped the academic workload planner with Appwrite authentication, per-user data permissions and a production deployment."],
-  ["06 SEP 2026", "SYNAPSE", "Shipped the workload planner into the portfolio and prepared the GIBC V2 competition submission."],
-  ["05 SEP 2026", "GRIDPULSE", "Hardened the live infrastructure control plane, telemetry flow and evidence boundary."],
-  ["04 SEP 2026", "Portfolio", "Reframed the portfolio around shipped products, proof of work and active engineering."],
-  ["04 SEP 2026", "FoodLoop", "Continued relaunch work with a focus on useful, dependable product workflows."],
-  ["03 SEP 2026", "AERO", "Shipped a new challenge stream and short-form content experiment."],
+  ["08 SEP 2026", "MIRROR", "Finished the deterministic decision-simulation engine and documented its model boundaries."],
+  ["07 SEP 2026", "PACE", "Shipped the academic workload planner with Appwrite authentication, per-user permissions and a production deployment."],
+  ["06 SEP 2026", "SYNAPSE", "Shipped the workload planner into the portfolio and prepared the competition submission."],
+  ["05 SEP 2026", "GRIDPULSE", "Hardened the infrastructure control plane, telemetry flow and evidence boundary."],
+  ["04 SEP 2026", "Portfolio", "Reframed the portfolio around shipped products, architecture, proof of work and active engineering."],
+  ["04 SEP 2026", "FoodLoop", "Continued product relaunch work with a focus on useful, dependable workflows."],
 ];
 
-const presence = [
-  { title: "GitHub", label: "CODE / PROJECTS", description: "Source code, experiments and the products behind the portfolio.", href: "https://github.com/kogleshofficial-hub", action: "View GitHub" },
-  { title: "LinkedIn", label: "PROFESSIONAL", description: "Projects, learning and builder updates.", href: "https://www.linkedin.com/in/koglesh-r-murugan-020450430/", action: "View LinkedIn" },
-  { title: "YouTube", label: "AERO / CREATOR", description: "Challenges, experiments and the process behind AERO.", href: "https://www.youtube.com/@ItsAero_Official", action: "Watch AERO" },
-];
+function Arrow() {
+  return <span aria-hidden="true">↗</span>;
+}
 
-function Arrow() { return <span aria-hidden="true">↗</span>; }
+function Architecture({ steps }: { steps: string[] }) {
+  return (
+    <div className="mt-7 overflow-x-auto rounded-2xl border border-white/[0.08] bg-black/30 p-4">
+      <div className="flex min-w-max items-center gap-2">
+        {steps.map((step, index) => (
+          <div key={step} className="flex items-center gap-2">
+            <div className="border border-white/[0.1] bg-white/[0.035] px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-white/55">
+              {step}
+            </div>
+            {index < steps.length - 1 && <span className="text-white/20">→</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <article className={`group relative overflow-hidden border border-white/[0.09] bg-white/[0.02] transition duration-500 hover:-translate-y-1 hover:border-white/20 ${project.featured ? "rounded-[2rem]" : "rounded-3xl"}`}>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(255,255,255,.07),transparent_32%)] opacity-0 transition group-hover:opacity-100" />
+      <div className="relative p-6 sm:p-8 lg:p-10">
+        <div className="flex flex-wrap items-start justify-between gap-5">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-white/20">{project.number}</span>
+            <span className="h-px w-8 bg-white/15" />
+            <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/30">{project.label}</span>
+          </div>
+          <a href={project.source} target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-[0.16em] text-white/30 transition hover:text-white">Source <Arrow /></a>
+        </div>
+
+        <div className="mt-9 grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:gap-14">
+          <div>
+            <h3 className="text-4xl font-semibold tracking-[-0.065em] text-white sm:text-5xl">{project.title}</h3>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/38 sm:text-base">{project.description}</p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {project.tags.map((tag) => <span key={tag} className="border border-white/[0.08] bg-white/[0.025] px-2.5 py-1.5 text-[9px] uppercase tracking-[0.12em] text-white/35">{tag}</span>)}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={project.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-5 py-3 text-xs font-medium text-white/80 transition hover:border-white/30 hover:bg-white/[0.13] hover:text-white">Live deployment <Arrow /></a>
+              <a href={project.source} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-5 py-3 text-xs text-white/40 transition hover:border-white/20 hover:text-white">Source & architecture <Arrow /></a>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-center justify-between">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-white/25">System architecture</p>
+              <span className="font-mono text-[9px] text-white/15">FLOW / {project.number}</span>
+            </div>
+            <Architecture steps={project.architecture} />
+            <div className="mt-6 border-l border-white/15 pl-4">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/20">Technical trade-off</p>
+              <p className="mt-2 text-xs leading-6 text-white/30">{project.tradeoff}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,7 +262,8 @@ export default function Home() {
     };
     const onMove = (event: MouseEvent) => setSpotlight({ x: (event.clientX / window.innerWidth) * 100, y: (event.clientY / window.innerHeight) * 100 });
     const updateTime = () => setTime(new Intl.DateTimeFormat("en-MY", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false, timeZone: "Asia/Kuala_Lumpur" }).format(new Date()));
-    onScroll(); updateTime();
+    onScroll();
+    updateTime();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", onMove, { passive: true });
     const clock = window.setInterval(updateTime, 1000);
@@ -66,8 +272,13 @@ export default function Home() {
 
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const copyEmail = async () => {
-    try { await navigator.clipboard.writeText("koglesh.official@gmail.com"); setCopied(true); window.setTimeout(() => setCopied(false), 1800); }
-    catch { window.location.href = "mailto:koglesh.official@gmail.com"; }
+    try {
+      await navigator.clipboard.writeText("koglesh.official@gmail.com");
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.location.href = "mailto:koglesh.official@gmail.com";
+    }
   };
 
   return (
@@ -78,42 +289,77 @@ export default function Home() {
 
       <nav className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-white/[0.08] bg-[#050505]/75 backdrop-blur-2xl" : ""}`}>
         <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-6 lg:px-10">
-          <button onClick={() => scrollTo("home")} className="group flex items-center gap-3" aria-label="Back to top"><span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.045] text-sm font-semibold transition group-hover:border-white/30">K</span><span className="hidden text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:block">Koglesh R. Murugan</span></button>
-          <div className="hidden items-center gap-7 md:flex"><button onClick={() => scrollTo("work")} className="text-xs text-white/40 transition hover:text-white">Work</button><button onClick={() => scrollTo("about")} className="text-xs text-white/40 transition hover:text-white">About</button><button onClick={() => scrollTo("stack")} className="text-xs text-white/40 transition hover:text-white">Stack</button><button onClick={() => scrollTo("log")} className="text-xs text-white/40 transition hover:text-white">Build log</button><button onClick={() => scrollTo("presence")} className="text-xs text-white/40 transition hover:text-white">Elsewhere</button><button onClick={() => scrollTo("contact")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/70 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</button></div>
+          <button onClick={() => scrollTo("home")} className="group flex items-center gap-3" aria-label="Back to top">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.045] text-sm font-semibold transition group-hover:border-white/30">K</span>
+            <span className="hidden text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:block">Koglesh R. Murugan</span>
+          </button>
+          <div className="hidden items-center gap-7 md:flex">
+            <button onClick={() => scrollTo("work")} className="text-xs text-white/40 transition hover:text-white">Work</button>
+            <button onClick={() => scrollTo("about")} className="text-xs text-white/40 transition hover:text-white">About</button>
+            <button onClick={() => scrollTo("stack")} className="text-xs text-white/40 transition hover:text-white">Stack</button>
+            <button onClick={() => scrollTo("log")} className="text-xs text-white/40 transition hover:text-white">Build log</button>
+            <button onClick={() => scrollTo("contact")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/70 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</button>
+          </div>
         </div>
       </nav>
 
       <section id="home" className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-20 pt-28 lg:px-10">
-        <div className="max-w-6xl"><div className="mb-8 flex items-center gap-3"><span className="h-px w-12 bg-white/35" /><span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">Independent builder · Malaysia · 2026</span></div><h1 className="max-w-5xl text-[clamp(4rem,11vw,10.5rem)] font-semibold leading-[0.82] tracking-[-0.085em]">I make<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">ideas real.</span></h1><div className="mt-12 grid max-w-5xl gap-10 md:grid-cols-[1fr_auto] md:items-end"><p className="max-w-2xl text-base leading-8 text-white/42 sm:text-lg">I&apos;m Koglesh R. Murugan. I build real-world web products, AI experiences and creative digital projects — from problem discovery to design, code, testing and deployment.</p><div className="flex flex-wrap items-center gap-3"><button onClick={() => scrollTo("work")} className="group flex w-fit items-center gap-3 text-sm text-white/70 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/30">↓</span>See the work</button><button onClick={() => scrollTo("log")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-white/55 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Live build log</button></div></div></div><div className="absolute bottom-8 left-6 right-6 flex items-center justify-between border-t border-white/[0.07] pt-5 text-[9px] font-medium uppercase tracking-[0.24em] text-white/20 lg:left-10 lg:right-10"><span>Portfolio / 2026</span><span className="hidden sm:block">Build · Test · Ship · Repeat</span><span>MY · {time || "00:00:00"}</span></div>
+        <div className="max-w-6xl">
+          <div className="mb-8 flex items-center gap-3"><span className="h-px w-12 bg-white/35" /><span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">Independent builder · Malaysia · 2026</span></div>
+          <h1 className="max-w-6xl text-[clamp(4rem,10.5vw,10rem)] font-semibold leading-[0.82] tracking-[-0.085em]">I build<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">systems that work.</span></h1>
+          <div className="mt-12 grid max-w-6xl gap-10 md:grid-cols-[1fr_auto] md:items-end">
+            <div>
+              <p className="max-w-2xl text-base leading-8 text-white/42 sm:text-lg">I&apos;m Koglesh R. Murugan. I build full-stack products, deterministic systems and practical digital tools — from problem discovery and architecture to code, testing and deployment.</p>
+              <p className="mt-4 max-w-2xl text-xs leading-6 text-white/25">My work is centered on clear system boundaries, dependable data, explainable behavior and shipping software people can actually use.</p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <button onClick={() => scrollTo("work")} className="group flex w-fit items-center gap-3 text-sm text-white/70 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/30">↓</span>See the work</button>
+              <button onClick={() => scrollTo("log")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-white/55 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Build log</button>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-6 right-6 flex items-center justify-between border-t border-white/[0.07] pt-5 text-[9px] font-medium uppercase tracking-[0.24em] text-white/20 lg:left-10 lg:right-10"><span>Portfolio / 2026</span><span className="hidden sm:block">Model · Build · Test · Ship</span><span>MY · {time || "00:00:00"}</span></div>
       </section>
 
-      <section className="relative z-10 border-y border-white/[0.07]"><div className="mx-auto grid max-w-7xl gap-px bg-white/[0.07] sm:grid-cols-3">{[["10", "Shipped projects", "Live products, experiments and creative work"], ["04", "Systems thinking", "MIRROR + PACE + SYNAPSE + GRIDPULSE lead the current portfolio"], ["LIVE", "Public build log", "The portfolio moves with the work"]].map(([value, title, text]) => <div key={title} className="bg-[#050505] px-6 py-8 lg:px-10"><p className="font-mono text-2xl tracking-[-0.05em] text-white/80">{value}</p><p className="mt-4 text-xs font-medium text-white/55">{title}</p><p className="mt-2 text-[10px] leading-5 text-white/25">{text}</p></div>)}</div></section>
+      <section className="relative z-10 border-y border-white/[0.07]">
+        <div className="mx-auto grid max-w-7xl gap-px bg-white/[0.07] sm:grid-cols-3">
+          {[["10", "Shipped projects", "Products, experiments and creative work"], ["03", "Architecture-led builds", "MIRROR · GRIDPULSE · PACE"], ["LIVE", "Public build log", "The portfolio moves with the work"]].map(([value, title, text]) => <div key={title} className="bg-[#050505] px-6 py-8 lg:px-10"><p className="font-mono text-2xl tracking-[-0.05em] text-white/80">{value}</p><p className="mt-4 text-xs font-medium text-white/55">{title}</p><p className="mt-2 text-[10px] leading-5 text-white/25">{text}</p></div>)}
+        </div>
+      </section>
 
       <section id="work" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-40">
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Selected work</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Built, not imagined.</h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Real products, experiments and creative work. Each project starts with a problem, gets shipped, and becomes a feedback loop.</p></div>
-
-        <article className="group relative mb-8 overflow-hidden rounded-[2rem] border border-white/[0.1] bg-white/[0.025] transition duration-500 hover:-translate-y-1 hover:border-white/20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,rgba(255,255,255,.1),transparent_34%)]" />
-          <div className="relative grid min-h-[620px] lg:grid-cols-[1.05fr_.95fr]">
-            <div className="flex flex-col justify-between border-b border-white/[0.07] p-8 sm:p-12 lg:border-b-0 lg:border-r"><div className="flex items-center justify-between"><span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/25">Current build / PACE</span><span className="rounded-full border border-white/10 px-3 py-1.5 text-[9px] text-white/30">01</span></div><div className="py-14"><div className="mb-6 flex items-center gap-3"><span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-lg font-semibold">P</span><span className="text-[10px] uppercase tracking-[0.22em] text-white/30">Academic workload planner</span></div><h3 className="max-w-2xl text-5xl font-semibold tracking-[-0.065em] sm:text-7xl">Make workload<br /><span className="text-white/30">realistic, not overwhelming.</span></h3><p className="mt-7 max-w-xl text-sm leading-7 text-white/40 sm:text-base">PACE turns deadlines, estimated effort, priority, and realistic daily capacity into an actionable seven-day study plan — with authenticated, per-user data and explainable planning.</p></div><div className="flex flex-wrap gap-2">{projects[1].tags.map((tag) => <span key={tag} className="rounded-full border border-white/[0.08] bg-black/20 px-3 py-1.5 text-[10px] text-white/30">{tag}</span>)}</div></div>
-            <div className="relative flex flex-col justify-between p-8 sm:p-12"><div className="absolute right-10 top-14 h-72 w-72 rounded-full border border-white/[0.07] transition duration-700 group-hover:scale-110 group-hover:rotate-6" /><div className="absolute right-28 top-32 h-36 w-36 rounded-full border border-white/[0.09] transition duration-700 group-hover:scale-125" /><div className="relative"><p className="mb-8 text-[10px] uppercase tracking-[0.22em] text-white/25">Planning loop</p><div className="space-y-5">{[["01", "CAPTURE", "Deadline + effort + priority"], ["02", "UNDERSTAND", "Capacity and workload pressure"], ["03", "ACT", "Next task and seven-day plan"], ["04", "RECALCULATE", "Complete work and rebalance"]].map(([num, title, text]) => <div key={num} className="flex gap-5 border-b border-white/[0.06] pb-5"><span className="font-mono text-[9px] text-white/20">{num}</span><div><p className="text-sm text-white/60">{title}</p><p className="mt-1 text-[10px] text-white/25">{text}</p></div></div>)}</div></div><div className="relative flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/[0.08] bg-black/20 p-4"><span className="text-[10px] text-white/30">Appwrite-backed · per-user · explainable</span><a href={projects[1].href} target="_blank" rel="noreferrer" className="rounded-full bg-white px-4 py-2 text-[10px] font-semibold text-black transition hover:bg-white/90">Open PACE <Arrow /></a></div></div>
-          </div>
-        </article>
-
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{projects.map((project) => project.slug === "pace" ? null : <article key={project.slug} className="group flex min-h-[330px] flex-col rounded-[1.6rem] border border-white/[0.08] bg-white/[0.018] p-7 transition duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.03]"><div className="flex items-center justify-between"><span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/25">{project.label}</span><span className="font-mono text-[9px] text-white/20">{project.number}</span></div><h3 className="mt-12 text-3xl font-semibold tracking-[-0.05em]">{project.title}</h3><p className="mt-4 text-sm leading-6 text-white/35">{project.description}</p><div className="mt-auto pt-7"><div className="mb-5 flex flex-wrap gap-2">{project.tags.slice(0, 4).map((tag) => <span key={tag} className="rounded-full border border-white/[0.07] px-2.5 py-1 text-[9px] text-white/25">{tag}</span>)}</div><div className="flex items-center justify-between"><a href={project.href} target="_blank" rel="noreferrer" className="text-xs text-white/60 transition hover:text-white">{project.cta} <Arrow /></a><a href={project.source} target="_blank" rel="noreferrer" className="text-[10px] text-white/20 transition hover:text-white/55">Source</a></div></div></article>)}</div>
+        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Selected work</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Built, not imagined.</h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Every project is presented as a working system: what it does, how data moves, what trade-offs shaped it, and where the source lives.</p></div>
+        <div className="space-y-6">{projects.map((project) => <ProjectCard key={project.title} project={project} />)}</div>
       </section>
 
-      <section id="about" className="relative z-10 border-y border-white/[0.07] scroll-mt-20"><div className="mx-auto grid max-w-7xl lg:grid-cols-[.8fr_1.2fr]"><div className="border-b border-white/[0.07] p-8 sm:p-12 lg:border-b-0 lg:border-r lg:p-16"><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">About the builder</p><h2 className="mt-10 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">Curious enough to build it. Stubborn enough to ship it.</h2></div><div className="p-8 sm:p-12 lg:p-16"><p className="max-w-2xl text-lg leading-8 text-white/45">I care about the gap between a clever idea and a product that actually works. My projects explore civic technology, social impact, AI, infrastructure intelligence and practical productivity systems.</p><p className="mt-7 max-w-2xl text-sm leading-7 text-white/30">I learn by building: researching the problem, making a useful version, testing what breaks, fixing it, deploying it, and then doing the loop again.</p><div className="mt-12 grid gap-8 sm:grid-cols-2">{principles.map(([number, title, text]) => <div key={number} className="border-t border-white/[0.08] pt-5"><span className="font-mono text-[9px] text-white/20">{number}</span><h3 className="mt-4 text-sm text-white/65">{title}</h3><p className="mt-2 text-xs leading-5 text-white/25">{text}</p></div>)}</div></div></div></section>
+      <section id="about" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-36">
+          <div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Engineering principles</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Make the system<br />understandable.</h2></div>
+          <div className="divide-y divide-white/[0.07]">{principles.map(([number, title, text]) => <div key={number} className="grid gap-4 py-7 sm:grid-cols-[70px_1fr] sm:gap-8"><span className="font-mono text-[10px] tracking-[0.2em] text-white/20">{number}</span><div><h3 className="text-base font-medium text-white/75">{title}</h3><p className="mt-2 max-w-xl text-sm leading-7 text-white/30">{text}</p></div></div>)}</div>
+        </div>
+      </section>
 
-      <section id="stack" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-36"><div className="grid gap-12 lg:grid-cols-[.65fr_1.35fr] lg:items-end"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Stack</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">Tools are leverage.</h2></div><div className="flex flex-wrap gap-2">{skills.map((skill) => <span key={skill} className="rounded-full border border-white/[0.09] bg-white/[0.025] px-4 py-2.5 text-xs text-white/40">{skill}</span>)}</div></div></section>
+      <section id="stack" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-36">
+        <div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr]"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Stack</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Tools I ship with.</h2><p className="mt-6 max-w-md text-sm leading-7 text-white/30">The stack changes with the problem. The consistent part is the focus on typed code, clear state, useful interfaces and deployable products.</p></div><div className="flex flex-wrap content-start gap-3">{skills.map((skill) => <span key={skill} className="border border-white/[0.09] bg-white/[0.025] px-4 py-3 text-xs text-white/45 transition hover:border-white/20 hover:text-white/75">{skill}</span>)}</div></div>
+      </section>
 
-      <section id="log" className="relative z-10 border-y border-white/[0.07] scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36"><div className="mb-14 flex items-end justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Build log</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">Still building.</h2></div><span className="hidden font-mono text-[9px] text-white/20 sm:block">PUBLIC / CONTINUOUS</span></div><div className="divide-y divide-white/[0.07] border-y border-white/[0.07]">{buildLog.map(([date, project, text]) => <div key={`${date}-${project}`} className="grid gap-4 py-7 md:grid-cols-[150px_160px_1fr] md:items-start"><span className="font-mono text-[9px] text-white/20">{date}</span><span className="text-xs font-medium text-white/55">{project}</span><p className="max-w-2xl text-sm leading-6 text-white/30">{text}</p></div>)}</div></div></section>
+      <section id="log" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
+          <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Build log</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">What shipped recently.</h2></div><span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">PUBLIC / ACTIVE</span></div>
+          <div className="divide-y divide-white/[0.07]">{buildLog.map(([date, title, text]) => <div key={`${date}-${title}`} className="grid gap-4 py-7 md:grid-cols-[150px_150px_1fr] md:items-start"><span className="font-mono text-[9px] tracking-[0.14em] text-white/20">{date}</span><span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/45">{title}</span><p className="max-w-2xl text-sm leading-7 text-white/30">{text}</p></div>)}</div>
+        </div>
+      </section>
 
-      <section id="presence" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-36"><div className="mb-14"><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Elsewhere</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">The work lives beyond this page.</h2></div><div className="grid gap-4 md:grid-cols-3">{presence.map((item) => <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="group rounded-[1.5rem] border border-white/[0.08] bg-white/[0.018] p-7 transition duration-300 hover:-translate-y-1 hover:border-white/20"><span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/20">{item.label}</span><div className="mt-10 flex items-center justify-between"><h3 className="text-xl font-semibold tracking-[-0.04em]">{item.title}</h3><span className="text-white/20 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white">↗</span></div><p className="mt-3 text-xs leading-5 text-white/25">{item.description}</p><p className="mt-7 text-[10px] text-white/40">{item.action}</p></a>)}</div></section>
+      <section id="contact" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-40">
+        <div className="overflow-hidden rounded-[2rem] border border-white/[0.1] bg-white/[0.025] p-8 sm:p-12 lg:p-16">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Contact</p>
+          <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="max-w-3xl text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a real problem<br />worth building for?</h2><p className="mt-6 max-w-xl text-sm leading-7 text-white/30">I&apos;m interested in thoughtful products, engineering challenges and opportunities to turn a clear problem into something useful.</p></div><div className="flex flex-wrap gap-3"><button onClick={copyEmail} className="rounded-full border border-white/15 bg-white/[0.08] px-6 py-3 text-xs font-medium text-white/75 transition hover:border-white/30 hover:bg-white/[0.13] hover:text-white">{copied ? "Email copied" : "Copy email"}</button><a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-xs text-white/40 transition hover:border-white/20 hover:text-white">LinkedIn <Arrow /></a></div></div>
+        </div>
+      </section>
 
-      <section id="contact" className="relative z-10 border-t border-white/[0.07] scroll-mt-20"><div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-40"><div className="max-w-4xl"><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Contact</p><h2 className="mt-6 text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a problem<br /><span className="text-white/30">worth building for?</span></h2><div className="mt-10 flex flex-wrap items-center gap-4"><button onClick={copyEmail} className="rounded-full bg-white px-6 py-3 text-xs font-semibold text-black transition hover:bg-white/90">{copied ? "Email copied" : "Copy email"}</button><a href="mailto:koglesh.official@gmail.com" className="rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 text-xs text-white/55 transition hover:border-white/25 hover:text-white">koglesh.official@gmail.com</a></div></div></div></section>
-
-      <footer className="relative z-10 border-t border-white/[0.07]"><div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-[9px] uppercase tracking-[0.22em] text-white/20 sm:flex-row sm:items-center sm:justify-between lg:px-10"><span>Koglesh R. Murugan · Malaysia</span><span>Build · Test · Ship · Repeat</span><span>© 2026</span></div></footer>
+      <footer className="relative z-10 border-t border-white/[0.07]">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-[9px] uppercase tracking-[0.2em] text-white/20 sm:flex-row sm:items-center sm:justify-between lg:px-10"><span>© 2026 Koglesh R. Murugan</span><span>Build · Test · Ship · Repeat</span><a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noreferrer" className="transition hover:text-white/50">GitHub <Arrow /></a></div>
+      </footer>
     </main>
   );
 }
