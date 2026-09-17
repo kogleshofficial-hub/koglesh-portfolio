@@ -357,6 +357,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="elsewhere" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+          <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Elsewhere</p>
+              <h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Network &amp; Protocol Control Planes</h2>
+            </div>
+            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">PUBLIC / ACTIVE NODES</span>
+          </div>
+          <div className="grid gap-px overflow-hidden border border-white/[0.08] bg-white/[0.08] md:grid-cols-3">
+            <a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noreferrer" className="group bg-[#050505] p-7 transition hover:bg-white/[0.035] lg:p-8">
+              <div className="flex items-center justify-between"><span className="font-mono text-[10px] tracking-[0.16em] text-white/25">SRC / GITHUB</span><Arrow /></div>
+              <h3 className="mt-8 text-lg font-medium text-white/75 group-hover:text-white">src/github/kogleshofficial-hub</h3>
+              <p className="mt-3 text-xs leading-6 text-white/30">[STATUS: PUBLIC_REPOS] — Production source trees, schema architectures, and deterministic state engine implementations.</p>
+            </a>
+            <a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noreferrer" className="group bg-[#050505] p-7 transition hover:bg-white/[0.035] lg:p-8">
+              <div className="flex items-center justify-between"><span className="font-mono text-[10px] tracking-[0.16em] text-white/25">SYS / LINKEDIN</span><Arrow /></div>
+              <h3 className="mt-8 text-lg font-medium text-white/75 group-hover:text-white">sys/linkedin/koglesh-r-murugan</h3>
+              <p className="mt-3 text-xs leading-6 text-white/30">[STATUS: ACTIVE_NODE] — Professional engineering network, product launches, and infrastructure updates.</p>
+            </a>
+            <a href="https://www.youtube.com/@ItsAero_Official" target="_blank" rel="noreferrer" className="group bg-[#050505] p-7 transition hover:bg-white/[0.035] lg:p-8">
+              <div className="flex items-center justify-between"><span className="font-mono text-[10px] tracking-[0.16em] text-white/25">CDN / YOUTUBE</span><Arrow /></div>
+              <h3 className="mt-8 text-lg font-medium text-white/75 group-hover:text-white">cdn/youtube/broadcast</h3>
+              <p className="mt-3 text-xs leading-6 text-white/30">[STATUS: LIVE_STREAM] — AERO challenges, build experiments, and creator-side engineering projects.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <footer className="relative z-10 border-t border-white/[0.07]">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-[9px] uppercase tracking-[0.2em] text-white/20 sm:flex-row sm:items-center sm:justify-between lg:px-10"><span>© 2026 Koglesh R. Murugan</span><span>Build · Test · Ship · Repeat</span><a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noreferrer" className="transition hover:text-white/50">GitHub <Arrow /></a></div>
       </footer>
