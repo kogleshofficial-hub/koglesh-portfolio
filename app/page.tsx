@@ -361,8 +361,8 @@ export default function Home() {
               <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/[0.07] pb-6">
                 <div>
                   <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">MILESTONE / 001</p>
-                  <h3 className="mt-3 text-xl font-medium tracking-[-0.04em] sm:text-2xl">VIFA Gewinn India Open</h3>
-                  <p className="mt-2 max-w-xl text-xs leading-6 text-white/35">India Open International Taekwondo Championship · Mapusa, Goa, India</p>
+                  <h3 className="mt-3 text-xl font-medium tracking-[-0.04em] sm:text-2xl">VIFA Gewinn India Open International Taekwondo Championship</h3>
+                  <p className="mt-2 max-w-xl text-xs leading-6 text-white/35">Peddem Multipurpose Indoor Sports Complex (Peddem Indoor Stadium) · Mapusa, Goa, India</p>
                 </div>
                 <span className="border border-amber-200/20 bg-amber-200/[0.045] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-amber-100/80">[RESULT: GOLD MEDAL]</span>
               </div>
