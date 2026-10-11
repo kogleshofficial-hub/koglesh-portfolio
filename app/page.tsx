@@ -445,7 +445,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-8 left-6 right-6 flex items-center justify-between border-t border-white/[0.07] pt-5 text-[9px] font-medium uppercase tracking-[0.24em] text-white/20 lg:left-10 lg:right-10"><span>Portfolio / 2026</span><span className="hidden sm:block">Model · Build · Test · Ship</span><span>MY · {time || "00:00:00"}</span></div>
+        <div className="absolute bottom-8 left-6 right-6 flex items-center justify-between border-t border-white/[0.07] pt-5 text-[9px] font-medium uppercase tracking-[0.24em] text-white/20 lg:left-10 lg:right-10"><span>Portfolio / 2026</span><span className="hidden sm:block">Model · Build · Test · Ship</span><span>MY · <StatusClock /></span></div>
       </section>
 
       <section className="relative z-10 border-y border-white/[0.07]">
