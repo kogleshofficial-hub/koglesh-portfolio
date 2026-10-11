@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Scholarship Profile",
@@ -89,7 +90,7 @@ const skills = [
   },
 ];
 
-function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
@@ -331,7 +332,7 @@ export default function ScholarshipPage() {
 
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-7 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <p>© {new Date().getFullYear()} Koglesh R. Murugan · Malaysia</p>
+          <p>© 2026 Koglesh R. Murugan · Malaysia</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <Link href="/" className="transition hover:text-white/80">Engineering portfolio</Link>
             <Link href="/resume" className="transition hover:text-white/80">Résumé</Link>
