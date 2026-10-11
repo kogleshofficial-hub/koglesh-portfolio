@@ -52,7 +52,7 @@ export function StatusClock() {
     const interval = window.setInterval(() => setTime(format()), 1000);
     return () => window.clearInterval(interval);
   }, []);
-  return <span aria-label={`Current Malaysia time ${time}`}>{time}</span>;
+  return <time aria-label={`Current Malaysia time ${time}`}>{time}</time>;
 }
 
 const navItems = [
