@@ -297,6 +297,7 @@ export default function Home() {
             <button onClick={() => scrollTo("work")} className="text-xs text-white/40 transition hover:text-white">Work</button>
             <button onClick={() => scrollTo("about")} className="text-xs text-white/40 transition hover:text-white">About</button>
             <button onClick={() => scrollTo("stack")} className="text-xs text-white/40 transition hover:text-white">Stack</button>
+            <button onClick={() => scrollTo("milestones")} className="text-xs text-white/40 transition hover:text-white">Milestones</button>
             <button onClick={() => scrollTo("log")} className="text-xs text-white/40 transition hover:text-white">Build log</button>
             <button onClick={() => scrollTo("contact")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/70 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</button>
           </div>
@@ -343,7 +344,7 @@ export default function Home() {
         <div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr]"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Stack</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Tools I ship with.</h2><p className="mt-6 max-w-md text-sm leading-7 text-white/30">The stack changes with the problem. The consistent part is the focus on typed code, clear state, useful interfaces and deployable products.</p></div><div className="flex flex-wrap content-start gap-3">{skills.map((skill) => <span key={skill} className="border border-white/[0.09] bg-white/[0.025] px-4 py-3 text-xs text-white/45 transition hover:border-white/20 hover:text-white/75">{skill}</span>)}</div></div>
       </section>
 
-       <section id="milestones" aria-labelledby="milestones-heading" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
+             <section id="milestones" aria-labelledby="milestones-heading" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
           <div className="mb-12 grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
             <div>
@@ -351,87 +352,116 @@ export default function Home() {
               <h2 id="milestones-heading" className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Milestones &amp;<br />Runtimes.</h2>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <p className="max-w-xl text-sm leading-7 text-white/30">A structured record of competitive results and rank progression beyond software. Preparation, technical precision, and composure under pressure.</p>
-              <span className="shrink-0 font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">ARCHIVE / 03 RECORDS</span>
+              <p className="max-w-xl text-sm leading-7 text-white/30">A bounded record of competitive results, published submissions, shipped experiments, and creator analytics. Every metric has a time window; every external claim has a source where available.</p>
+              <span className="shrink-0 font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">ARCHIVE / 06 RECORDS</span>
             </div>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-2">
-            <article className="min-w-0 border border-white/[0.1] bg-white/[0.025] p-6 sm:p-8">
-              <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/[0.07] pb-6">
-                <div>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">MILESTONE / 001</p>
-                  <h3 className="mt-3 text-xl font-medium tracking-[-0.04em] sm:text-2xl">VIFA Gewinn India Open International Taekwondo Championship</h3>
-                  <p className="mt-2 max-w-xl text-xs leading-6 text-white/35">Peddem Multipurpose Indoor Sports Complex (Peddem Indoor Stadium) · Mapusa, Goa, India</p>
-                </div>
-                <span className="border border-amber-200/20 bg-amber-200/[0.045] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-amber-100/80">[RESULT: GOLD MEDAL]</span>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <article className="flex min-w-0 flex-col border border-white/[0.1] bg-white/[0.025] p-6 sm:p-7">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">SPORT / 001</p>
+                <span className="border border-amber-200/20 bg-amber-200/[0.045] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-amber-100/80">[RESULT: GOLD]</span>
               </div>
-
-              <dl className="grid gap-5 py-6 sm:grid-cols-3">
-                <div>
-                  <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Event dates</dt>
-                  <dd className="mt-2 text-sm text-white/75">28–29 Sep 2024</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Competition scope</dt>
-                  <dd className="mt-2 text-sm text-white/75">International</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Competition result</dt>
-                  <dd className="mt-2 text-sm text-white/75">Gold medalist</dd>
-                </div>
+              <h3 className="mt-5 text-xl font-medium leading-tight tracking-[-0.04em]">VIFA Gewinn India Open International Taekwondo Championship</h3>
+              <p className="mt-3 text-xs leading-6 text-white/35">Peddem Multipurpose Indoor Sports Complex (Peddem Indoor Stadium) · Mapusa, Goa, India</p>
+              <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-white/[0.07] pt-5">
+                <div><dt className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/25">Dates</dt><dd className="mt-2 text-sm text-white/75">28–29 Sep 2024</dd></div>
+                <div><dt className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/25">Result</dt><dd className="mt-2 text-sm text-white/75">Gold medalist</dd></div>
               </dl>
-
-              <div className="border-t border-white/[0.07] pt-5">
-                <a href="https://www.facebook.com/vifataekwondo/posts/welcome-to-vifa-gewwin-india-open-international-championship-24confirmed-partici/1064356138727220/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-white/45 transition hover:text-white/80">
-                  Event announcement <span aria-hidden="true">↗</span>
-                </a>
+              <div className="mt-auto border-t border-white/[0.07] pt-5">
+                <a href="https://www.facebook.com/vifataekwondo/posts/welcome-to-vifa-gewwin-india-open-international-championship-24confirmed-partici/1064356138727220/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-white/45 transition hover:text-white/80">Event announcement <span aria-hidden="true">↗</span></a>
               </div>
             </article>
 
-            <article className="min-w-0 border border-white/[0.1] bg-white/[0.025] p-6 sm:p-8">
-              <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/[0.07] pb-6">
-                <div>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">MILESTONE / 002</p>
-                  <h3 className="mt-3 text-xl font-medium tracking-[-0.04em] sm:text-2xl">MBC Cup Open International</h3>
-                  <p className="mt-2 max-w-xl text-xs leading-6 text-white/35">10th MBC Cup Open International Taekwondo Championship · Korea · 2025</p>
-                </div>
-                <span className="border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/55">[RESULT: BRONZE MEDAL]</span>
+            <article className="flex min-w-0 flex-col border border-white/[0.1] bg-white/[0.025] p-6 sm:p-7">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">SPORT / 002</p>
+                <span className="border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/55">[RESULT: BRONZE]</span>
               </div>
-
-              <dl className="grid gap-5 py-6 sm:grid-cols-3">
-                <div>
-                  <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Discipline</dt>
-                  <dd className="mt-2 text-sm text-white/75">Taekwondo</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Competition scope</dt>
-                  <dd className="mt-2 text-sm text-white/75">International</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Competition result</dt>
-                  <dd className="mt-2 text-sm text-white/75">Bronze medalist</dd>
-                </div>
+              <h3 className="mt-5 text-xl font-medium leading-tight tracking-[-0.04em]">10th MBC Cup Open International Taekwondo Championship</h3>
+              <p className="mt-3 text-xs leading-6 text-white/35">Korea · 2025</p>
+              <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-white/[0.07] pt-5">
+                <div><dt className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/25">Scope</dt><dd className="mt-2 text-sm text-white/75">International</dd></div>
+                <div><dt className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/25">Result</dt><dd className="mt-2 text-sm text-white/75">Bronze medalist</dd></div>
               </dl>
+              <div className="mt-auto border-t border-white/[0.07] pt-5">
+                <p className="text-xs leading-6 text-white/35">Competition result recorded from personal history; no independent result listing was located during this audit.</p>
+              </div>
+            </article>
 
-              <div className="border-t border-white/[0.07] pt-5">
-                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/25">Execution profile</p>
-                <p className="mt-2 text-xs leading-6 text-white/40">Structured training, physical conditioning, timing, and technical precision applied under tournament pressure.</p>
+            <article className="flex min-w-0 flex-col border border-white/[0.1] bg-white/[0.025] p-6 sm:p-7">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">SPORT / 003</p>
+                <span className="border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/55">[RANK: BLACK BELT]</span>
+              </div>
+              <h3 className="mt-5 text-xl font-medium leading-tight tracking-[-0.04em]">Taekwondo Black Belt</h3>
+              <p className="mt-3 text-xs leading-6 text-white/35">Rank milestone · Competitive Taekwondo</p>
+              <div className="mt-6 border-t border-white/[0.07] pt-5">
+                <p className="text-xs leading-6 text-white/40">Sustained practice in technical execution, conditioning, timing, and composure under competitive pressure.</p>
+              </div>
+              <div className="mt-auto pt-5">
+                <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/25">DISCIPLINE / REPEATABILITY</span>
               </div>
             </article>
           </div>
 
-          <article className="mt-4 flex flex-col gap-5 border border-white/[0.1] bg-white/[0.025] p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
-            <div className="flex items-start gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/10 bg-white/[0.035] font-mono text-[10px] text-white/55">03</span>
-              <div>
-                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">RANK / TAEKWONDO</p>
-                <h3 className="mt-2 text-xl font-medium tracking-[-0.04em]">Black Belt</h3>
-                <p className="mt-2 max-w-2xl text-xs leading-6 text-white/40">Rank milestone reflecting sustained technical training, discipline, and progression.</p>
+          <div className="mt-4 grid gap-4 lg:grid-cols-[1.2fr_.8fr]">
+            <article className="min-w-0 border border-white/[0.1] bg-white/[0.025] p-6 sm:p-8">
+              <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/[0.07] pb-6">
+                <div>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">CREATOR / AERO</p>
+                  <h3 className="mt-3 text-2xl font-medium tracking-[-0.04em] sm:text-3xl">Audience signal, measured.</h3>
+                  <p className="mt-2 text-xs leading-6 text-white/35">YouTube Studio snapshot · 12 Sep–09 Oct 2026 · 28-day window</p>
+                </div>
+                <a href="https://www.youtube.com/@ItsAero_Official" target="_blank" rel="noreferrer" className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/45 transition hover:text-white/80">Open channel ↗</a>
               </div>
+              <dl className="grid grid-cols-3 gap-3 py-7 sm:gap-5">
+                <div className="min-w-0"><dt className="font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-white/25">Views</dt><dd className="mt-2 text-2xl font-medium tracking-[-0.05em] tabular-nums text-white/85 sm:text-3xl">35,550</dd></div>
+                <div className="min-w-0"><dt className="font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-white/25">Watch hours</dt><dd className="mt-2 text-2xl font-medium tracking-[-0.05em] tabular-nums text-white/85 sm:text-3xl">125.3</dd></div>
+                <div className="min-w-0"><dt className="font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-white/25">Subscribers</dt><dd className="mt-2 text-2xl font-medium tracking-[-0.05em] tabular-nums text-white/85 sm:text-3xl">+42</dd></div>
+              </dl>
+              <div className="border-t border-white/[0.07] pt-5">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/25">Top Short in this window</p>
+                    <p className="mt-2 text-sm text-white/75">I Tried Making a Zack D. Films Style Short</p>
+                    <p className="mt-1 text-xs text-white/35">6 Oct 2026 · 8,435 views in the snapshot</p>
+                  </div>
+                  <span className="border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/50">[FORMAT: SHORTS]</span>
+                </div>
+                <p className="mt-4 text-xs leading-6 text-white/35">Multiple editing, skill, and student-life Shorts also crossed 1,000 views. These are dated historical analytics, not a live counter or a forecast.</p>
+              </div>
+            </article>
+
+            <div className="flex min-w-0 flex-col gap-4">
+              <article className="flex-1 border border-white/[0.1] bg-white/[0.025] p-6 sm:p-7">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">BUILDER / GRIDPULSE</p>
+                  <span className="border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/50">[STATUS: SUBMITTED]</span>
+                </div>
+                <h3 className="mt-4 text-xl font-medium tracking-[-0.04em]">NextStep Hacks 2026</h3>
+                <p className="mt-3 text-xs leading-6 text-white/40">GRIDPULSE was submitted as a public hackathon project. This records participation and shipped work, not a prize or finalist result.</p>
+                <div className="mt-5 flex flex-wrap gap-4 font-mono text-[9px] uppercase tracking-[0.14em]">
+                  <a href="https://devpost.com/software/gridpulse-mqy46k" target="_blank" rel="noreferrer" className="text-white/50 transition hover:text-white/85">Submission ↗</a>
+                  <a href="https://nextstep2026.devpost.com/" target="_blank" rel="noreferrer" className="text-white/35 transition hover:text-white/75">Hackathon ↗</a>
+                </div>
+              </article>
+
+              <article className="flex-1 border border-white/[0.1] bg-white/[0.025] p-6 sm:p-7">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">BUILDER / FOODLOOP</p>
+                  <span className="border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/50">[BUILD MODE: PHONE-ONLY]</span>
+                </div>
+                <h3 className="mt-4 text-xl font-medium tracking-[-0.04em]">Mobile-first execution</h3>
+                <p className="mt-3 text-xs leading-6 text-white/40">Built the initial FoodLoop MVP entirely on a phone, then published the product and source. Real-world adoption and impact remain separate from the build milestone.</p>
+                <div className="mt-5 flex flex-wrap gap-4 font-mono text-[9px] uppercase tracking-[0.14em]">
+                  <a href="https://food-loop-app.vercel.app/" target="_blank" rel="noreferrer" className="text-white/50 transition hover:text-white/85">Live product ↗</a>
+                  <a href="https://github.com/kogleshofficial-hub/FoodLoop" target="_blank" rel="noreferrer" className="text-white/35 transition hover:text-white/75">Source ↗</a>
+                </div>
+              </article>
             </div>
-            <span className="w-fit shrink-0 border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/55">[RANK: BLACK BELT]</span>
-          </article>
+          </div>
         </div>
       </section>
 
