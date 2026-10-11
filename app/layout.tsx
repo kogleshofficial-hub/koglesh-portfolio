@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Koglesh R. Murugan — Developer, Builder & Creator", template: "%s — Koglesh R. Murugan" },
   description: "Official portfolio of Koglesh R. Murugan — an independent developer and product builder creating real-world web products, AI experiences and creative digital projects.",
-  keywords: ["Koglesh R. Murugan", "Koglesh Murugan", "web developer", "software developer", "product builder", "AI builder", "developer portfolio", "Malaysia developer", "GRIDPULSE", "QueueWise", "BeforeYouGo", "FoodLoop", "One Next Step", "Truth Checker", "AERO"],
+  keywords: ["Koglesh R. Murugan", "Koglesh Murugan", "web developer", "software developer", "product builder", "AI builder", "developer portfolio", "Malaysia developer", "GRIDPULSE", "MIRROR", "GRIDPULSE", "PACE", "SYNAPSE", "QueueWise", "BeforeYouGo", "FoodLoop", "One Next Step", "Truth Checker", "AERO", "Java"],
   authors: [{ name: "Koglesh R. Murugan", url: siteUrl }],
   creator: "Koglesh R. Murugan",
   publisher: "Koglesh R. Murugan",
@@ -42,6 +42,9 @@ const personJsonLd = {
 };
 
 const portfolioProjects = [
+  { "@type": "CreativeWork", name: "MIRROR", url: "https://mirror-simulation-engine.vercel.app", description: "A deterministic decision-simulation engine for resource-constrained scenarios." },
+  { "@type": "CreativeWork", name: "PACE", url: "https://pace-nu-seven.vercel.app", description: "A multi-user academic workload planner with Appwrite-backed authentication and capacity planning." },
+  { "@type": "CreativeWork", name: "SYNAPSE", url: "https://synapse-7ldp5tfhy-kogleshofficial-hubs-projects.vercel.app", description: "A local-first workload planner that creates a seven-day plan from task effort, priority and available time." },
   { "@type": "CreativeWork", name: "GRIDPULSE", url: "https://gridpulse-three.vercel.app", description: "An evidence-first infrastructure intelligence control plane combining telemetry validation with Azure Machine Learning and Microsoft Foundry." },
   { "@type": "CreativeWork", name: "QueueWise", url: "https://queuewise-app.vercel.app", description: "A community-powered queue tracker using fresh reports from real-world services." },
   { "@type": "CreativeWork", name: "BeforeYouGo", url: "https://beforeyougo-gray.vercel.app", description: "A private browser-based checklist tool for preparing before visits, travel and important tasks." },
