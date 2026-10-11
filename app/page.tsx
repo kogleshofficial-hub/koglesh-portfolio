@@ -343,6 +343,50 @@ export default function Home() {
         <div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr]"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Stack</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Tools I ship with.</h2><p className="mt-6 max-w-md text-sm leading-7 text-white/30">The stack changes with the problem. The consistent part is the focus on typed code, clear state, useful interfaces and deployable products.</p></div><div className="flex flex-wrap content-start gap-3">{skills.map((skill) => <span key={skill} className="border border-white/[0.09] bg-white/[0.025] px-4 py-3 text-xs text-white/45 transition hover:border-white/20 hover:text-white/75">{skill}</span>)}</div></div>
       </section>
 
+      <section id="milestones" aria-labelledby="milestones-heading" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-36">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Out-of-band achievement</p>
+            <h2 id="milestones-heading" className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Milestones &amp;<br />Runtimes.</h2>
+            <p className="mt-6 max-w-md text-sm leading-7 text-white/30">A record of execution beyond software: structured preparation, technical precision, and performance under competitive constraints.</p>
+          </div>
+
+          <article className="min-w-0 border border-white/[0.1] bg-white/[0.025] p-6 sm:p-8">
+            <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/[0.07] pb-6">
+              <div>
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">MILESTONE / 001</p>
+                <h3 className="mt-3 text-2xl font-medium tracking-[-0.04em] sm:text-3xl">International Taekwondo</h3>
+                <p className="mt-3 max-w-xl text-xs leading-6 text-white/35">10th MBC Cup Open International Taekwondo Championship · Korea · 2025</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="border border-white/10 bg-white/[0.035] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/50">[NODES: INTERNATIONAL]</span>
+                <span className="border border-emerald-300/20 bg-emerald-300/[0.045] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-emerald-200/75">[STATUS: MEDALIST]</span>
+              </div>
+            </div>
+
+            <dl className="grid gap-6 py-7 sm:grid-cols-3">
+              <div>
+                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Discipline</dt>
+                <dd className="mt-2 text-sm text-white/75">Taekwondo</dd>
+              </div>
+              <div>
+                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Competition scope</dt>
+                <dd className="mt-2 text-sm text-white/75">International</dd>
+              </div>
+              <div>
+                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Verified result</dt>
+                <dd className="mt-2 text-sm text-white/75">Bronze medalist</dd>
+              </div>
+            </dl>
+
+            <div className="border-t border-white/[0.07] pt-6">
+              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">Execution profile</p>
+              <p className="mt-3 text-xs leading-6 text-white/40">Structured training, physical conditioning, and technical precision applied under tournament pressure. The operating principles are repeatability, timing, composure, and adaptation when conditions change.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="log" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
           <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Build log</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">What shipped recently.</h2></div><span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">PUBLIC / ACTIVE</span></div>
