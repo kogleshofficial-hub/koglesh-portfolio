@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { CopyEmailButton, MobileNav, StatusClock, SystemChrome } from "@/components/site-chrome";
 
 type Project = {
   number: string;
@@ -364,7 +365,8 @@ function ProjectCard({ project }: { project: Project }) {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-5 py-3 text-xs font-medium text-white/80 transition hover:border-white/30 hover:bg-white/[0.13] hover:text-white">Live deployment <Arrow /></a>
-              <a href={project.source} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-5 py-3 text-xs text-white/40 transition hover:border-white/20 hover:text-white">Source & architecture <Arrow /></a>
+              <a href={project.source} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/[0.14] px-5 py-3 text-xs text-white/65 transition hover:border-white/30 hover:text-white">Source & architecture <Arrow /></a>
+              {project.featured && <a href={`/projects/${project.title.toLowerCase()}`} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-5 py-3 text-xs text-cyan-50/90 transition hover:border-cyan-100/40 hover:bg-cyan-100/[0.08]">Case study <Arrow /></a>}
             </div>
           </div>
 
@@ -376,20 +378,11 @@ function ProjectCard({ project }: { project: Project }) {
             <Architecture steps={project.architecture} />
             {project.title === "MIRROR" && <MirrorSandbox />}
             {project.title === "GRIDPULSE" && <GridPulseTelemetry />}
-            <SchemaPreview projectName={project.title} />
             <div className="mt-6 border-l border-white/15 pl-4">
               <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/20">Technical trade-off</p>
               <p className="mt-2 text-xs leading-6 text-white/30">{project.tradeoff}</p>
             </div>
-            <details className="mt-5 border border-white/[0.08] bg-black/20 p-4">
-              <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.14em] text-white/40">BENCHMARK INDEX / OPEN RECORD</summary>
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                <div><p className="font-mono text-[8px] uppercase text-white/25">Bundle footprint</p><p className="mt-1 text-[10px] text-white/60">Not measured</p></div>
-                <div><p className="font-mono text-[8px] uppercase text-white/25">Vercel cold start</p><p className="mt-1 text-[10px] text-white/60">Not measured</p></div>
-                <div><p className="font-mono text-[8px] uppercase text-white/25">Client calculation</p><p className="mt-1 text-[10px] text-white/60">Not instrumented</p></div>
-              </div>
-              <p className="mt-3 text-[9px] leading-5 text-white/25">No benchmark is claimed until it is collected with a reproducible bundle analysis, deployment trace, or browser profiling run.</p>
-            </details>
+            
           </div>
         </div>
       </div>
@@ -398,29 +391,20 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [spotlight, setSpotlight] = useState({ x: 50, y: 20 });
-  const [time, setTime] = useState("");
-  const [copied, setCopied] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
-
   useEffect(() => {
-    const onScroll = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
-      setScrolled(window.scrollY > 24);
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.code === "Backquote" && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement)) {
+        event.preventDefault();
+        setTerminalOpen((value) => !value);
+      }
+      if (event.key === "Escape") setTerminalOpen(false);
     };
-    const onMove = (event: MouseEvent) => setSpotlight({ x: (event.clientX / window.innerWidth) * 100, y: (event.clientY / window.innerHeight) * 100 });
-    const onKeyDown = (event: KeyboardEvent) => { if (event.ctrlKey && event.code === "Backquote") { event.preventDefault(); setTerminalOpen((isOpen) => !isOpen); } if (event.key === "Escape") setTerminalOpen(false); };
-    const updateTime = () => setTime(new Intl.DateTimeFormat("en-MY", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false, timeZone: "Asia/Kuala_Lumpur" }).format(new Date()));
-    onScroll();
-    updateTime();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("mousemove", onMove, { passive: true });
     window.addEventListener("keydown", onKeyDown);
-    const clock = window.setInterval(updateTime, 1000);
-    return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("mousemove", onMove); window.removeEventListener("keydown", onKeyDown); window.clearInterval(clock); };
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("mousemove", onMove); window.removeEventListener("keydown", onKeyDown); window.clearInterval(clock); };
   }, []);
 
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -435,28 +419,26 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#050505] text-white selection:bg-white/20">
-      <div className="pointer-events-none fixed inset-0 z-0 opacity-70 transition-[background] duration-300" style={{ background: `radial-gradient(520px circle at ${spotlight.x}% ${spotlight.y}%, rgba(255,255,255,.065), transparent 65%)` }} />
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.018)_1px,transparent_1px)] bg-[size:72px_72px]" />
-      <div className="pointer-events-none fixed left-0 top-0 z-[60] h-px bg-white/80" style={{ width: `${progress}%` }} />
-
-      <div className="system-status-bar print-hide fixed inset-x-0 top-0 z-[70] flex h-7 items-center justify-between gap-3 border-b border-white/[0.08] bg-[#050505]/95 px-4 font-mono text-[8px] uppercase tracking-[0.12em] text-white/45 backdrop-blur-xl sm:px-6">
-        <span>LOC: MY</span><span className="hidden sm:inline">ZONE: KL / UTC+08</span><span>LOCAL: {time || "--:--:--"}</span><span className="hidden sm:inline">ENV: PRODUCTION</span><span className="text-emerald-100/60">ENGINE: CLIENT READY</span>
-      </div>
-      <nav className={`print-hide fixed left-0 right-0 top-7 z-50 transition-all duration-500 ${scrolled ? "border-b border-white/[0.08] bg-[#050505]/75 backdrop-blur-2xl" : ""}`}>
+    <main id="main-content" className="min-h-screen overflow-x-hidden bg-[#050505] text-white selection:bg-white/20">
+      <a href="#main-content" className="skip-link print-hide">Skip to content</a>
+      <SystemChrome />
+      <div className="system-status-bar print-hide fixed inset-x-0 top-0 z-[70] flex h-7 items-center justify-between gap-3 border-b border-white/[0.1] bg-[#050505]/95 px-4 font-mono text-[8px] uppercase tracking-[0.12em] text-white/65 backdrop-blur-xl sm:px-6"><span>LOC: MY</span><span className="hidden sm:inline">ZONE: ASIA/KL · UTC+08</span><span>LOCAL: <StatusClock /></span><span className="hidden sm:inline">SURFACE: PORTFOLIO</span><span className="text-emerald-100/80">STATUS: INTERACTIVE</span></div>
+      <nav className="print-hide fixed left-0 right-0 top-7 z-50 border-b border-white/[0.12] bg-[#050505]/90 backdrop-blur-2xl">
         <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-6 lg:px-10">
-          <button onClick={() => scrollTo("home")} className="group flex items-center gap-3" aria-label="Back to top">
+          <a href="#home" className="group flex min-h-11 items-center gap-3" aria-label="Back to top">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.045] text-sm font-semibold transition group-hover:border-white/30">K</span>
             <span className="hidden text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:block">Koglesh R. Murugan</span>
-          </button>
+          </a>
           <div className="hidden items-center gap-7 md:flex">
-            <button onClick={() => scrollTo("work")} className="text-xs text-white/40 transition hover:text-white">Work</button>
-            <button onClick={() => scrollTo("about")} className="text-xs text-white/40 transition hover:text-white">About</button>
-            <button onClick={() => scrollTo("stack")} className="text-xs text-white/40 transition hover:text-white">Stack</button>
-            <button onClick={() => scrollTo("milestones")} className="text-xs text-white/40 transition hover:text-white">Milestones</button>
-            <button onClick={() => scrollTo("log")} className="text-xs text-white/40 transition hover:text-white">Build log</button>
-            <button onClick={() => scrollTo("contact")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/70 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</button>
+            <a href="#work" className="text-xs text-white/65 transition hover:text-white">Work</a>
+            <a href="#about" className="text-xs text-white/65 transition hover:text-white">About</a>
+            <a href="#stack" className="text-xs text-white/65 transition hover:text-white">Stack</a>
+            <a href="#milestones" className="text-xs text-white/65 transition hover:text-white">Milestones</a>
+            <a href="#log" className="text-xs text-white/65 transition hover:text-white">Build log</a>
+            <a href="#contact" className="inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.05] px-5 py-2.5 text-xs text-white/85 transition hover:border-white/30 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</a>
           </div>
+        <a href="/resume" className="hidden md:inline-flex min-h-11 items-center rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-4 py-2 text-xs text-cyan-50/90 transition hover:bg-cyan-100/[0.08]">Résumé</a>
+        <MobileNav />
         </div>
       </nav>
 
@@ -466,12 +448,13 @@ export default function Home() {
           <h1 className="max-w-6xl text-[clamp(4rem,10.5vw,10rem)] font-semibold leading-[0.82] tracking-[-0.085em]">I build<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">systems that work.</span><span aria-hidden="true" className="terminal-cursor">_</span></h1>
           <div className="mt-12 grid max-w-6xl gap-10 md:grid-cols-[1fr_auto] md:items-end">
             <div>
-              <p className="max-w-2xl text-base leading-8 text-white/42 sm:text-lg">I&apos;m Koglesh R. Murugan. I build full-stack products, deterministic systems and practical digital tools — from problem discovery and architecture to code, testing and deployment.</p>
+              <p className="max-w-2xl text-base leading-8 text-white/70 sm:text-lg">I&apos;m Koglesh R. Murugan. I build full-stack products, deterministic systems and practical digital tools — from problem discovery and architecture to code, testing and deployment.</p>
               <p className="mt-4 max-w-2xl text-xs leading-6 text-white/25">My work is centered on clear system boundaries, dependable data, explainable behavior and shipping software people can actually use.</p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <button onClick={() => scrollTo("work")} className="group flex w-fit items-center gap-3 text-sm text-white/70 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/30">↓</span>See the work</button>
-              <button onClick={() => scrollTo("log")} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-white/55 transition hover:border-white/25 hover:bg-white/[0.09] hover:text-white">Build log</button>
+              <a href="#work" className="group flex min-h-12 w-fit items-center gap-3 text-sm text-white/85 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/40">↓</span>Explore the work</a>
+              <a href="#log" className="inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs text-white/80 transition hover:border-white/30 hover:bg-white/[0.09] hover:text-white">Build log</a>
+              <a href="/resume" className="inline-flex min-h-11 items-center rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-5 py-3 text-xs text-cyan-50/90 transition hover:border-cyan-100/40 hover:bg-cyan-100/[0.08]">Résumé / Save as PDF</a>
             </div>
           </div>
         </div>
@@ -491,6 +474,22 @@ export default function Home() {
         <div className="mb-7 mt-20 flex items-end justify-between gap-4 border-b border-white/[0.08] pb-4"><div><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">TIER 02 / MICRO-UTILITIES &amp; FUNCTIONAL EXPERIMENTS</p><h3 className="mt-2 text-2xl font-medium tracking-[-0.04em] text-white/85 sm:text-3xl">The supporting systems.</h3><p className="mt-2 max-w-2xl text-xs leading-6 text-white/30">Additional shipped products, practical utilities and experiments — organized below the three core engines, not mixed into the same visual tier.</p></div><span className="font-mono text-[9px] text-white/25">07 BUILDS</span></div>
         <div className="space-y-6">{projects.filter((project) => !["MIRROR", "GRIDPULSE", "PACE"].includes(project.title)).map((project) => <ProjectCard key={project.title} project={project} />)}</div>
         <div className="mt-12 border border-white/[0.08] bg-white/[0.02] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/35">PORTFOLIO SOURCE MAP</p><div className="mt-4 grid gap-4 sm:grid-cols-3"><div><code className="font-mono text-[10px] text-white/70">app/page.tsx</code><p className="mt-2 text-[10px] leading-5 text-white/30">Project contract, architecture views, command terminal, local demos, and milestone content.</p></div><div><code className="font-mono text-[10px] text-white/70">app/globals.css</code><p className="mt-2 text-[10px] leading-5 text-white/30">Global system styling, motion preferences, status shell, and print layout.</p></div><div><code className="font-mono text-[10px] text-white/70">app/layout.tsx</code><p className="mt-2 text-[10px] leading-5 text-white/30">Site metadata, font setup, and schema.org structured data.</p></div></div><p className="mt-4 text-[10px] leading-5 text-white/25">Product-specific repository directories vary. Source links point to each real repository so internal paths are not guessed or represented as verified when they have not been inspected.</p></div>
+
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <article className="border border-white/[0.12] bg-white/[0.025] p-5 sm:p-6">
+            <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/65">PERFORMANCE / MEASUREMENT REGISTER</p>
+            <h3 className="mt-3 text-xl font-medium tracking-[-0.04em] text-white/90">Measure first. Publish second.</h3>
+            <p className="mt-3 text-xs leading-6 text-white/80">The portfolio does not yet publish measured bundle, cold-start or client-calculation numbers. These require a reproducible test environment; a successful build is not a performance benchmark.</p>
+            <div className="mt-5 grid gap-2 sm:grid-cols-3"><div className="border border-white/10 bg-black/30 p-3"><p className="font-mono text-[8px] uppercase text-white/65">Bundle size</p><p className="mt-1 text-xs text-white/85">Not measured</p></div><div className="border border-white/10 bg-black/30 p-3"><p className="font-mono text-[8px] uppercase text-white/65">Cold start</p><p className="mt-1 text-xs text-white/85">Not measured / route dependent</p></div><div className="border border-white/10 bg-black/30 p-3"><p className="font-mono text-[8px] uppercase text-white/65">Client compute</p><p className="mt-1 text-xs text-white/85">Not instrumented</p></div></div>
+            <p className="mt-4 text-[10px] leading-5 text-white/70">Method: record commit, device/browser, repeated samples and median; distinguish lab measurements from real-user Core Web Vitals.</p>
+          </article>
+          <article className="border border-white/[0.12] bg-white/[0.025] p-5 sm:p-6">
+            <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/65">DATA CONTRACT / PORTFOLIO INDEX</p>
+            <p className="mt-3 text-xs leading-6 text-white/80">The portfolio uses one shared TypeScript project model. Product-specific API and database schemas belong in each source repository and are shown only when verified.</p>
+            <SchemaPreview projectName="shared project index" />
+          </article>
+        </div>
+
       </section>
 
       <section id="about" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
@@ -635,7 +634,7 @@ export default function Home() {
       <section id="contact" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-40">
         <div className="overflow-hidden rounded-[2rem] border border-white/[0.1] bg-white/[0.025] p-8 sm:p-12 lg:p-16">
           <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Contact</p>
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="max-w-3xl text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a real problem<br />worth building for?</h2><p className="mt-6 max-w-xl text-sm leading-7 text-white/30">I&apos;m interested in thoughtful products, engineering challenges and opportunities to turn a clear problem into something useful.</p></div><div className="flex flex-wrap gap-3"><button aria-live="polite" onClick={copyEmail} className={"rounded-full border px-6 py-3 font-mono text-[9px] uppercase tracking-[0.1em] transition-all duration-200 " + (copied ? "border-emerald-200/30 bg-emerald-100/[0.08] text-emerald-100" : "border-white/15 bg-white/[0.08] text-white/75 hover:border-white/30 hover:bg-white/[0.13] hover:text-white")}>{copied ? "[STATUS: COPIED_TO_CLIPBOARD]" : "Copy email"}</button><a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-xs text-white/40 transition hover:border-white/20 hover:text-white">LinkedIn <Arrow /></a></div></div>
+          <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><h2 className="max-w-3xl text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Have a real problem<br />worth building for?</h2><p className="mt-6 max-w-xl text-sm leading-7 text-white/30">I&apos;m interested in thoughtful products, engineering challenges and opportunities to turn a clear problem into something useful.</p></div><div className="flex flex-wrap gap-3"><CopyEmailButton /><a href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/[0.08] px-6 py-3 text-xs text-white/40 transition hover:border-white/20 hover:text-white">LinkedIn <Arrow /></a></div></div>
         </div>
       </section>
 
