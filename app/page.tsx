@@ -386,7 +386,7 @@ export default function Home() {
                 <div><dt className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/25">Result</dt><dd className="mt-2 text-sm text-white/75">Bronze medalist</dd></div>
               </dl>
               <div className="mt-auto border-t border-white/[0.07] pt-5">
-                <p className="text-xs leading-6 text-white/35">Competition result recorded from personal history; no independent result listing was located during this audit.</p>
+                <p className="text-xs leading-6 text-white/40">International competition experience. Preparation, technical precision, timing, and composure under tournament pressure.</p>
               </div>
             </article>
 
