@@ -404,20 +404,6 @@ export default function Home() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("mousemove", onMove); window.removeEventListener("keydown", onKeyDown); window.clearInterval(clock); };
-  }, []);
-
-  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("koglesh.official@gmail.com");
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      window.location.href = "mailto:koglesh.official@gmail.com";
-    }
-  };
-
   return (
     <main id="main-content" className="min-h-screen overflow-x-hidden bg-[#050505] text-white selection:bg-white/20">
       <a href="#main-content" className="skip-link print-hide">Skip to content</a>
