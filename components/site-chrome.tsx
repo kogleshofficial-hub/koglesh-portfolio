@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export function SystemChrome() {
   useEffect(() => {
@@ -76,7 +77,9 @@ export function MobileNav() {
       </button>
       {open && (
         <nav id="mobile-navigation" aria-label="Mobile navigation" className="absolute right-0 top-14 z-[75] w-60 rounded-xl border border-white/20 bg-[#080909] p-2 shadow-2xl shadow-black/60">
-          {navItems.map(([label, href]) => (
+          {navItems.map(([label, href]) => href.startsWith("/") ? (
+            <Link key={href} href={href} onClick={() => setOpen(false)} className="block min-h-11 rounded-lg px-3 py-3 text-sm text-white/85 transition hover:bg-white/[0.07] hover:text-white">{label}</Link>
+          ) : (
             <a key={href} href={href} onClick={() => setOpen(false)} className="block min-h-11 rounded-lg px-3 py-3 text-sm text-white/85 transition hover:bg-white/[0.07] hover:text-white">{label}</a>
           ))}
           <p className="border-t border-white/10 px-3 py-3 font-mono text-[9px] text-white/65">Terminal shortcut: Ctrl + `</p>
