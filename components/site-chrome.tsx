@@ -49,7 +49,6 @@ export function StatusClock() {
       hour: "2-digit", minute: "2-digit", second: "2-digit",
       hour12: false, timeZone: "Asia/Kuala_Lumpur"
     }).format(new Date());
-    setTime(format());
     const interval = window.setInterval(() => setTime(format()), 1000);
     return () => window.clearInterval(interval);
   }, []);
