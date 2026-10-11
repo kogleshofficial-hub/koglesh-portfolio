@@ -1,27 +1,16 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://koglesh-portfolio.vercel.app";
-  const projectSlugs = ["queuewise", "beforeyougo", "foodloop", "one-next-step", "truth-checker", "aero"];
+const baseUrl = "https://koglesh-portfolio.vercel.app";
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    ...projectSlugs.map((slug) => ({
-      url: `${baseUrl}/work/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
+export default function sitemap(): MetadataRoute.Sitemap {
+  const paths = [
+    { path: "/", priority: 1, changeFrequency: "weekly" as const },
+    { path: "/resume", priority: 0.85, changeFrequency: "monthly" as const },
+    { path: "/projects/mirror", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/projects/gridpulse", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/projects/pace", priority: 0.9, changeFrequency: "monthly" as const }
   ];
+  return paths.map(({ path, priority, changeFrequency }) => ({
+    url: `${baseUrl}${path}`, lastModified: new Date(), changeFrequency, priority
+  }));
 }
