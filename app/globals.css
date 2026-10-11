@@ -34,3 +34,30 @@ a, button { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+.architecture-nodes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
+.architecture-node-wrap { min-width: 0; position: relative; }
+.architecture-node { min-height: 64px; height: 100%; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.025); padding: 10px; position: relative; }
+.architecture-node-wrap:not(:last-child) .architecture-node::after { content: ""; position: absolute; width: 10px; height: 1px; right: -11px; top: 50%; background: rgba(255,255,255,.22); }
+.architecture-edge { display: none; }
+.schema-disclosure > summary::-webkit-details-marker { display: none; }
+.schema-disclosure > summary::before { content: "+"; display: inline-block; width: 18px; color: rgba(255,255,255,.35); }
+.schema-disclosure[open] > summary::before { content: "−"; }
+.terminal-cursor { display: inline-block; margin-left: .04em; color: rgba(255,255,255,.65); animation: cursorBlink 1s steps(2, start) infinite; }
+@keyframes cursorBlink { to { visibility: hidden; } }
+@media (max-width: 640px) { .architecture-nodes { grid-template-columns: 1fr; gap: 8px; } .architecture-node { min-height: 48px; } .architecture-node-wrap:not(:last-child) .architecture-node::after { width: 1px; height: 8px; right: auto; left: 18px; top: auto; bottom: -9px; } }
+@media print {
+  @page { size: auto; margin: 14mm; }
+  html, body { background: #fff !important; color: #111 !important; scroll-behavior: auto !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-hide, nav, .system-status-bar, button, .terminal-cursor, .pointer-events-none, [aria-modal="true"] { display: none !important; }
+  main { background: #fff !important; color: #111 !important; overflow: visible !important; }
+  section, article, details, .architecture-node, .schema-disclosure { break-inside: avoid; page-break-inside: avoid; border-color: #bbb !important; }
+  section { padding-top: 16pt !important; padding-bottom: 16pt !important; }
+  h1, h2, h3, h4, p, span, li, dt, dd, summary, code, pre { color: #111 !important; text-shadow: none !important; }
+  article, .architecture-tree, .schema-disclosure, pre, .benchmark-index { background: #fff !important; box-shadow: none !important; }
+  a { color: #111 !important; text-decoration: underline; overflow-wrap: anywhere; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7pt; overflow-wrap: anywhere; }
+  .architecture-nodes { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; gap: 5pt !important; }
+  .architecture-node { min-height: auto !important; padding: 5pt !important; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+}
