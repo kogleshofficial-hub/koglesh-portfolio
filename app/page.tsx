@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { CopyEmailButton, MobileNav, StatusClock, SystemChrome } from "@/components/site-chrome";
 
@@ -366,7 +367,7 @@ function ProjectCard({ project }: { project: Project }) {
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-5 py-3 text-xs font-medium text-white/80 transition hover:border-white/30 hover:bg-white/[0.13] hover:text-white">Live deployment <Arrow /></a>
               <a href={project.source} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/[0.14] px-5 py-3 text-xs text-white/65 transition hover:border-white/30 hover:text-white">Source & architecture <Arrow /></a>
-              {project.featured && <a href={`/projects/${project.title.toLowerCase()}`} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-5 py-3 text-xs text-cyan-50/90 transition hover:border-cyan-100/40 hover:bg-cyan-100/[0.08]">Case study <Arrow /></a>}
+              {project.featured && <Link href={`/projects/${project.title.toLowerCase()}`} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-5 py-3 text-xs text-cyan-50/90 transition hover:border-cyan-100/40 hover:bg-cyan-100/[0.08]">Case study <Arrow /></Link>}
             </div>
           </div>
 
@@ -423,7 +424,7 @@ export default function Home() {
             <a href="#log" className="text-xs text-white/65 transition hover:text-white">Build log</a>
             <a href="#contact" className="inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.05] px-5 py-2.5 text-xs text-white/85 transition hover:border-white/30 hover:bg-white/[0.09] hover:text-white">Let&apos;s talk</a>
           </div>
-        <a href="/resume" className="hidden md:inline-flex min-h-11 items-center rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-4 py-2 text-xs text-cyan-50/90 transition hover:bg-cyan-100/[0.08]">Résumé</a>
+        <Link href="/resume" className="hidden md:inline-flex min-h-11 items-center rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-4 py-2 text-xs text-cyan-50/90 transition hover:bg-cyan-100/[0.08]">Résumé</Link>
         <MobileNav />
         </div>
       </nav>
@@ -440,7 +441,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-3">
               <a href="#work" className="group flex min-h-12 w-fit items-center gap-3 text-sm text-white/85 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/40">↓</span>Explore the work</a>
               <a href="#log" className="inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs text-white/80 transition hover:border-white/30 hover:bg-white/[0.09] hover:text-white">Build log</a>
-              <a href="/resume" className="inline-flex min-h-11 items-center rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-5 py-3 text-xs text-cyan-50/90 transition hover:border-cyan-100/40 hover:bg-cyan-100/[0.08]">Résumé / Save as PDF</a>
+              <Link href="/resume" className="inline-flex min-h-11 items-center rounded-full border border-cyan-100/25 bg-cyan-100/[0.04] px-5 py-3 text-xs text-cyan-50/90 transition hover:border-cyan-100/40 hover:bg-cyan-100/[0.08]">Résumé / Save as PDF</Link>
             </div>
           </div>
         </div>
