@@ -374,7 +374,7 @@ export default function Home() {
                 <dd className="mt-2 text-sm text-white/75">International</dd>
               </div>
               <div>
-                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Verified result</dt>
+                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">Competition result</dt>
                 <dd className="mt-2 text-sm text-white/75">Bronze medalist</dd>
               </div>
             </dl>
