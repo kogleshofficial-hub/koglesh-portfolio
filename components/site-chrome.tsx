@@ -58,7 +58,7 @@ export function StatusClock() {
 const navItems = [
   ["Work", "#work"], ["About", "#about"], ["Stack", "#stack"],
   ["Milestones", "#milestones"], ["Build log", "#log"],
-  ["Résumé", "/resume"], ["Contact", "#contact"]
+  ["Résumé", "/resume"], ["Scholarship profile ↗", "/scholarship"], ["Contact", "#contact"]
 ];
 
 export function MobileNav() {
@@ -77,7 +77,7 @@ export function MobileNav() {
       {open && (
         <nav id="mobile-navigation" aria-label="Mobile navigation" className="absolute right-0 top-14 z-[75] w-60 rounded-xl border border-white/20 bg-[#080909] p-2 shadow-2xl shadow-black/60">
           {navItems.map(([label, href]) => href.startsWith("/") ? (
-            <Link key={href} href={href} onClick={() => setOpen(false)} className="block min-h-11 rounded-lg px-3 py-3 text-sm text-white/85 transition hover:bg-white/[0.07] hover:text-white">{label}</Link>
+            <Link key={href} href={href} onClick={() => setOpen(false)} className={"block min-h-11 rounded-lg px-3 py-3 text-sm transition hover:bg-white/[0.07] hover:text-white " + (href === "/scholarship" ? "font-medium text-cyan-100" : "text-white/85")}>{label}</Link>
           ) : (
             <a key={href} href={href} onClick={() => setOpen(false)} className="block min-h-11 rounded-lg px-3 py-3 text-sm text-white/85 transition hover:bg-white/[0.07] hover:text-white">{label}</a>
           ))}
