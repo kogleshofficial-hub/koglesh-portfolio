@@ -437,7 +437,8 @@ export default function Home() {
           <div className="mt-12 grid max-w-6xl gap-10 md:grid-cols-[1fr_auto] md:items-end">
             <div>
               <p className="max-w-2xl text-base leading-8 text-white/70 sm:text-lg">I&apos;m Koglesh R. Murugan. I build full-stack products, deterministic systems and practical digital tools — from problem discovery and architecture to code, testing and deployment.</p>
-              <p className="mt-4 max-w-2xl text-xs leading-6 text-white/25">My work is centered on clear system boundaries, dependable data, explainable behavior and shipping software people can actually use.</p>
+              <p className="mt-4 font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-cyan-100/70">Build with purpose. Learn by shipping.</p>
+              <p className="mt-3 max-w-2xl text-xs leading-6 text-white/25">My work is centered on clear system boundaries, dependable data, explainable behavior and shipping software people can actually use.</p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <a href="#work" className="group flex min-h-12 w-fit items-center gap-3 text-sm text-white/85 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/40">↓</span>Explore the work</a>
