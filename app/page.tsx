@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { CopyEmailButton, MobileNav, StatusClock, SystemChrome } from "@/components/site-chrome";
+import { ArchitectureInspector, BootSequence, CommandTerminal, ControlRoomHud, GridPulseFailureBoundary, InteractiveSchemaInspector, MirrorWaveform, ProjectFilterRail, ScrambleText, SpatialBlueprint, TimelineBeam } from "@/components/control-plane";
 
 type Project = {
   number: string;
@@ -184,53 +185,22 @@ const buildLog = [
   ["04 SEP 2026", "FoodLoop", "Continued product relaunch work with a focus on useful, dependable workflows."],
 ];
 
+
+const projectCategoryMap: Record<string, string> = {
+  MIRROR: "core utility",
+  GRIDPULSE: "core ai",
+  PACE: "core utility",
+  SYNAPSE: "utility",
+  QueueWise: "civic",
+  FoodLoop: "civic",
+  BeforeYouGo: "utility",
+  "One Next Step": "ai",
+  "Truth Checker": "ai",
+  AERO: "creative",
+};
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
-}
-
-function Architecture({ steps }: { steps: string[] }) {
-  return (
-    <div className="architecture-tree mt-7 rounded-2xl border border-white/[0.08] bg-black/30 p-4" aria-label="Architecture node flow">
-      <div className="architecture-nodes">
-        {steps.map((step, index) => (
-          <div key={step} className="architecture-node-wrap">
-            {index > 0 && <span aria-hidden="true" className="architecture-edge" /> }
-            <div className="architecture-node">
-              <span className="font-mono text-[9px] text-white/25">NODE / {String(index + 1).padStart(2, "0")}</span>
-              <span className="mt-1 text-[10px] uppercase tracking-[0.12em] text-white/65">{step}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-      <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-white/25">FLOW / VERIFIED DESCRIPTION · NOT A RUNTIME TRACE</p>
-    </div>
-  );
-}
-
-function SchemaPreview({ projectName }: { projectName: string }) {
-  const schemaText = "type Project = {\n" +
-    "  number: string;\n" +
-    "  title: string;\n" +
-    "  label: string;\n" +
-    "  description: string;\n" +
-    "  architecture: string[];\n" +
-    "  tradeoff: string;\n" +
-    "  tags: string[];\n" +
-    "  href: string;\n" +
-    "  source: string;\n" +
-    "  featured?: boolean;\n" +
-    "};";
-  return (
-    <details className="schema-disclosure mt-5 border border-white/[0.08] bg-black/20 p-4">
-      <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.14em] text-white/45">[VIEW_DATA_SCHEMA.JSON]</summary>
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-        <p className="font-mono text-[9px] text-white/30">PORTFOLIO CONTRACT · {projectName}</p>
-        <span className="font-mono text-[9px] text-white/20">TYPESCRIPT / SOURCE-VERIFIED</span>
-      </div>
-      <pre className="mt-3 overflow-x-auto rounded-lg border border-white/[0.06] bg-black/40 p-3 text-[10px] leading-6 text-emerald-100/70"><code>{schemaText}</code></pre>
-      <p className="mt-3 text-[10px] leading-5 text-white/30">This is the exact typed contract used by this portfolio to render the project index. It is not presented as the internal Zod or database schema of the linked product.</p>
-    </details>
-  );
 }
 
 function MirrorSandbox() {
@@ -304,48 +274,9 @@ function GridPulseTelemetry() {
   );
 }
 
-function TerminalPanel({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [command, setCommand] = useState("");
-  const [lines, setLines] = useState<string[]>(["PORTFOLIO SHELL / LOCAL ROUTER", "Type help to list supported commands."]);
-  const inputRef = useRef<HTMLInputElement>(null);
-  useEffect(() => { if (open) inputRef.current?.focus(); }, [open]);
-  if (!open) return null;
-  const execute = (raw: string) => {
-    const parts = raw.trim().split(/\s+/);
-    const cmd = (parts[0] || "").toLowerCase();
-    const arg = (parts[1] || "").toLowerCase();
-    if (!cmd) return;
-    if (cmd === "clear") { setLines([]); setCommand(""); return; }
-    let response = "";
-    if (cmd === "help") response = "help · projects · cat about.md · ls · whoami · status · open mirror|gridpulse|pace|github|linkedin|youtube · clear";
-    else if (cmd === "projects") response = "MIRROR · GRIDPULSE · PACE · SYNAPSE · QueueWise · FoodLoop · BeforeYouGo · One Next Step · Truth Checker · AERO";
-    else if (cmd === "cat" && parts.slice(1).join(" ") === "about.md") response = "Koglesh R. Murugan / Malaysia. Independent student builder. Focus: typed web products, deterministic systems, evidence boundaries, and shipping."; 
-    else if (cmd === "ls") response = "about.md  projects/  milestones/  build-log/  contact/  system-status";
-    else if (cmd === "whoami") response = "koglesh-r-murugan · independent builder · MY";
-    else if (cmd === "status") response = "PORTFOLIO: CLIENT_READY · ENV: PRODUCTION · TELEMETRY: MOCK_ONLY · BENCHMARKS: NOT_MEASURED_UNLESS_SHOWN";
-    else if (cmd === "open") {
-      const routes: Record<string, string> = { mirror: "https://mirror-simulation-engine.vercel.app", gridpulse: "https://gridpulse-three.vercel.app", pace: "https://pace-nu-seven.vercel.app", github: "https://github.com/kogleshofficial-hub", linkedin: "https://www.linkedin.com/in/koglesh-r-murugan-020450430/", youtube: "https://www.youtube.com/@ItsAero_Official" };
-      if (routes[arg]) { window.open(routes[arg], "_blank", "noopener,noreferrer"); response = "Requested route opened in a new tab: " + arg; }
-      else response = "Unknown route. Try open mirror, gridpulse, pace, github, linkedin, or youtube.";
-    } else response = "Command not found: " + cmd + ". Type help for supported commands.";
-    setLines((previous) => [...previous, "$ " + raw, response]);
-    setCommand("");
-  };
-  return (
-    <div className="fixed inset-0 z-[90] flex items-end justify-center bg-black/70 p-3 backdrop-blur-sm sm:items-center sm:p-6" role="dialog" aria-modal="true" aria-label="Interactive portfolio terminal">
-      <div className="w-full max-w-3xl overflow-hidden rounded-2xl border border-emerald-100/20 bg-[#050807] shadow-2xl shadow-black/60">
-        <div className="flex items-center justify-between border-b border-white/[0.08] px-4 py-3"><div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-red-300/70" /><span className="h-2 w-2 rounded-full bg-amber-200/70" /><span className="h-2 w-2 rounded-full bg-emerald-200/70" /><span className="ml-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/40">KRM / PORTFOLIO SHELL</span></div><button type="button" onClick={onClose} className="font-mono text-[10px] text-white/45 hover:text-white" aria-label="Close terminal">ESC / CLOSE</button></div>
-        <div className="max-h-[55vh] min-h-48 space-y-2 overflow-y-auto px-4 py-4 font-mono text-[10px] leading-5 sm:text-xs">{lines.map((line, index) => <p key={index} className={line.startsWith("$") ? "text-emerald-100/80" : "break-words text-white/55"}>{line}</p>)}</div>
-        <form onSubmit={(event) => { event.preventDefault(); execute(command); }} className="flex items-center gap-3 border-t border-white/[0.08] px-4 py-3"><label htmlFor="terminal-command" className="font-mono text-xs text-emerald-200">&gt;</label><input ref={inputRef} id="terminal-command" value={command} onChange={(event) => setCommand(event.target.value)} autoComplete="off" spellCheck={false} className="min-w-0 flex-1 bg-transparent font-mono text-xs text-white outline-none placeholder:text-white/20" placeholder="type a command…" /><button type="submit" className="font-mono text-[9px] text-emerald-100/60 hover:text-emerald-100">RUN ↵</button></form>
-        <div className="border-t border-white/[0.06] px-4 py-2 font-mono text-[8px] text-white/25">CTRL + ` TOGGLE · ESC CLOSES · LOCAL COMMANDS ONLY</div>
-      </div>
-    </div>
-  );
-}
-
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className={`group relative overflow-hidden border border-white/[0.09] bg-white/[0.02] transition duration-500 hover:-translate-y-1 hover:border-white/20 ${project.featured ? "rounded-[2rem]" : "rounded-3xl"}`}>
+    <article data-project-card="" data-project-tier={["MIRROR", "GRIDPULSE", "PACE"].includes(project.title) ? "core" : "support"} data-project-categories={projectCategoryMap[project.title] ?? "utility"} data-tilt="" className={`project-card group relative overflow-hidden border border-white/[0.09] bg-white/[0.02] transition duration-500 hover:-translate-y-1 hover:border-white/20 ${project.featured ? "rounded-[2rem]" : "rounded-3xl"}`}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(255,255,255,.07),transparent_32%)] opacity-0 transition group-hover:opacity-100" />
       <div className="relative p-6 sm:p-8 lg:p-10">
         <div className="flex flex-wrap items-start justify-between gap-5">
@@ -376,9 +307,9 @@ function ProjectCard({ project }: { project: Project }) {
               <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-white/25">System architecture</p>
               <span className="font-mono text-[9px] text-white/15">FLOW / {project.number}</span>
             </div>
-            <Architecture steps={project.architecture} />
-            {project.title === "MIRROR" && <MirrorSandbox />}
-            {project.title === "GRIDPULSE" && <GridPulseTelemetry />}
+            <ArchitectureInspector steps={project.architecture} projectTitle={project.title} />
+            {project.title === "MIRROR" && <><MirrorSandbox /><MirrorWaveform /></>}
+            {project.title === "GRIDPULSE" && <><GridPulseTelemetry /><GridPulseFailureBoundary /></>}
             <div className="mt-6 border-l border-white/15 pl-4">
               <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/20">Technical trade-off</p>
               <p className="mt-2 text-xs leading-6 text-white/30">{project.tradeoff}</p>
@@ -395,7 +326,7 @@ export default function Home() {
   const [terminalOpen, setTerminalOpen] = useState(false);
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.code === "Backquote" && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement)) {
+      if (((event.ctrlKey && event.code === "Backquote") || (event.metaKey && event.key.toLowerCase() === "k")) && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement)) {
         event.preventDefault();
         setTerminalOpen((value) => !value);
       }
@@ -409,6 +340,8 @@ export default function Home() {
     <main id="main-content" className="min-h-screen overflow-x-hidden bg-[#050505] text-white selection:bg-white/20">
       <a href="#main-content" className="skip-link print-hide">Skip to content</a>
       <SystemChrome />
+      <BootSequence />
+      <ControlRoomHud />
       <div className="system-status-bar print-hide fixed inset-x-0 top-0 z-[70] flex h-7 items-center justify-between gap-3 border-b border-white/[0.1] bg-[#050505]/95 px-4 font-mono text-[8px] uppercase tracking-[0.12em] text-white/65 backdrop-blur-xl sm:px-6"><span>LOC: MY</span><span className="hidden sm:inline">ZONE: ASIA/KL · UTC+08</span><span>LOCAL: <StatusClock /></span><span className="hidden sm:inline">SURFACE: PORTFOLIO</span><span className="text-emerald-100/80">STATUS: INTERACTIVE</span></div>
       <nav className="print-hide fixed left-0 right-0 top-7 z-50 border-b border-white/[0.12] bg-[#050505]/90 backdrop-blur-2xl">
         <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-6 lg:px-10">
@@ -431,9 +364,10 @@ export default function Home() {
       </nav>
 
       <section id="home" className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-20 pt-28 lg:px-10">
-        <div className="max-w-6xl">
+        <SpatialBlueprint />
+        <div className="relative z-10 max-w-6xl">
           <div className="mb-8 flex items-center gap-3"><span className="h-px w-12 bg-white/35" /><span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">Independent builder · Malaysia · 2026</span></div>
-          <h1 className="max-w-6xl text-[clamp(4rem,10.5vw,10rem)] font-semibold leading-[0.82] tracking-[-0.085em]">I build<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">systems that work.</span><span aria-hidden="true" className="terminal-cursor">_</span></h1>
+          <h1 className="kinetic-headline max-w-6xl text-[clamp(4rem,10.5vw,10rem)] font-semibold leading-[0.82] tracking-[-0.085em]">I build<br /><span className="bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent"><ScrambleText text="systems that work." /></span><span aria-hidden="true" className="terminal-cursor">_</span></h1>
           <div className="mt-12 grid max-w-6xl gap-10 md:grid-cols-[1fr_auto] md:items-end">
             <div>
               <p className="max-w-2xl text-base leading-8 text-white/70 sm:text-lg">I&apos;m Koglesh R. Murugan. I build full-stack products, deterministic systems and practical digital tools — from problem discovery and architecture to code, testing and deployment.</p>
@@ -441,10 +375,10 @@ export default function Home() {
               <p className="mt-3 max-w-2xl text-xs leading-6 text-white/25">My work is centered on clear system boundaries, dependable data, explainable behavior and shipping software people can actually use.</p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <a href="#work" className="group flex min-h-12 w-fit items-center gap-3 text-sm text-white/85 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/40">↓</span>Explore the work</a>
-              <a href="#log" className="inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs text-white/80 transition hover:border-white/30 hover:bg-white/[0.09] hover:text-white">Build log</a>
-              <Link href="/resume" className="inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs text-white/80 transition hover:border-white/30 hover:bg-white/[0.08]">Résumé / Save as PDF</Link>
-              <Link href="/scholarship" className="inline-flex min-h-11 items-center rounded-full border border-cyan-100/30 bg-cyan-100/[0.09] px-5 py-3 text-xs font-medium text-cyan-50 transition hover:border-cyan-100/50 hover:bg-cyan-100/[0.14]">Scholarship profile ↗</Link>
+              <a href="#work" data-magnetic="" className="magnetic-control group flex min-h-12 w-fit items-center gap-3 text-sm text-white/85 transition hover:text-white"><span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.035] transition group-hover:-translate-y-1 group-hover:border-white/40">↓</span>Explore the work</a>
+              <a href="#log" data-magnetic="" className="magnetic-control inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs text-white/80 transition hover:border-white/30 hover:bg-white/[0.09] hover:text-white">Build log</a>
+              <Link href="/resume" data-magnetic="" className="magnetic-control inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs text-white/80 transition hover:border-white/30 hover:bg-white/[0.08]">Résumé / Save as PDF</Link>
+              <Link href="/scholarship" data-magnetic="" className="magnetic-control inline-flex min-h-11 items-center rounded-full border border-cyan-100/30 bg-cyan-100/[0.09] px-5 py-3 text-xs font-medium text-cyan-50 transition hover:border-cyan-100/50 hover:bg-cyan-100/[0.14]">Scholarship profile ↗</Link>
             </div>
           </div>
         </div>
@@ -459,9 +393,10 @@ export default function Home() {
 
       <section id="work" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-6 py-28 lg:px-10 lg:py-40">
         <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Selected work</p><h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Built, not imagined.</h2></div><p className="max-w-sm text-sm leading-7 text-white/30">Every project is presented as a working system: what it does, how data moves, what trade-offs shaped it, and where the source lives.</p></div>
-        <div className="mb-7 flex items-end justify-between gap-4 border-b border-white/[0.08] pb-4"><div><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">TIER 01 / CORE SYSTEM ENGINES</p><h3 className="mt-2 text-2xl font-medium tracking-[-0.04em] text-white/85 sm:text-3xl">Core architecture first.</h3></div><span className="font-mono text-[9px] text-white/25">03 SYSTEMS</span></div>
+        <ProjectFilterRail />
+        <div data-project-tier-heading="core" className="mb-7 flex items-end justify-between gap-4 border-b border-white/[0.08] pb-4"><div><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">TIER 01 / CORE SYSTEM ENGINES</p><h3 className="mt-2 text-2xl font-medium tracking-[-0.04em] text-white/85 sm:text-3xl">Core architecture first.</h3></div><span className="font-mono text-[9px] text-white/25">03 SYSTEMS</span></div>
         <div className="space-y-6">{projects.filter((project) => ["MIRROR", "GRIDPULSE", "PACE"].includes(project.title)).map((project) => <ProjectCard key={project.title} project={project} />)}</div>
-        <div className="mb-7 mt-20 flex items-end justify-between gap-4 border-b border-white/[0.08] pb-4"><div><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">TIER 02 / MICRO-UTILITIES &amp; FUNCTIONAL EXPERIMENTS</p><h3 className="mt-2 text-2xl font-medium tracking-[-0.04em] text-white/85 sm:text-3xl">The supporting systems.</h3><p className="mt-2 max-w-2xl text-xs leading-6 text-white/30">Additional shipped products, practical utilities and experiments — organized below the three core engines, not mixed into the same visual tier.</p></div><span className="font-mono text-[9px] text-white/25">07 BUILDS</span></div>
+        <div data-project-tier-heading="support" className="mb-7 mt-20 flex items-end justify-between gap-4 border-b border-white/[0.08] pb-4"><div><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">TIER 02 / MICRO-UTILITIES &amp; FUNCTIONAL EXPERIMENTS</p><h3 className="mt-2 text-2xl font-medium tracking-[-0.04em] text-white/85 sm:text-3xl">The supporting systems.</h3><p className="mt-2 max-w-2xl text-xs leading-6 text-white/30">Additional shipped products, practical utilities and experiments — organized below the three core engines, not mixed into the same visual tier.</p></div><span className="font-mono text-[9px] text-white/25">07 BUILDS</span></div>
         <div className="space-y-6">{projects.filter((project) => !["MIRROR", "GRIDPULSE", "PACE"].includes(project.title)).map((project) => <ProjectCard key={project.title} project={project} />)}</div>
         <div className="mt-12 border border-white/[0.08] bg-white/[0.02] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/35">PORTFOLIO SOURCE MAP</p><div className="mt-4 grid gap-4 sm:grid-cols-3"><div><code className="font-mono text-[10px] text-white/70">app/page.tsx</code><p className="mt-2 text-[10px] leading-5 text-white/30">Project contract, architecture views, command terminal, local demos, and milestone content.</p></div><div><code className="font-mono text-[10px] text-white/70">app/globals.css</code><p className="mt-2 text-[10px] leading-5 text-white/30">Global system styling, motion preferences, status shell, and print layout.</p></div><div><code className="font-mono text-[10px] text-white/70">app/layout.tsx</code><p className="mt-2 text-[10px] leading-5 text-white/30">Site metadata, font setup, and schema.org structured data.</p></div></div><p className="mt-4 text-[10px] leading-5 text-white/25">Product-specific repository directories vary. Source links point to each real repository so internal paths are not guessed or represented as verified when they have not been inspected.</p></div>
 
@@ -476,7 +411,7 @@ export default function Home() {
           <article className="border border-white/[0.12] bg-white/[0.025] p-5 sm:p-6">
             <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/65">DATA CONTRACT / PORTFOLIO INDEX</p>
             <p className="mt-3 text-xs leading-6 text-white/80">The portfolio uses one shared TypeScript project model. Product-specific API and database schemas belong in each source repository and are shown only when verified.</p>
-            <SchemaPreview projectName="shared project index" />
+            <InteractiveSchemaInspector projectName="shared project index" />
           </article>
         </div>
 
@@ -617,7 +552,7 @@ export default function Home() {
       <section id="log" className="relative z-10 border-y border-white/[0.07] scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
           <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/25">Build log</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">What shipped recently.</h2></div><span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">PUBLIC / ACTIVE</span></div>
-          <div className="divide-y divide-white/[0.07]">{buildLog.map(([date, title, text]) => <div key={`${date}-${title}`} className="grid gap-4 py-7 md:grid-cols-[150px_150px_1fr] md:items-start"><span className="font-mono text-[9px] tracking-[0.14em] text-white/20">{date}</span><span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/45">{title}</span><p className="max-w-2xl text-sm leading-7 text-white/30">{text}</p></div>)}</div>
+          <TimelineBeam><div className="divide-y divide-white/[0.07]">{buildLog.map(([date, title, text]) => <div key={`${date}-${title}`} className="grid gap-4 py-7 md:grid-cols-[150px_150px_1fr] md:items-start"><span className="font-mono text-[9px] tracking-[0.14em] text-white/20">{date}</span><span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/45">{title}</span><p className="max-w-2xl text-sm leading-7 text-white/30">{text}</p></div>)}</div></TimelineBeam>
         </div>
       </section>
 
@@ -661,7 +596,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-[9px] uppercase tracking-[0.2em] text-white/20 sm:flex-row sm:items-center sm:justify-between lg:px-10"><span>© 2026 Koglesh R. Murugan</span><span>Build · Test · Ship · Repeat</span><a href="https://github.com/kogleshofficial-hub" target="_blank" rel="noopener noreferrer" className="transition hover:text-white/50">GitHub <Arrow /></a></div>
       </footer>
       <button type="button" onClick={() => setTerminalOpen((isOpen) => !isOpen)} className="print-hide fixed bottom-5 right-5 z-[80] inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-[#07100d]/95 px-4 py-3 font-mono text-[9px] uppercase tracking-[0.12em] text-emerald-100/80 shadow-xl shadow-black/40 backdrop-blur transition hover:border-emerald-100/40 hover:text-emerald-50" aria-label="Open portfolio terminal"><span aria-hidden="true">›_</span> Terminal <span className="hidden sm:inline text-white/30">CTRL + `</span></button>
-      <TerminalPanel open={terminalOpen} onClose={() => setTerminalOpen(false)} />
+      <CommandTerminal open={terminalOpen} onClose={() => setTerminalOpen(false)} />
     </main>
   );
 }
