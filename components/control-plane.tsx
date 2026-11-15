@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 
 export function BootSequence() {
   const [visible, setVisible] = useState(true);
@@ -274,7 +274,7 @@ export function CommandTerminal({open,onClose}:{open:boolean;onClose:()=>void}) 
   const inputRef=useRef<HTMLInputElement>(null),history=useRef<string[]>([]),historyCursor=useRef(-1);
   useEffect(()=>{
     if(!open)return;inputRef.current?.focus();const previous=document.body.style.overflow;document.body.style.overflow="hidden";
-    const close=(event:KeyboardEvent)=>{if(event.key==="Escape")onClose();};window.addEventListener("keydown",close);
+    const close=(event:Event)=>{if(event instanceof KeyboardEvent&&event.key==="Escape")onClose();};window.addEventListener("keydown",close);
     return ()=>{document.body.style.overflow=previous;window.removeEventListener("keydown",close);};
   },[open,onClose]);
   if(!open)return null;
@@ -302,7 +302,7 @@ export function CommandTerminal({open,onClose}:{open:boolean;onClose:()=>void}) 
     else response="Command not found: "+cmd+". Type help to list available commands.";
     setLines(previous=>[...previous,"$ "+trimmed,response]);setCommand("");
   };
-  const handleHistory=(event:KeyboardEvent<HTMLInputElement>)=>{
+  const handleHistory=(event:ReactKeyboardEvent<HTMLInputElement>)=>{
     if(event.key==="ArrowUp"){event.preventDefault();const next=historyCursor.current===-1?history.current.length-1:Math.max(0,historyCursor.current-1);historyCursor.current=next;setCommand(history.current[next]??"");}
     else if(event.key==="ArrowDown"){event.preventDefault();if(historyCursor.current<0)return;const next=historyCursor.current+1;if(next>=history.current.length){historyCursor.current=-1;setCommand("");}else{historyCursor.current=next;setCommand(history.current[next]??"");}}
   };
