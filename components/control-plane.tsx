@@ -5,14 +5,8 @@ import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 
 export function BootSequence() {
   const [visible, setVisible] = useState(true);
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem("koglesh-portfolio-booted") === "1") { setVisible(false); return; }
-    } catch {}
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const timer = window.setTimeout(() => {
-      setVisible(false);
-      try { sessionStorage.setItem("koglesh-portfolio-booted", "1"); } catch {}
-    }, reduced ? 100 : 820);
+    const timer = window.setTimeout(() => setVisible(false), reduced ? 100 : 820);
     return () => window.clearTimeout(timer);
   }, []);
   if (!visible) return null;
