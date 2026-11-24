@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: siteUrl,
   },
   twitter: { card: "summary_large_image", title: "Koglesh R. Murugan | Student Developer", description: "Real products, AI experiences and creative work by Koglesh R. Murugan." },
-  icons: { icon: "/favicon.ico", apple: "/favicon.ico" },
+  icons: { icon: "/favicon.ico" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   verification: { google: "LI6z3Avdq6RsVP2faZ6nlhcbRwvnMIdjJkrSBygvnZM" },
 };
