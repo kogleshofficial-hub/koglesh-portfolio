@@ -464,11 +464,10 @@ export default function Home() {
         <section className="hero">
           <div className="hero-main">
             <p className="eyebrow"><span className="availability-dot" /> Student developer based in Malaysia</p>
-            <div className="hero-status"><span className="status-pulse" /> Currently building Kyrqen in Malaysia</div>
+            <div className="hero-status"><span className="status-pulse" /> Currently building Kyrqen</div>
             <h1>I build useful things <span>for real people.</span></h1>
             <p className="hero-copy">
-              I&apos;m Koglesh. I design and build web products, try ideas, and learn by shipping them.
-              Most of my work starts with a problem I want to make a little easier.
+              I&apos;m Koglesh, a student developer in Malaysia. I build web apps around problems I want to solve, then put them online and learn what needs to change.
             </p>
             <div className="hero-bottom">
               <div className="hero-actions">
@@ -489,26 +488,25 @@ export default function Home() {
           </div>
           <figure className="hero-portrait" aria-label="Portrait of Koglesh R. Murugan">
             <div className="hero-portrait-frame">
-              <span className="hero-portrait-label">THE PERSON BEHIND THE BUILDS</span>
               <Image
                 src="/koglesh-portrait.jpg"
-                alt="Portrait of Koglesh R. Murugan wearing a black shirt."
+                alt="Koglesh R. Murugan in a black shirt, photographed in monochrome."
                 width={340}
                 height={336}
                 priority
-                sizes="(max-width: 950px) min(100vw - 48px, 420px), 380px"
+                sizes="(max-width: 950px) min(100vw - 48px, 430px), 420px"
                 className="hero-portrait-image"
               />
-              <figcaption className="hero-portrait-caption">
-                <span>KOG / PERSONAL PROFILE</span>
+            </div>
+            <figcaption className="hero-portrait-caption">
+              <div className="hero-portrait-identity">
                 <strong>Koglesh R. Murugan</strong>
-                <small>Student developer · Malaysia</small>
-              </figcaption>
-            </div>
-            <div className="hero-portrait-foot">
-              <span>Building Kyrqen</span>
-              <span>Design / Code / Ship</span>
-            </div>
+                <span>Student developer · Malaysia</span>
+              </div>
+              <a href="https://kryqen.vercel.app/" target="_blank" rel="noreferrer noopener" className="hero-portrait-link">
+                Building Kyrqen <ExternalArrow />
+              </a>
+            </figcaption>
           </figure>
         </section>
 
