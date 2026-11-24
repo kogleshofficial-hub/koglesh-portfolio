@@ -2,78 +2,86 @@
 
 import { useState } from "react";
 
+type ProjectKind = "kyrqen" | "mirror" | "gridpulse" | "pace" | "foodloop" | "truth";
 type Project = {
   number: string;
   name: string;
   category: string;
-  domain: string;
-  preview: string;
   description: string;
   stack: string[];
   live: string;
   github: string;
+  kind: ProjectKind;
+  featured?: boolean;
 };
 
-const featuredProjects: Project[] = [
+const projects: Project[] = [
   {
     number: "01",
-    name: "MIRROR",
-    category: "Simulation tool",
-    domain: "mirror-simulation-engine.vercel.app",
-    preview: "https://mirror-simulation-engine.vercel.app",
+    name: "Kyrqen",
+    category: "Flagship SaaS",
     description:
-      "I built MIRROR to see how changes in demand and capacity affect a simple workflow. I kept the simulation local and repeatable, which makes it easier to test but limits it to the scenarios the model supports.",
-    stack: ["Next.js", "React", "TypeScript", "Simulation"],
-    live: "https://mirror-simulation-engine.vercel.app",
-    github: "https://github.com/kogleshofficial-hub/mirror-simulation-engine",
+      "A freight document workspace that turns Bills of Lading, Consignment Notes, and commercial invoices into verified shipment drafts. Built multi-tenant PostgreSQL security, ISO 6346 container check-digit validation, and cross-document mismatch checks so logistics teams stop re-typing PDFs by hand.",
+    stack: ["Next.js", "TypeScript", "Supabase RLS", "AI Extraction", "Vercel"],
+    live: "https://kryqen.vercel.app/",
+    github: "https://github.com/kogleshofficial-hub/kyrqen",
+    kind: "kyrqen",
+    featured: true,
   },
   {
     number: "02",
-    name: "GRIDPULSE",
-    category: "Infrastructure project",
-    domain: "gridpulse-three.vercel.app",
-    preview: "https://gridpulse-three.vercel.app",
+    name: "MIRROR",
+    category: "Simulation tool",
     description:
-      "I built GRIDPULSE to make infrastructure data easier to review. I kept observed evidence separate from optional AI analysis, so a failed AI service cannot quietly turn into a made-up result.",
-    stack: ["Next.js", "PostgreSQL", "Zod", "Azure"],
-    live: "https://gridpulse-three.vercel.app",
-    github: "https://github.com/kogleshofficial-hub/GRIDPULSE",
+      "A small simulation tool for testing how changes in demand and capacity affect a workflow. I kept the model local and repeatable, which makes it easier to test but limits it to the scenarios the model supports.",
+    stack: ["Next.js", "React", "TypeScript", "Simulation"],
+    live: "https://mirror-simulation-engine.vercel.app",
+    github: "https://github.com/kogleshofficial-hub/mirror-simulation-engine",
+    kind: "mirror",
   },
   {
     number: "03",
-    name: "PACE",
-    category: "Study planner",
-    domain: "pace-nu-seven.vercel.app",
-    preview: "https://pace-nu-seven.vercel.app",
+    name: "GRIDPULSE",
+    category: "Infrastructure project",
     description:
-      "I built PACE to help students plan work around real deadlines and available time. I chose accounts and per-user saved data instead of a local-only planner, which makes permissions and unreliable connections part of the product.",
-    stack: ["Next.js", "React", "TypeScript", "Appwrite"],
-    live: "https://pace-nu-seven.vercel.app",
-    github: "https://github.com/kogleshofficial-hub/PACE",
+      "A project for reviewing infrastructure data without mixing observed evidence with optional AI analysis. I kept those paths separate so a failed AI request cannot quietly become a made-up result.",
+    stack: ["Next.js", "PostgreSQL", "Zod", "Azure"],
+    live: "https://gridpulse-three.vercel.app",
+    github: "https://github.com/kogleshofficial-hub/GRIDPULSE",
+    kind: "gridpulse",
   },
   {
     number: "04",
-    name: "FoodLoop",
-    category: "Food rescue",
-    domain: "food-loop-app.vercel.app",
-    preview: "https://food-loop-app.vercel.app",
+    name: "PACE",
+    category: "Study planner",
     description:
-      "I built FoodLoop around a simple problem: surplus food is useful only when someone can find and request it in time. I built the first MVP entirely on a phone, so I kept the early version focused on listings and requests.",
-    stack: ["Next.js", "Supabase", "PostgreSQL", "Vercel"],
-    live: "https://food-loop-app.vercel.app",
-    github: "https://github.com/kogleshofficial-hub/FoodLoop",
+      "A study planner that helps students organize deadlines and available time into a practical weekly plan. I chose account-based storage and per-user permissions instead of keeping everything only in the browser.",
+    stack: ["Next.js", "React", "TypeScript", "Appwrite"],
+    live: "https://pace-nu-seven.vercel.app",
+    github: "https://github.com/kogleshofficial-hub/PACE",
+    kind: "pace",
   },
   {
     number: "05",
+    name: "FoodLoop",
+    category: "Food rescue",
+    description:
+      "A food-rescue app built around a simple problem: surplus food is useful only when someone can find and request it in time. I built the first MVP entirely on a phone, so I kept the early version focused on listings and requests.",
+    stack: ["Next.js", "Supabase", "PostgreSQL", "Vercel"],
+    live: "https://food-loop-app.vercel.app",
+    github: "https://github.com/kogleshofficial-hub/FoodLoop",
+    kind: "foodloop",
+  },
+  {
+    number: "06",
     name: "Truth Checker",
     category: "Research tool",
-    domain: "truth-checker-app.vercel.app",
-    preview: "https://truth-checker-app.vercel.app",
     description:
-      "I built Truth Checker to make it easier to inspect an online claim and follow the sources behind it. I chose to show evidence and context instead of presenting a confident verdict without an explanation.",
+      "A web app for examining online claims and reviewing the sources behind them. I chose to show evidence and context rather than present a confident verdict without an explanation.",
     stack: ["Next.js", "TypeScript", "AI", "Evidence"],
     live: "https://truth-checker-app.vercel.app",
     github: "https://github.com/kogleshofficial-hub/truth-checker",
+    kind: "truth",
   },
 ];
 
@@ -117,27 +125,32 @@ const moreProjects = [
 
 const buildLog = [
   {
-    date: "08 Sep 2026",
-    project: "MIRROR",
-    note: "Finished the simulation model and documented which scenarios it supports.",
+    date: "NOV 2026",
+    project: "Kyrqen",
+    note: "Launched the public site for my freight document workspace and continued building the extraction and review flow.",
   },
   {
-    date: "07 Sep 2026",
+    date: "08 SEP 2026",
+    project: "MIRROR",
+    note: "Finished the simulation model and documented the scenarios it supports.",
+  },
+  {
+    date: "07 SEP 2026",
     project: "PACE",
     note: "Shipped the study planner with Appwrite sign-in and separate user data.",
   },
   {
-    date: "06 Sep 2026",
+    date: "06 SEP 2026",
     project: "SYNAPSE",
     note: "Published a local-first weekly planner built around tasks and available time.",
   },
   {
-    date: "05 Sep 2026",
+    date: "05 SEP 2026",
     project: "GRIDPULSE",
     note: "Improved how infrastructure signals are checked before they are explained.",
   },
   {
-    date: "04 Sep 2026",
+    date: "04 SEP 2026",
     project: "FoodLoop",
     note: "Worked on the food listing and request flow for the MVP.",
   },
@@ -147,29 +160,206 @@ function ExternalArrow() {
   return <span aria-hidden="true" className="external-arrow">↗</span>;
 }
 
-function ProjectPreview({ project }: { project: Project }) {
+function WindowDots() {
   return (
-    <div className="preview-shell">
-      <div className="preview-chrome">
-        <div className="preview-dots" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-        <span className="preview-domain">{project.domain}</span>
-        <a href={project.live} target="_blank" rel="noreferrer noopener" className="preview-open">
-          Open <ExternalArrow />
-        </a>
+    <div className="window-dots" aria-hidden="true">
+      <span />
+      <span />
+      <span />
+    </div>
+  );
+}
+
+function KyrqenPreview() {
+  return (
+    <div className="preview-app preview-kyrqen">
+      <div className="preview-app-top">
+        <span className="preview-app-brand"><span className="kyrqen-mark">K</span> kyrqen</span>
+        <span className="preview-workspace">Workspace / Shipments</span>
+        <span className="preview-avatar">KR</span>
       </div>
-      <div className="preview-viewport">
-        <iframe
-          src={project.preview}
-          title={project.name + " live website preview"}
-          loading="lazy"
-          referrerPolicy="strict-origin-when-cross-origin"
-          sandbox="allow-scripts allow-same-origin allow-forms"
-          tabIndex={-1}
-        />
+      <div className="preview-app-body">
+        <div className="preview-sidebar">
+          <span className="sidebar-active">Overview</span>
+          <span>Documents</span>
+          <span>Shipments</span>
+          <span>Team</span>
+        </div>
+        <div className="freight-panel">
+          <div className="freight-heading">
+            <div>
+              <span className="preview-overline">DOCUMENT WORKSPACE</span>
+              <strong>Shipment documents</strong>
+            </div>
+            <span className="preview-outline-action">New upload +</span>
+          </div>
+          <div className="document-list">
+            <div className="document-row">
+              <span className="file-type">BL</span>
+              <span><strong>Bill of Lading</strong><small>Source document</small></span>
+              <span className="file-state">Review</span>
+            </div>
+            <div className="document-row">
+              <span className="file-type">CN</span>
+              <span><strong>Consignment Note</strong><small>Source document</small></span>
+              <span className="file-state">Review</span>
+            </div>
+            <div className="document-row">
+              <span className="file-type">CI</span>
+              <span><strong>Commercial Invoice</strong><small>Source document</small></span>
+              <span className="file-state">Review</span>
+            </div>
+          </div>
+          <div className="freight-checks">
+            <span>Container check digit</span>
+            <span>Document mismatch checks</span>
+            <span>Human approval before shipment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MirrorPreview() {
+  return (
+    <div className="preview-app preview-mirror">
+      <div className="mini-app-heading">
+        <div><span className="preview-overline">MIRROR / MODEL</span><strong>Scenario overview</strong></div>
+        <span className="mini-label">Local simulation</span>
+      </div>
+      <div className="mirror-workspace">
+        <div className="mirror-inputs">
+          <span className="mini-section-label">SCENARIO INPUTS</span>
+          <div className="input-line"><span>Demand</span><i /></div>
+          <div className="input-line"><span>Available capacity</span><i /></div>
+          <div className="input-line"><span>Time window</span><i /></div>
+          <div className="mini-control">Edit scenario <span>↗</span></div>
+        </div>
+        <div className="mirror-flow">
+          <span className="mini-section-label">MODEL FLOW</span>
+          <div className="flow-step"><span>01</span><strong>Inputs</strong><b /></div>
+          <div className="flow-connector" />
+          <div className="flow-step"><span>02</span><strong>Simulation</strong><b /></div>
+          <div className="flow-connector" />
+          <div className="flow-step"><span>03</span><strong>Outcome</strong><b /></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function GridPulsePreview() {
+  return (
+    <div className="preview-app preview-gridpulse">
+      <div className="mini-app-heading">
+        <div><span className="preview-overline">GRIDPULSE / REVIEW</span><strong>Infrastructure signals</strong></div>
+        <span className="mini-label">Evidence view</span>
+      </div>
+      <div className="gridpulse-layout">
+        <div className="signal-table">
+          <div className="signal-table-head"><span>INPUT</span><span>REVIEW</span></div>
+          <div><span className="signal-icon">↗</span><strong>Observed source</strong><small>Source record</small></div>
+          <div><span className="signal-icon">✓</span><strong>Validation</strong><small>Schema checks</small></div>
+          <div><span className="signal-icon">≋</span><strong>Supporting notes</strong><small>Context and history</small></div>
+        </div>
+        <div className="analysis-card">
+          <span className="mini-section-label">OPTIONAL ANALYSIS</span>
+          <div className="analysis-orbit"><span /><i /><b /></div>
+          <strong>Evidence first</strong>
+          <small>Keep observed data separate from analysis.</small>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PacePreview() {
+  return (
+    <div className="preview-app preview-pace">
+      <div className="mini-app-heading">
+        <div><span className="preview-overline">PACE / MY WEEK</span><strong>Weekly study plan</strong></div>
+        <span className="mini-label">Planner</span>
+      </div>
+      <div className="pace-week">
+        {["MON", "TUE", "WED", "THU", "FRI"].map((day, index) => (
+          <div className="pace-day" key={day}>
+            <span>{day}</span>
+            <b className={index === 2 ? "day-selected" : ""}>{index + 9}</b>
+            <i className="pace-task task-one" />
+            <i className={index % 2 === 0 ? "pace-task task-two" : "pace-task task-empty"} />
+            <i className={index === 3 ? "pace-task task-three" : "pace-task task-empty"} />
+          </div>
+        ))}
+      </div>
+      <div className="pace-footer">
+        <span><i className="legend-dot legend-coral" /> Focus session</span>
+        <span><i className="legend-dot legend-muted" /> Deadline</span>
+        <span className="pace-footer-action">Adjust plan ↗</span>
+      </div>
+    </div>
+  );
+}
+
+function FoodLoopPreview() {
+  return (
+    <div className="preview-app preview-foodloop">
+      <div className="mini-app-heading">
+        <div><span className="preview-overline">FOODLOOP / DISCOVER</span><strong>Available near you</strong></div>
+        <span className="mini-label">Food rescue</span>
+      </div>
+      <div className="food-listings">
+        <div className="food-listing">
+          <div className="food-art food-art-one"><span>F</span></div>
+          <div><strong>Surplus food listing</strong><small>Pickup details available</small></div>
+          <span className="food-arrow">↗</span>
+        </div>
+        <div className="food-listing">
+          <div className="food-art food-art-two"><span>+</span></div>
+          <div><strong>Community donation</strong><small>Request to collect</small></div>
+          <span className="food-arrow">↗</span>
+        </div>
+      </div>
+      <div className="foodloop-bottom"><span>Browse listings</span><span>Make a request</span></div>
+    </div>
+  );
+}
+
+function TruthPreview() {
+  return (
+    <div className="preview-app preview-truth">
+      <div className="mini-app-heading">
+        <div><span className="preview-overline">TRUTH CHECKER / REVIEW</span><strong>Examine a claim</strong></div>
+        <span className="mini-label">Research</span>
+      </div>
+      <div className="claim-card">
+        <span className="mini-section-label">CLAIM TO REVIEW</span>
+        <strong>What does the original source actually say?</strong>
+        <span className="claim-focus">Review the wording, context, and date.</span>
+      </div>
+      <div className="source-review">
+        <div className="source-row"><span className="source-mark">01</span><span><strong>Original source</strong><small>Open the source material</small></span><b>↗</b></div>
+        <div className="source-row"><span className="source-mark">02</span><span><strong>Additional context</strong><small>Compare the supporting details</small></span><b>↗</b></div>
+      </div>
+    </div>
+  );
+}
+
+function ProjectPreview({ kind, name }: { kind: ProjectKind; name: string }) {
+  return (
+    <div className="browser-frame" aria-label={name + " interface preview"}>
+      <div className="browser-toolbar">
+        <WindowDots />
+        <div className="browser-address"><span className="address-lock">•</span>{kind === "kyrqen" ? "kryqen.vercel.app" : name.toLowerCase().replaceAll(" ", "") + ".vercel.app"}</div>
+        <span className="browser-live"><i /> LIVE SITE</span>
+      </div>
+      <div className="browser-canvas">
+        {kind === "kyrqen" && <KyrqenPreview />}
+        {kind === "mirror" && <MirrorPreview />}
+        {kind === "gridpulse" && <GridPulsePreview />}
+        {kind === "pace" && <PacePreview />}
+        {kind === "foodloop" && <FoodLoopPreview />}
+        {kind === "truth" && <TruthPreview />}
       </div>
     </div>
   );
@@ -177,23 +367,25 @@ function ProjectPreview({ project }: { project: Project }) {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="project-card">
-      <ProjectPreview project={project} />
-      <div className="project-copy">
+    <article className={"project-card" + (project.featured ? " project-card-featured" : "")}>
+      <div className="project-visual">
+        <ProjectPreview kind={project.kind} name={project.name} />
+      </div>
+      <div className="project-content">
         <div className="project-meta">
-          <span>{project.number}</span>
-          <span>{project.category}</span>
+          <span className="project-number">{project.number}</span>
+          <span className={project.featured ? "project-category project-category-featured" : "project-category"}>
+            {project.category}
+          </span>
         </div>
         <h3>{project.name}</h3>
         <p className="project-description">{project.description}</p>
         <div className="project-tags" aria-label={project.name + " technology stack"}>
-          {project.stack.map((item) => (
-            <span className="tag" key={item}>{item}</span>
-          ))}
+          {project.stack.map((item) => <span className="tag" key={item}>{item}</span>)}
         </div>
         <div className="project-links">
-          <a href={project.live} target="_blank" rel="noreferrer noopener" className="primary-text-link">
-            Live Site <ExternalArrow />
+          <a className="project-live-link" href={project.live} target="_blank" rel="noreferrer noopener">
+            Visit live site <ExternalArrow />
           </a>
           <a href={project.github} target="_blank" rel="noreferrer noopener">
             GitHub <ExternalArrow />
@@ -201,6 +393,31 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
     </article>
+  );
+}
+
+function StoryIcon({ type }: { type: "phone" | "medal" | "play" }) {
+  if (type === "phone") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="6.5" y="2.5" width="11" height="19" rx="2.2" />
+        <path d="M10 5.5h4M10.5 18.5h3" />
+      </svg>
+    );
+  }
+  if (type === "medal") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="8" r="4.2" />
+        <path d="m8.9 11.1-1.3 9 4.4-2.7 4.4 2.7-1.3-9M12 5.9v4.2M9.9 8h4.2" />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="3" />
+      <path d="m10 9 5 3-5 3z" />
+    </svg>
   );
 }
 
@@ -245,44 +462,52 @@ export default function Home() {
         <section className="hero">
           <div className="hero-main">
             <p className="eyebrow"><span className="availability-dot" /> Student developer based in Malaysia</p>
+            <div className="hero-status"><span className="status-pulse" /> Currently building Kyrqen in Malaysia</div>
             <h1>I build useful things <span>for real people.</span></h1>
             <p className="hero-copy">
               I&apos;m Koglesh. I design and build web products, try ideas, and learn by shipping them.
               Most of my work starts with a problem I want to make a little easier.
             </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#work">Explore my projects <ExternalArrow /></a>
-              <a className="text-link" href="https://github.com/kogleshofficial-hub" target="_blank" rel="noreferrer noopener">
-                GitHub <ExternalArrow />
-              </a>
+            <div className="hero-bottom">
+              <div className="hero-actions">
+                <a className="button button-primary" href="#work">Explore my projects <ExternalArrow /></a>
+                <a className="text-link" href="https://github.com/kogleshofficial-hub" target="_blank" rel="noreferrer noopener">
+                  GitHub <ExternalArrow />
+                </a>
+              </div>
+              <div className="stack-focus">
+                <span className="stack-focus-label">Stack &amp; Focus</span>
+                <div className="stack-focus-items">
+                  {["Next.js", "TypeScript", "PostgreSQL", "AI Workflows", "Product Design"].map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-          <aside className="hero-note" aria-label="A little about my work">
-            <p className="hero-note-label">A little about my work</p>
-            <p>I like clear interfaces, useful details, and products that solve a real problem.</p>
-            <div className="hero-note-rule" />
-            <p className="hero-note-small">Design, code, test, learn, repeat.</p>
+          <aside className="hero-aside" aria-label="A note about my work">
+            <div className="hero-aside-top"><span>01 / 06</span><span>SELECTED WORK</span></div>
+            <p>Ideas are easy to describe. I prefer building a version people can actually try.</p>
+            <div className="hero-aside-bottom"><span>Based in</span><strong>Malaysia</strong></div>
           </aside>
         </section>
 
-        <section id="work" className="page-section">
+        <section id="work" className="page-section work-section">
           <div className="section-heading">
             <div>
               <p className="section-kicker">Selected work</p>
               <h2>Projects</h2>
-              <p className="section-intro">A few things I&apos;ve been working on, and the decisions behind them.</p>
+              <p className="section-intro">Products and experiments I&apos;ve been building, with a look at how each one works.</p>
             </div>
-            <span className="section-count">05 featured projects</span>
+            <span className="section-count">06 featured projects</span>
           </div>
 
-          <div className="featured-projects">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.name} project={project} />
-            ))}
+          <div className="project-grid">
+            {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
           </div>
 
           <div className="more-projects-heading">
-            <h3>More projects</h3>
+            <div><p className="section-kicker">Also in the workshop</p><h3>More projects</h3></div>
             <span>Other things I&apos;ve made</span>
           </div>
           <div className="more-projects-grid">
@@ -311,40 +536,37 @@ export default function Home() {
               <p className="section-kicker">A little more about me</p>
               <h2>Outside of Coding</h2>
               <p className="section-intro">
-                Building software is one part of my life. I also enjoy competing, learning new skills, and making videos.
+                Building software is one part of my life. I also compete, make videos, and learn outside the screen.
               </p>
             </div>
           </div>
 
           <div className="story-grid">
             <article className="story-card">
-              <span className="story-number">01</span>
-              <h3>FoodLoop, built on a phone</h3>
+              <div className="story-card-top"><span className="story-icon"><StoryIcon type="phone" /></span><span className="story-index">01</span></div>
+              <h3>FoodLoop built on a phone</h3>
               <p>
-                I built the first FoodLoop MVP entirely on a phone. It meant working with limited tools and keeping my attention on the core idea: listing surplus food and letting someone request it.
+                I built the first FoodLoop MVP entirely on a phone. Limited tools meant keeping the first version focused on the core idea: list surplus food and let someone request it.
               </p>
-              <a href="https://food-loop-app.vercel.app" target="_blank" rel="noreferrer noopener">
-                See FoodLoop <ExternalArrow />
-              </a>
+              <a href="https://food-loop-app.vercel.app" target="_blank" rel="noreferrer noopener">See FoodLoop <ExternalArrow /></a>
             </article>
 
             <article className="story-card">
-              <span className="story-number">02</span>
+              <div className="story-card-top"><span className="story-icon"><StoryIcon type="medal" /></span><span className="story-index">02</span></div>
               <h3>Taekwondo</h3>
               <p>
-                Gold at the VIFA Gewinn India Open International Taekwondo Championship in 2024, bronze at the 10th MBC Cup Open International Taekwondo Championship in Korea in 2025, and a Taekwondo Black Belt.
+                International gold at the VIFA Gewinn India Open in 2024, bronze at the 10th MBC Cup in Korea in 2025, and a Taekwondo Black Belt.
               </p>
+              <span className="story-footnote">Gold · India 2024 / Bronze · Korea 2025</span>
             </article>
 
             <article className="story-card">
-              <span className="story-number">03</span>
+              <div className="story-card-top"><span className="story-icon"><StoryIcon type="play" /></span><span className="story-index">03</span></div>
               <h3>AERO</h3>
               <p>
                 I also run AERO, my YouTube Shorts channel. It reached 35.5k views in a 28-day YouTube Studio snapshot from 12 September to 9 October 2026.
               </p>
-              <a href="https://www.youtube.com/@ItsAero_Official" target="_blank" rel="noreferrer noopener">
-                Visit AERO <ExternalArrow />
-              </a>
+              <a href="https://www.youtube.com/@ItsAero_Official" target="_blank" rel="noreferrer noopener">Visit AERO <ExternalArrow /></a>
             </article>
           </div>
         </section>
@@ -354,15 +576,16 @@ export default function Home() {
             <div>
               <p className="section-kicker">Notes from the process</p>
               <h2>Build Log</h2>
-              <p className="section-intro">A few checkpoints from projects I&apos;ve shipped and improved.</p>
+              <p className="section-intro">A few checkpoints from things I&apos;ve shipped, tested, and improved.</p>
             </div>
           </div>
-          <div className="build-log-list">
-            {buildLog.map((entry) => (
-              <article className="build-row" key={entry.date + entry.project}>
+          <div className="timeline">
+            {buildLog.map((entry, index) => (
+              <article className={"timeline-entry" + (index === 0 ? " timeline-entry-recent" : "")} key={entry.date + entry.project}>
+                <span className="timeline-marker" aria-hidden="true" />
                 <time>{entry.date}</time>
-                <h3>{entry.project}</h3>
-                <p>{entry.note}</p>
+                <div className="timeline-copy"><h3>{entry.project}</h3><p>{entry.note}</p></div>
+                {index === 0 && <span className="timeline-recent-label">Recent</span>}
               </article>
             ))}
           </div>
@@ -393,20 +616,16 @@ export default function Home() {
           </div>
           <div className="links-grid">
             <a className="link-card" href="https://github.com/kogleshofficial-hub" target="_blank" rel="noreferrer noopener">
-              <span>GitHub</span><ExternalArrow />
-              <small>Code and projects</small>
+              <span>GitHub</span><ExternalArrow /><small>Code and projects</small>
             </a>
             <a className="link-card" href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/" target="_blank" rel="noreferrer noopener">
-              <span>LinkedIn</span><ExternalArrow />
-              <small>Professional profile</small>
+              <span>LinkedIn</span><ExternalArrow /><small>Professional profile</small>
             </a>
             <a className="link-card" href="https://www.youtube.com/@ItsAero_Official" target="_blank" rel="noreferrer noopener">
-              <span>YouTube / AERO</span><ExternalArrow />
-              <small>Videos and experiments</small>
+              <span>YouTube / AERO</span><ExternalArrow /><small>Videos and experiments</small>
             </a>
             <a className="link-card" href="mailto:koglesh.official@gmail.com">
-              <span>Email</span><ExternalArrow />
-              <small>koglesh.official@gmail.com</small>
+              <span>Email</span><ExternalArrow /><small>koglesh.official@gmail.com</small>
             </a>
           </div>
         </section>
