@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type ProjectKind = "kyrqen" | "mirror" | "gridpulse" | "pace" | "foodloop" | "truth";
@@ -486,11 +487,29 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <aside className="hero-aside" aria-label="A note about my work">
-            <div className="hero-aside-top"><span>01 / 06</span><span>SELECTED WORK</span></div>
-            <p>Ideas are easy to describe. I prefer building a version people can actually try.</p>
-            <div className="hero-aside-bottom"><span>Based in</span><strong>Malaysia</strong></div>
-          </aside>
+          <figure className="hero-portrait" aria-label="Portrait of Koglesh R. Murugan">
+            <div className="hero-portrait-frame">
+              <span className="hero-portrait-label">THE PERSON BEHIND THE BUILDS</span>
+              <Image
+                src="/koglesh-portrait.jpg"
+                alt="Portrait of Koglesh R. Murugan wearing a black shirt."
+                width={340}
+                height={336}
+                priority
+                sizes="(max-width: 950px) min(100vw - 48px, 420px), 380px"
+                className="hero-portrait-image"
+              />
+              <figcaption className="hero-portrait-caption">
+                <span>KOG / PERSONAL PROFILE</span>
+                <strong>Koglesh R. Murugan</strong>
+                <small>Student developer · Malaysia</small>
+              </figcaption>
+            </div>
+            <div className="hero-portrait-foot">
+              <span>Building Kyrqen</span>
+              <span>Design / Code / Ship</span>
+            </div>
+          </figure>
         </section>
 
         <section id="work" className="page-section work-section">
