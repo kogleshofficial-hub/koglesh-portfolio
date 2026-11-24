@@ -9,22 +9,22 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Koglesh R. Murugan — Developer, Builder & Creator", template: "%s — Koglesh R. Murugan" },
-  description: "Official portfolio of Koglesh R. Murugan — an independent developer and product builder creating real-world web products, AI experiences and creative digital projects.",
+  title: { default: "Koglesh R. Murugan | Student Developer", template: "%s | Koglesh R. Murugan" },
+  description: "Portfolio of Koglesh R. Murugan, a student developer in Malaysia. Explore web apps, practical tools, and experiments built around real problems.",
   keywords: ["Koglesh R. Murugan", "Koglesh Murugan", "web developer", "software developer", "product builder", "AI builder", "developer portfolio", "Malaysia developer", "GRIDPULSE", "MIRROR", "GRIDPULSE", "PACE", "SYNAPSE", "QueueWise", "BeforeYouGo", "FoodLoop", "One Next Step", "Truth Checker", "AERO", "Java"],
   authors: [{ name: "Koglesh R. Murugan", url: siteUrl }],
   creator: "Koglesh R. Murugan",
   publisher: "Koglesh R. Murugan",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Koglesh R. Murugan — Developer, Builder & Creator",
-    description: "Real products, AI experiences and creative projects by Koglesh R. Murugan. Explore GRIDPULSE, QueueWise, BeforeYouGo, FoodLoop and more.",
+    title: "Koglesh R. Murugan | Student Developer",
+    description: "Web apps, practical tools, and personal projects by Koglesh R. Murugan, a student developer in Malaysia. Explore GRIDPULSE, QueueWise, BeforeYouGo, FoodLoop and more.",
     type: "website",
     locale: "en_US",
     siteName: "Koglesh R. Murugan",
     url: siteUrl,
   },
-  twitter: { card: "summary_large_image", title: "Koglesh R. Murugan — Developer, Builder & Creator", description: "Real products, AI experiences and creative work by Koglesh R. Murugan." },
+  twitter: { card: "summary_large_image", title: "Koglesh R. Murugan | Student Developer", description: "Real products, AI experiences and creative work by Koglesh R. Murugan." },
   icons: { icon: "/favicon.ico", apple: "/favicon.ico" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   verification: { google: "LI6z3Avdq6RsVP2faZ6nlhcbRwvnMIdjJkrSBygvnZM" },
@@ -36,25 +36,25 @@ const personJsonLd = {
   name: "Koglesh R. Murugan",
   url: siteUrl,
   jobTitle: "Developer, Builder & Creator",
-  description: "Independent developer and product builder creating real-world web products, AI experiences and creative digital projects.",
+  description: "Student developer in Malaysia building web apps, practical tools, and personal projects.",
   sameAs: ["https://github.com/kogleshofficial-hub", "https://www.linkedin.com/in/koglesh-r-murugan-020450430/", "https://www.youtube.com/@ItsAero_Official"],
   knowsAbout: ["Web development", "Artificial intelligence", "Product design", "User interface design", "Software development", "Supabase", "PostgreSQL", "Next.js", "Azure", "Content creation"],
 };
 
 const portfolioProjects = [
-  { "@type": "CreativeWork", name: "MIRROR", url: "https://mirror-simulation-engine.vercel.app", description: "A deterministic decision-simulation engine for resource-constrained scenarios." },
-  { "@type": "CreativeWork", name: "PACE", url: "https://pace-nu-seven.vercel.app", description: "A multi-user academic workload planner with Appwrite-backed authentication and capacity planning." },
-  { "@type": "CreativeWork", name: "SYNAPSE", url: "https://synapse-7ldp5tfhy-kogleshofficial-hubs-projects.vercel.app", description: "A local-first workload planner that creates a seven-day plan from task effort, priority and available time." },
-  { "@type": "CreativeWork", name: "GRIDPULSE", url: "https://gridpulse-three.vercel.app", description: "An evidence-first infrastructure intelligence control plane combining telemetry validation with Azure Machine Learning and Microsoft Foundry." },
-  { "@type": "CreativeWork", name: "QueueWise", url: "https://queuewise-app.vercel.app", description: "A community-powered queue tracker using fresh reports from real-world services." },
-  { "@type": "CreativeWork", name: "BeforeYouGo", url: "https://beforeyougo-gray.vercel.app", description: "A private browser-based checklist tool for preparing before visits, travel and important tasks." },
-  { "@type": "CreativeWork", name: "FoodLoop", url: "https://food-loop-app.vercel.app", description: "A food-rescue platform connecting surplus food with people who can use it." },
-  { "@type": "CreativeWork", name: "One Next Step", url: "https://one-next-step.vercel.app", description: "A focused decision-support experience that turns a situation into one clear next action." },
-  { "@type": "CreativeWork", name: "Truth Checker", url: "https://truth-checker-app.vercel.app", description: "An evidence-first claim investigation web experience." },
-  { "@type": "CreativeWork", name: "AERO", url: "https://www.youtube.com/@ItsAero_Official", description: "A challenge-driven creative project focused on learning, experimentation and storytelling." },
+  { "@type": "CreativeWork", name: "MIRROR", url: "https://mirror-simulation-engine.vercel.app", description: "A local simulation tool for testing how changes to demand and capacity affect a workflow." },
+  { "@type": "CreativeWork", name: "PACE", url: "https://pace-nu-seven.vercel.app", description: "A study planner that helps students organize deadlines and available time into a weekly plan." },
+  { "@type": "CreativeWork", name: "SYNAPSE", url: "https://synapse-7ldp5tfhy-kogleshofficial-hubs-projects.vercel.app", description: "A local-first weekly planner that organizes tasks by effort, priority, and available time." },
+  { "@type": "CreativeWork", name: "GRIDPULSE", url: "https://gridpulse-three.vercel.app", description: "A tool for reviewing infrastructure data while keeping observed evidence separate from optional AI analysis." },
+  { "@type": "CreativeWork", name: "QueueWise", url: "https://queuewise-app.vercel.app", description: "A community queue tracker built around recent reports and clear waiting-time estimates." },
+  { "@type": "CreativeWork", name: "BeforeYouGo", url: "https://beforeyougo-gray.vercel.app", description: "A browser-based checklist tool for getting ready before visits, travel, and important tasks." },
+  { "@type": "CreativeWork", name: "FoodLoop", url: "https://food-loop-app.vercel.app", description: "A food-rescue app for listing surplus food and letting people request available items." },
+  { "@type": "CreativeWork", name: "One Next Step", url: "https://one-next-step.vercel.app", description: "A decision tool that helps turn a situation into one practical next action." },
+  { "@type": "CreativeWork", name: "Truth Checker", url: "https://truth-checker-app.vercel.app", description: "A web app for examining online claims and reviewing the sources behind them." },
+  { "@type": "CreativeWork", name: "AERO", url: "https://www.youtube.com/@ItsAero_Official", description: "A YouTube channel for challenges, experiments, and documenting progress." },
 ];
 
-const websiteJsonLd = { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "Koglesh R. Murugan", description: "Official portfolio of Koglesh R. Murugan — developer, builder and creator.", publisher: { "@id": `${siteUrl}/#person` }, inLanguage: "en" };
+const websiteJsonLd = { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "Koglesh R. Murugan", description: "Portfolio of Koglesh R. Murugan, a student developer in Malaysia.", publisher: { "@id": `${siteUrl}/#person` }, inLanguage: "en" };
 const graphJsonLd = { "@context": "https://schema.org", "@graph": [personJsonLd, websiteJsonLd, ...portfolioProjects] };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
