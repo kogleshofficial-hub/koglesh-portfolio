@@ -350,8 +350,8 @@ function ProjectPreview({ kind, name }: { kind: ProjectKind; name: string }) {
     <div className="browser-frame" aria-label={name + " interface preview"}>
       <div className="browser-toolbar">
         <WindowDots />
-        <div className="browser-address"><span className="address-lock">•</span>{kind === "kyrqen" ? "kryqen.vercel.app" : name.toLowerCase().replaceAll(" ", "") + ".vercel.app"}</div>
-        <span className="browser-live"><i /> LIVE SITE</span>
+        <div className="browser-address"><span className="address-lock">•</span>{kind === "kyrqen" ? "kryqen.vercel.app" : name.toLowerCase().replace(/\s+/g, "") + ".vercel.app"}</div>
+        <span className="browser-live"><i /> UI PREVIEW</span>
       </div>
       <div className="browser-canvas">
         {kind === "kyrqen" && <KyrqenPreview />}
@@ -380,6 +380,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <h3>{project.name}</h3>
         <p className="project-description">{project.description}</p>
+        {project.featured && <p className="project-review-note">Extraction is a first pass. An operator checks the source documents before approving a shipment.</p>}
         <div className="project-tags" aria-label={project.name + " technology stack"}>
           {project.stack.map((item) => <span className="tag" key={item}>{item}</span>)}
         </div>
