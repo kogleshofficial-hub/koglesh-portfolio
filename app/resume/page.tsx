@@ -38,7 +38,13 @@ export default function ResumePage() {
         </header>
         <section className="resume-section">
           <h2>Profile</h2>
-          <p>I build and ship practical web products, deterministic simulation systems and data-aware interfaces. My focus is clear system boundaries, typed code, trustworthy data, explainable behavior, and learning through implementation, testing and iteration.</p>
+          <p>I am a Form 4 Science stream student in Malaysia who builds full-stack web apps alongside school. I work with React, Next.js, TypeScript, databases and deployment tools. I learn by making projects, testing what I have built and being clear about what is still unfinished.</p>
+        </section>
+        <section className="resume-section">
+          <h2>Education</h2>
+          <p><strong>Form 4 · Science stream · Malaysia</strong></p>
+          <p>Current subjects include Physics, Chemistry, Additional Mathematics and Computer Science, alongside the rest of the school curriculum.</p>
+          <p>Grades and examination results are not listed here because no confirmed results have been supplied for this version of the résumé.</p>
         </section>
         <section className="resume-section">
           <h2>Technical skills</h2>
@@ -60,6 +66,10 @@ export default function ResumePage() {
             <li>Public hackathon submissions: GRIDPULSE at NextStep Hacks 2026 and PACE at the CSC Back-to-School Hackathon. These are submission records, not prize claims.</li>
             <li>FoodLoop initial MVP built entirely on a phone.</li>
           </ul>
+        </section>
+        <section className="resume-section">
+          <h2>Peer learning</h2>
+          <p>I help other students get started with website building by explaining basic concepts, working through coding problems and helping them shape an idea into a first version. This is informal peer support, not a formal teaching appointment.</p>
         </section>
         <section className="resume-section">
           <h2>Creator project</h2>
