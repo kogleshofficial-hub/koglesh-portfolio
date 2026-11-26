@@ -118,8 +118,10 @@ export default function ScholarshipPage() {
             </span>
           </Link>
           <nav aria-label="Page navigation" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/65">
+            <a href="#education" className="transition hover:text-white">Education</a>
             <a href="#projects" className="transition hover:text-white">Projects</a>
             <a href="#achievements" className="transition hover:text-white">Achievements</a>
+            <a href="#peer-learning" className="transition hover:text-white">Peer learning</a>
             <a href="#about" className="transition hover:text-white">About</a>
             <Link href="/resume" className="transition hover:text-white">Résumé</Link>
             <Link href="/" className="inline-flex min-h-10 items-center rounded-full border border-white/20 bg-white/[0.04] px-4 transition hover:bg-white/[0.09] hover:text-white">Engineering portfolio ↗</Link>
@@ -141,7 +143,7 @@ export default function ScholarshipPage() {
               <span className="text-white/55">building things.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
-              I&apos;m Koglesh. I build software to explore ideas, solve practical problems and learn by turning concepts into working projects. I&apos;m still growing, and I try to be honest about what each project can do, what I&apos;ve learned and what still needs testing.
+              I&apos;m Koglesh, a 16-year-old Form 4 student in Malaysia. I study in the Science stream while building full-stack web apps outside school. Most of my learning happens by taking an idea, making a working version and finding out where it falls short. I&apos;m still a student, and I want this page to show both parts of that: the schoolwork I&apos;m responsible for and the projects I choose to build.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-cyan-50">Explore selected projects ↓</a>
@@ -181,6 +183,20 @@ export default function ScholarshipPage() {
           <p>
             I don&apos;t think a live link automatically proves that a project has changed people&apos;s lives. Some of my work is still early-stage, and some demos use simulated data. I try to label those boundaries clearly, and I want to get better at testing with real people and learning from their feedback.
           </p>
+        </div>
+      </section>
+
+      <section id="education" className="border-y border-white/10 bg-white/[0.015]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">02 / Education</p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">School is part of the work.</h2>
+          </div>
+          <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
+            <p>I&apos;m currently in Form 4 in Malaysia, following the Science stream. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science, alongside the rest of my school curriculum.</p>
+            <p>Balancing school with independent projects means planning my time and accepting that progress is not always fast. I don&apos;t treat building software as a replacement for my studies. I see them as two parts of my education: one follows a formal syllabus, while the other lets me apply what I learn to problems I choose.</p>
+            <p>I have not added grades or examination results here because I want to publish only results that are confirmed and ready to be shared.</p>
+          </div>
         </div>
       </section>
 
@@ -290,10 +306,23 @@ export default function ScholarshipPage() {
         </div>
       </section>
 
+      <section id="peer-learning" className="border-y border-white/10 bg-white/[0.015]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">05 / Learning with others</p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Helping other students get started.</h2>
+          </div>
+          <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
+            <p>I also help peers who are learning to build websites. That usually means explaining how a page is put together, helping them work through a problem or showing them how to turn a simple idea into a first version.</p>
+            <p>It is informal peer support rather than a formal teaching position. Explaining something to another person often shows me which parts I understand and which parts I still need to learn properly.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">05 / Tools I use</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">06 / Tools I use</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Learning by doing.</h2>
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">
@@ -310,7 +339,7 @@ export default function ScholarshipPage() {
       <section className="border-t border-white/10">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">06 / What comes next</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">07 / What comes next</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">I&apos;m still at the beginning. That&apos;s the point.</h2>
           </div>
           <div>
