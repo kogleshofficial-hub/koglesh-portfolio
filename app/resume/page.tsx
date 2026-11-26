@@ -25,7 +25,7 @@ export default function ResumePage() {
       <div className="resume-actions print-hide"><Link href="/" className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/80 hover:text-white">← Portfolio</Link><PrintButton /></div>
       <article id="resume-content" className="mx-auto max-w-4xl px-6 py-12 sm:py-16 lg:px-10">
         <header className="border-b border-white/20 pb-8">
-          <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-100/80">Résumé / Project-focused</p>
+          <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-100/80">Résumé / Student profile</p>
           <h1 className="mt-4 text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Koglesh R. Murugan</h1>
           <p className="mt-4 text-lg text-white/85">Independent student developer · Product builder · Malaysia</p>
           <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/80">
@@ -38,20 +38,22 @@ export default function ResumePage() {
         </header>
         <section className="resume-section">
           <h2>Profile</h2>
-          <p>I am a Form 4 Science stream student in Malaysia who builds full-stack web apps alongside school. I work with React, Next.js, TypeScript, databases and deployment tools. I learn by making projects, testing what I have built and being clear about what is still unfinished.</p>
+          <p>I am a 16-year-old Form 4 Science stream student in Negeri Sembilan, Malaysia, interested in Computer Science and AI. I explore ideas through early software prototypes and creative projects. I have used substantial AI assistance while coding, so I do not present my project stack as proof of independent mastery. I am actively building a stronger understanding of programming fundamentals, debugging and how the systems behind my projects work.</p>
         </section>
         <section className="resume-section">
           <h2>Education</h2>
-          <p><strong>Form 4 · Science stream · Malaysia</strong></p>
-          <p>Current subjects include Physics, Chemistry, Additional Mathematics and Computer Science, alongside the rest of the school curriculum.</p>
-          <p>Grades and examination results are not listed here because no confirmed results have been supplied for this version of the résumé.</p>
+          <p><strong>Form 4 · Science stream · Negeri Sembilan, Malaysia</strong></p>
+          <p>Preparing for SPM 2027. Current school work includes Computer Science coursework.</p>
+          <p><strong>Mid-year:</strong> Bahasa Melayu 78 (A−), English 84 (A), Mathematics 69 (B+) and History 79 (A−).</p>
+          <p><strong>End-of-year:</strong> Moral Education 91, History 67, Mathematics 71, Bahasa Melayu 80, Physics 50, Physical Education 64, Bahasa Tamil 82, Tamil Literature 76 and Computer Science 56. Chemistry and Additional Mathematics were not passed. English result pending.</p>
+          <p>My stronger subjects at present are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics are my main areas for improvement. This is a personal results summary, not an official transcript.</p>
         </section>
         <section className="resume-section">
-          <h2>Technical skills</h2>
-          <p><strong>Frontend:</strong> React, Next.js, TypeScript, JavaScript, Tailwind CSS</p>
-          <p><strong>Data &amp; backend:</strong> Supabase, PostgreSQL, Appwrite, API validation with Zod</p>
-          <p><strong>Platform &amp; tools:</strong> Java, Git, GitHub, Vercel, Azure AI service integration</p>
-          <p><strong>Product work:</strong> technical documentation, interface design, debugging, deployment, short-form video editing and storytelling</p>
+          <h2>Tools used in projects</h2>
+          <p><strong>Web technologies:</strong> React, Next.js, TypeScript, JavaScript and Tailwind CSS.</p>
+          <p><strong>Data and services:</strong> Supabase, PostgreSQL, Appwrite and Zod.</p>
+          <p><strong>Workflow:</strong> Git, GitHub, Vercel and AI-assisted prototyping.</p>
+          <p>These are tools I have encountered while building projects, often with substantial AI assistance. They are not a claim of independent proficiency. I am working through the fundamentals so I can understand, debug and maintain my code myself.</p>
         </section>
         <section className="resume-section">
           <h2>Selected project work</h2>
@@ -60,20 +62,32 @@ export default function ResumePage() {
         <section className="resume-section">
           <h2>Selected achievements</h2>
           <ul>
-            <li>Gold medal — VIFA Gewinn India Open International Taekwondo Championship, 28–29 September 2024, Mapusa, Goa, India.</li>
-            <li>Bronze medal — 10th MBC Cup Open International Taekwondo Championship, Korea, 2025.</li>
-            <li>Taekwondo Black Belt rank.</li>
-            <li>Public hackathon submissions: GRIDPULSE at NextStep Hacks 2026 and PACE at the CSC Back-to-School Hackathon. These are submission records, not prize claims.</li>
-            <li>FoodLoop initial MVP built entirely on a phone.</li>
+            <li>Gold medal, Poomsae Taeguk 6 — VIFA Gewinn International Taekwondo Championship, India, 2024.</li>
+            <li>Bronze medal, Poomsae Taeguk 7 — 10th MBC Cup International Open Taekwondo Championships, Korea, 2025.</li>
+            <li>Taekwondo 2nd Dan Black Belt, awarded December 2025, with a certificate from Kukkiwon headquarters.</li>
+            <li>First place with a partner in a primary-school solar-powered car challenge at age 12, using materials provided by the school.</li>
+            <li>2026 Pengakap Kawad Kaki team results: first at an earlier competition level and second at state level.</li>
+            <li>Form 3 school recognition for district-level Pengakap Kawad Kaki and state-level Pengakap Kem participation.</li>
+            <li>Participation certificates: Spelling Bee and HIPPO Olympiad.</li>
+            <li>Public hackathon submissions: GRIDPULSE at NextStep Hacks 2026 and PACE at the CSC Back-to-School Hackathon. These are submissions, not prize claims.</li>
           </ul>
         </section>
         <section className="resume-section">
           <h2>Peer learning</h2>
-          <p>I help other students get started with website building by explaining basic concepts, working through coding problems and helping them shape an idea into a first version. This is informal peer support, not a formal teaching appointment.</p>
+          <p>I have helped classmates get started with website building and personal portfolios. This is informal peer support, not a formal teaching appointment. I also take part in Pengakap (Scouts), the STEM Club and Seni Bela Diri, and I am a Pembimbing Rakan Sebaya (PRS) member.</p>
         </section>
         <section className="resume-section">
           <h2>Creator project</h2>
-          <p>AERO is a challenge-driven video project focused on real attempts, learning, editing experiments and documenting progress. A dated YouTube Studio snapshot for 12 September–9 October 2026 recorded 35,550 views, 125.3 watch hours and +42 subscribers; these are historical period metrics, not live or lifetime totals.</p>
+          <p>AERO is my YouTube creator project, currently focused on Self-Improvement &amp; Personal Growth and Self-Improvement &amp; Psychology. A channel-page snapshot shared on 26 November 2026 showed 109 subscribers and 89,549 total channel views. I paused uploading during exams and plan to resume afterward.</p>
+        </section>
+        <section className="resume-section">
+          <h2>Current martial arts practice</h2>
+          <p><strong>Silambam:</strong> Brown-Black belt level, preparing for grading in December 2026. The next grade has not yet been awarded.</p>
+          <p><strong>Taekwondo:</strong> I began training at age six and help teach younger students during training sessions.</p>
+        </section>
+        <section className="resume-section">
+          <h2>Study goals</h2>
+          <p>My next academic milestone is SPM 2027. I hope to study Computer Science or an AI-related subject through a fully funded scholarship. The United States is my first-choice destination, and I am also researching Australia.</p>
         </section>
         <footer className="resume-footer"><span>Project case studies and detailed source links</span><a href="https://koglesh-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">koglesh-portfolio.vercel.app</a></footer>
       </article>

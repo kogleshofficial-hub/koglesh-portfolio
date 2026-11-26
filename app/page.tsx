@@ -20,9 +20,9 @@ const projects: Project[] = [
   {
     number: "01",
     name: "Kyrqen",
-    category: "Flagship SaaS",
+    category: "Freight workflow prototype",
     description:
-      "A freight document workspace that turns Bills of Lading, Consignment Notes, and commercial invoices into verified shipment drafts. Built multi-tenant PostgreSQL security, ISO 6346 container check-digit validation, and cross-document mismatch checks so logistics teams stop re-typing PDFs by hand.",
+      "An early freight-document workflow prototype exploring how Bills of Lading, Consignment Notes and commercial invoices could be organised into draft shipment records. The project explores document checks and mismatch review. I used substantial AI assistance during development and am working through the code to understand the implementation properly.",
     stack: ["Next.js", "TypeScript", "Supabase RLS", "AI Extraction", "Vercel"],
     live: "https://kryqen.vercel.app/",
     github: "https://github.com/kogleshofficial-hub/kyrqen",
@@ -455,6 +455,7 @@ export default function Home() {
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <a href="#build-log">Build Log</a>
+            <a href="/scholarship">Scholarship Profile</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
@@ -467,7 +468,7 @@ export default function Home() {
             <div className="hero-status"><span className="status-pulse" /> Currently building Kyrqen</div>
             <h1>I build useful things <span>for real people.</span></h1>
             <p className="hero-copy">
-              I&apos;m Koglesh, a student developer in Malaysia. I build web apps around problems I want to solve, then put them online and learn what needs to change.
+              I&apos;m Koglesh, a Form 4 Science stream student in Malaysia. I explore software ideas through AI-assisted prototypes and creative projects, while working to understand the programming behind what I build.
             </p>
             <div className="hero-bottom">
               <div className="hero-actions">
@@ -477,7 +478,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="stack-focus">
-                <span className="stack-focus-label">Stack &amp; Focus</span>
+                <span className="stack-focus-label">Tools I have used</span>
                 <div className="stack-focus-items">
                   {["Next.js", "TypeScript", "PostgreSQL", "AI Workflows", "Product Design"].map((item) => (
                     <span key={item}>{item}</span>
@@ -573,7 +574,7 @@ export default function Home() {
               <div className="story-card-top"><span className="story-icon"><StoryIcon type="medal" /></span><span className="story-index">02</span></div>
               <h3>Taekwondo</h3>
               <p>
-                International gold at the VIFA Gewinn India Open in 2024, bronze at the 10th MBC Cup in Korea in 2025, and a Taekwondo Black Belt.
+                Gold in Poomsae Taeguk 6 at the VIFA Gewinn International Taekwondo Championship in India (2024), bronze in Poomsae Taeguk 7 at the 10th MBC Cup in Korea (2025), and a 2nd Dan Black Belt awarded in December 2025.
               </p>
               <span className="story-footnote">Gold · India 2024 / Bronze · Korea 2025</span>
             </article>
@@ -582,7 +583,7 @@ export default function Home() {
               <div className="story-card-top"><span className="story-icon"><StoryIcon type="play" /></span><span className="story-index">03</span></div>
               <h3>AERO</h3>
               <p>
-                I also run AERO, my YouTube Shorts channel. It reached 35.5k views in a 28-day YouTube Studio snapshot from 12 September to 9 October 2026.
+                I run AERO, a YouTube channel about self-improvement, personal growth and psychology. A channel-page snapshot on 26 November 2026 showed 109 subscribers and 89,549 views. I paused uploads during exams and plan to return afterward.
               </p>
               <a href="https://www.youtube.com/@ItsAero_Official" target="_blank" rel="noreferrer noopener">Visit AERO <ExternalArrow /></a>
             </article>
