@@ -217,7 +217,7 @@ export default function ScholarshipPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">03 / Selected work</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] sm:text-5xl">Ideas made tangible.</h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-white/55">Three projects that show different sides of how I think, build and learn.</p>
+            <p className="max-w-md text-sm leading-6 text-white/55">Four projects that show different sides of how I think, build and learn.</p>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-3">
