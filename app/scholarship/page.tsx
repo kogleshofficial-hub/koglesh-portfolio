@@ -418,7 +418,6 @@ export default function ScholarshipPage() {
       </section>
 
       <p className="mx-auto mt-6 max-w-6xl px-6 text-xs leading-6 text-white/40 lg:px-10">These are tools I have encountered while building prototypes, often with AI assistance. This list is not a claim of professional or independent mastery. My current priority is learning programming fundamentals and understanding the code behind my projects.</p>
-      </section>
 
       <section className="border-t border-white/10">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">

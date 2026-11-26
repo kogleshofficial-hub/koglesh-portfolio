@@ -27,7 +27,7 @@ export default function ResumePage() {
         <header className="border-b border-white/20 pb-8">
           <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-100/80">Résumé / Student profile</p>
           <h1 className="mt-4 text-5xl font-semibold tracking-[-0.07em] sm:text-7xl">Koglesh R. Murugan</h1>
-          <p className="mt-4 text-lg text-white/85">Independent student developer · Product builder · Malaysia</p>
+          <p className="mt-4 text-lg text-white/85">Student · Software projects · Malaysia</p>
           <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/80">
             <a href="mailto:koglesh.official@gmail.com" className="underline underline-offset-4">koglesh.official@gmail.com</a>
             <a href="https://koglesh-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Portfolio</a>
