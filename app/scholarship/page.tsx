@@ -20,6 +20,16 @@ export const metadata: Metadata = {
 const projects = [
   {
     number: "01",
+    name: "Kyrqen",
+    theme: "Reducing repeated work in freight documentation",
+    summary:
+      "A freight document workspace for Bills of Lading, Consignment Notes and commercial invoices. It extracts shipment details into draft records, checks container numbers and flags mismatches across documents. The extraction is a first pass; a person still reviews the source documents before approving a shipment.",
+    stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL"],
+    live: "https://kryqen.vercel.app/",
+    source: "https://github.com/kogleshofficial-hub/kyrqen",
+  },
+  {
+    number: "02",
     name: "FoodLoop",
     theme: "A practical problem, a phone, and a first version",
     summary:
@@ -29,7 +39,7 @@ const projects = [
     source: "https://github.com/kogleshofficial-hub/FoodLoop",
   },
   {
-    number: "02",
+    number: "03",
     name: "PACE",
     theme: "Making a difficult week easier to plan",
     summary:
@@ -40,7 +50,7 @@ const projects = [
     details: "https://koglesh-portfolio.vercel.app/projects/pace",
   },
   {
-    number: "03",
+    number: "04",
     name: "MIRROR",
     theme: "Exploring how changing constraints changes outcomes",
     summary:
@@ -204,7 +214,7 @@ export default function ScholarshipPage() {
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
           <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">02 / Selected work</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">03 / Selected work</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] sm:text-5xl">Ideas made tangible.</h2>
             </div>
             <p className="max-w-md text-sm leading-6 text-white/55">Three projects that show different sides of how I think, build and learn.</p>
@@ -248,7 +258,7 @@ export default function ScholarshipPage() {
       <section id="achievements" className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">03 / Beyond software</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">04 / Beyond software</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-5xl">Practice, patience and showing up.</h2>
             <p className="mt-5 text-sm leading-7 text-white/60">Taekwondo and creating videos give me different ways to practise, experiment and learn from results.</p>
           </div>
@@ -287,7 +297,7 @@ export default function ScholarshipPage() {
       <section className="border-y border-white/10 bg-white/[0.015]">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">04 / Public submissions</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">05 / Public submissions</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Work shared beyond my own site.</h2>
           </div>
           <div className="space-y-5">
@@ -309,7 +319,7 @@ export default function ScholarshipPage() {
       <section id="peer-learning" className="border-y border-white/10 bg-white/[0.015]">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">05 / Learning with others</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">06 / Learning with others</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Helping other students get started.</h2>
           </div>
           <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
@@ -322,7 +332,7 @@ export default function ScholarshipPage() {
       <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">06 / Tools I use</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">07 / Tools I use</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Learning by doing.</h2>
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">
@@ -339,7 +349,7 @@ export default function ScholarshipPage() {
       <section className="border-t border-white/10">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">07 / What comes next</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">08 / What comes next</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">I&apos;m still at the beginning. That&apos;s the point.</h2>
           </div>
           <div>
