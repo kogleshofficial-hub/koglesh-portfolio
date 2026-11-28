@@ -636,6 +636,9 @@ export default function Home() {
             <a className="link-card" href="https://www.youtube.com/@ItsAero_Official" target="_blank" rel="noreferrer noopener">
               <span>YouTube / AERO</span><ExternalArrow /><small>Videos and experiments</small>
             </a>
+            <a className="link-card" href="/scholarship">
+              <span>Scholarship Profile</span><ExternalArrow /><small>Education, results and achievements</small>
+            </a>
             <a className="link-card" href="mailto:koglesh.official@gmail.com">
               <span>Email</span><ExternalArrow /><small>koglesh.official@gmail.com</small>
             </a>
