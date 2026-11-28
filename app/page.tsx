@@ -115,13 +115,6 @@ const moreProjects = [
     github: "https://github.com/kogleshofficial-hub/one-next-step",
     stack: "Next.js · TypeScript",
   },
-  {
-    name: "AERO",
-    description: "My YouTube channel for challenges, experiments, and documenting progress.",
-    live: "https://www.youtube.com/@ItsAero_Official",
-    github: "https://github.com/kogleshofficial-hub/AERO",
-    stack: "YouTube · Editing · Storytelling",
-  },
 ];
 
 const buildLog = [
@@ -468,7 +461,7 @@ export default function Home() {
             <div className="hero-status"><span className="status-pulse" /> Currently building Kyrqen</div>
             <h1>I build useful things <span>for real people.</span></h1>
             <p className="hero-copy">
-              I&apos;m Koglesh, a Form 4 Science stream student in Malaysia. I explore software ideas through AI-assisted prototypes and creative projects, while working to understand the programming behind what I build.
+              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student in Negeri Sembilan, Malaysia. I study Physics, Chemistry, Additional Mathematics and Computer Science. Alongside school, I build AI-assisted web app prototypes and make videos about self-improvement through AERO.
             </p>
             <div className="hero-bottom">
               <div className="hero-actions">

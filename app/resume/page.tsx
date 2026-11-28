@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 };
 
 const projects = [
-  { name: "MIRROR", summary: "Deterministic decision-simulation engine for resource-constrained scenarios.", stack: "Next.js · React · TypeScript", href: "https://mirror-simulation-engine.vercel.app", source: "https://github.com/kogleshofficial-hub/mirror-simulation-engine" },
-  { name: "GRIDPULSE", summary: "Evidence-first infrastructure intelligence control plane separating validation, prediction and explanation.", stack: "Next.js · PostgreSQL · Zod · Azure ML · Microsoft Foundry", href: "https://gridpulse-three.vercel.app", source: "https://github.com/kogleshofficial-hub/GRIDPULSE" },
-  { name: "PACE", summary: "Multi-user academic workload planner with Appwrite authentication, per-user permissions and seven-day capacity planning.", stack: "Next.js · React · TypeScript · Appwrite", href: "https://pace-nu-seven.vercel.app", source: "https://github.com/kogleshofficial-hub/PACE" },
-  { name: "FoodLoop", summary: "Food-rescue MVP for listing surplus food and managing requests; the initial MVP was built entirely on a phone.", stack: "Next.js · TypeScript · Supabase · PostgreSQL", href: "https://food-loop-app.vercel.app", source: "https://github.com/kogleshofficial-hub/FoodLoop" },
-  { name: "SYNAPSE", summary: "Local-first workload planner that creates a seven-day plan from effort, priority and available time.", stack: "Next.js · React · TypeScript · Local Storage", href: "https://synapse-7ldp5tfhy-kogleshofficial-hubs-projects.vercel.app", source: "https://github.com/kogleshofficial-hub/synapse" },
-  { name: "QueueWise", summary: "Community queue-tracking concept built around fresh reports and transparent estimates.", stack: "Next.js · Supabase · PostgreSQL · OpenStreetMap", href: "https://queuewise-app.vercel.app", source: "https://github.com/kogleshofficial-hub/queuewise" }
+  { name: "Kyrqen", summary: "Freight-document workflow prototype for organising shipment documents, creating draft records and flagging mismatches for human review.", stack: "Next.js · TypeScript · Supabase · PostgreSQL", href: "https://kryqen.vercel.app", source: "https://github.com/kogleshofficial-hub/kyrqen" },
+  { name: "FoodLoop", summary: "Food-rescue MVP for listing surplus food and handling requests. I built the first version entirely on a phone.", stack: "Next.js · TypeScript · Supabase · PostgreSQL", href: "https://food-loop-app.vercel.app", source: "https://github.com/kogleshofficial-hub/FoodLoop" },
+  { name: "GRIDPULSE", summary: "Infrastructure-data review concept that keeps simulated telemetry separate from optional AI analysis.", stack: "Next.js · PostgreSQL · Zod · Azure", href: "https://gridpulse-three.vercel.app", source: "https://github.com/kogleshofficial-hub/GRIDPULSE" },
+  { name: "PACE", summary: "Academic workload planner with account-based storage and a seven-day planning view.", stack: "Next.js · React · TypeScript · Appwrite", href: "https://pace-nu-seven.vercel.app", source: "https://github.com/kogleshofficial-hub/PACE" },
+  { name: "MIRROR", summary: "Local simulation tool for comparing outcomes under different resource constraints.", stack: "Next.js · React · TypeScript", href: "https://mirror-simulation-engine.vercel.app", source: "https://github.com/kogleshofficial-hub/mirror-simulation-engine" },
+  { name: "QueueWise", summary: "Community queue-tracking concept based on recent reports and estimated waiting times.", stack: "Next.js · Supabase · PostgreSQL · OpenStreetMap", href: "https://queuewise-app.vercel.app", source: "https://github.com/kogleshofficial-hub/queuewise" }
 ];
 
 export default function ResumePage() {
@@ -38,17 +38,35 @@ export default function ResumePage() {
         </header>
         <section className="resume-section">
           <h2>Profile</h2>
-          <p>I am a 16-year-old Form 4 Science stream student in Negeri Sembilan, Malaysia, interested in Computer Science and AI. I explore ideas through early software prototypes and creative projects. I have used substantial AI assistance while coding, so I do not present my project stack as proof of independent mastery. I am actively building a stronger understanding of programming fundamentals, debugging and how the systems behind my projects work.</p>
+          <p>I am a Form 4 Science stream student at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science. I explore ideas through early software prototypes and creative projects. I have used substantial AI assistance while coding, so I do not present my project stack as proof of independent mastery. I am working through programming fundamentals so I can understand, test and maintain more of my own code.</p>
         </section>
         <section className="resume-section">
           <h2>Education</h2>
-          <p><strong>Form 4 · Science stream · Negeri Sembilan, Malaysia</strong></p>
-          <p>Preparing for SPM 2027. Current school work includes Computer Science coursework.</p>
-          <p><strong>Mid-year:</strong> Bahasa Melayu 78 (A−), English 84 (A), Mathematics 69 (B+) and History 79 (A−).</p>
-          <p><strong>End-of-year:</strong> Moral Education 91, History 67, Mathematics 71, Bahasa Melayu 80, Physics 50, Physical Education 64, Bahasa Tamil 82, Tamil Literature 76 and Computer Science 56. Chemistry and Additional Mathematics were not passed. English result pending.</p>
+          <p><strong>Form 4 Science stream · Sekolah Menengah Kebangsaan Desa Cempaka · Negeri Sembilan, Malaysia</strong></p>
+          <p>Preparing for SPM 2027. Current school work includes Computer Science coursework. My subject combination includes Physics, Chemistry, Additional Mathematics and Computer Science.</p>
+          <p><strong>Examination grades</strong></p>
+          <p>End-year grades are SPM-style estimates for internal school exams. English is pending because I have not sat that paper yet. Only the four mid-year subjects clearly aligned in the supplied report row are shown. Other mid-year entries are marked as not listed rather than guessed.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[520px] border-collapse text-xs">
+              <thead><tr><th className="border-b border-white/20 py-2 text-left">Subject</th><th className="border-b border-white/20 py-2 text-left">Mid-year</th><th className="border-b border-white/20 py-2 text-left">End-year</th></tr></thead>
+              <tbody>
+                <tr><td className="border-b border-white/10 py-2">Bahasa Melayu</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">A</td></tr>
+                <tr><td className="border-b border-white/10 py-2">English</td><td className="border-b border-white/10 py-2">A</td><td className="border-b border-white/10 py-2">Pending</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Mathematics</td><td className="border-b border-white/10 py-2">B+</td><td className="border-b border-white/10 py-2">A-</td></tr>
+                <tr><td className="border-b border-white/10 py-2">History</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">B+</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Moral Education</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A+</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Tamil</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Tamil Literature</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A-</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Physics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Chemistry</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Additional Mathematics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
+                <tr><td className="border-b border-white/10 py-2">Computer Science</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C+</td></tr>
+                <tr><td className="py-2">Physical Education</td><td className="py-2">Not listed</td><td className="py-2">B</td></tr>
+              </tbody>
+            </table>
+          </div>
           <p>My stronger subjects at present are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics are my main areas for improvement. This is a personal results summary, not an official transcript.</p>
-        </section>
-        <section className="resume-section">
+        </section>        <section className="resume-section">
           <h2>Tools used in projects</h2>
           <p><strong>Web technologies:</strong> React, Next.js, TypeScript, JavaScript and Tailwind CSS.</p>
           <p><strong>Data and services:</strong> Supabase, PostgreSQL, Appwrite and Zod.</p>
@@ -66,7 +84,7 @@ export default function ResumePage() {
             <li>Bronze medal, Poomsae Taeguk 7 — 10th MBC Cup International Open Taekwondo Championships, Korea, 2025.</li>
             <li>Taekwondo 2nd Dan Black Belt, awarded December 2025, with a certificate from Kukkiwon headquarters.</li>
             <li>First place with a partner in a primary-school solar-powered car challenge at age 12, using materials provided by the school.</li>
-            <li>2026 Pengakap Kawad Kaki team results: first at an earlier competition level and second at state level.</li>
+            <li>2026 Pengakap Kawad Kaki team results: first at school level and second at state level.</li>
             <li>Form 3 school recognition for district-level Pengakap Kawad Kaki and state-level Pengakap Kem participation.</li>
             <li>Participation certificates: Spelling Bee and HIPPO Olympiad.</li>
             <li>Public hackathon submissions: GRIDPULSE at NextStep Hacks 2026 and PACE at the CSC Back-to-School Hackathon. These are submissions, not prize claims.</li>

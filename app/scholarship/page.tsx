@@ -154,7 +154,7 @@ export default function ScholarshipPage() {
               <span className="text-white/55">building things.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
-              I&apos;m Koglesh, a 16-year-old Form 4 Science stream student from Negeri Sembilan, Malaysia. I&apos;m interested in Computer Science and AI, and I spend time exploring ideas through small software projects and creative challenges. Some of my early coding work involved substantial AI assistance. I&apos;m now focused on understanding the programming fundamentals behind what I build, not just getting a demo online.
+              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science. Outside class, I work on web app prototypes and run AERO, a YouTube channel about self-improvement and psychology. I have used AI coding tools in several projects, and I am now working to understand the programming behind them.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-cyan-50">Explore selected projects ↓</a>
@@ -205,51 +205,51 @@ export default function ScholarshipPage() {
               <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">School is part of the work.</h2>
             </div>
             <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-              <p>I&apos;m a Form 4 student in the Science stream in Negeri Sembilan, preparing for SPM in 2027. My subjects include Mathematics, Additional Mathematics, Physics, Chemistry and Computer Science, alongside languages and humanities.</p>
-              <p>My stronger areas at the moment are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics are the subjects I need to work on most. I am also completing my school Computer Science coursework.</p>
-              <p>I&apos;m sharing the results as a progress record, not as a claim that every subject is already where I want it to be. The end-of-year English result is pending. I have not added grades where only a mark or pass status was supplied.</p>
+              <p>I study Form 4 Science at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science, alongside languages and humanities.</p>
+              <p>I am preparing for SPM in 2027 and completing my SPM Computer Science coursework. My stronger subjects at present are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics need the most attention.</p>
+              <p>I am sharing these results as a record of progress. The end-of-year English paper is pending because I have not sat it yet.</p>
             </div>
           </div>
-          <div className="mt-10 grid gap-8 lg:grid-cols-2">
-            <div className="border border-white/10 bg-[#080808] p-5 sm:p-6">
-              <h3 className="text-lg font-semibold">Mid-year examination</h3>
-              <p className="mt-1 text-xs text-white/45">Clearly aligned core subjects from the school report</p>
-              <dl className="mt-5 divide-y divide-white/10">
-                {[
-                  ["Bahasa Melayu", "78 · A−"],
-                  ["English", "84 · A"],
-                  ["Mathematics", "69 · B+"],
-                  ["History", "79 · A−"],
-                ].map(([subject, result]) => <div key={subject} className="flex items-center justify-between gap-4 py-3 text-sm"><dt className="text-white/65">{subject}</dt><dd className="font-medium tabular-nums text-white">{result}</dd></div>)}
-              </dl>
+          <div className="mt-10">
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <h3 className="text-lg font-semibold">Examination grades</h3>
+                <p className="mt-1 text-xs leading-5 text-white/45">Grades only. End-year grades are SPM-style estimates for internal school exams.</p>
+              </div>
+              <span className="text-xs text-white/40">Mid-year / End-year</span>
             </div>
-            <div className="border border-white/10 bg-[#080808] p-5 sm:p-6">
-              <h3 className="text-lg font-semibold">End-of-year examination</h3>
-              <p className="mt-1 text-xs text-white/45">Marks and statuses as currently reported</p>
-              <dl className="mt-5 grid grid-cols-2 gap-x-5">
-                {[
-                  ["Moral Education", "91"],
-                  ["History", "67"],
-                  ["Mathematics", "71"],
-                  ["Bahasa Melayu", "80"],
-                  ["Physics", "50"],
-                  ["Chemistry", "Not passed"],
-                  ["Additional Mathematics", "Not passed"],
-                  ["Physical Education", "64"],
-                  ["Bahasa Tamil", "82"],
-                  ["Tamil Literature", "76"],
-                  ["Computer Science", "56"],
-                  ["English", "Pending"],
-                ].map(([subject, result]) => <div key={subject} className="border-t border-white/10 py-3"><dt className="text-xs leading-5 text-white/50">{subject}</dt><dd className="mt-1 text-sm font-medium text-white">{result}</dd></div>)}
-              </dl>
+            <div className="overflow-x-auto border border-white/10">
+              <table className="w-full min-w-[650px] border-collapse text-left text-sm">
+                <thead className="bg-white/[0.04] text-xs uppercase tracking-[0.12em] text-white/55">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 font-medium">Subject</th>
+                    <th scope="col" className="px-4 py-3 font-medium">Mid-year</th>
+                    <th scope="col" className="px-4 py-3 font-medium">End-year</th>
+                    <th scope="col" className="px-4 py-3 font-medium">Progress</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10 text-white/75">
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Bahasa Melayu</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">English</th><td className="px-4 py-3">A</td><td className="px-4 py-3">Pending</td><td className="px-4 py-3 text-white/45">Not sat yet</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Mathematics</th><td className="px-4 py-3">B+</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">History</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">B+</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Moral Education</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A+</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil Literature</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Physics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Chemistry</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Additional Mathematics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Computer Science</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C+</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Physical Education</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">B</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                </tbody>
+              </table>
             </div>
+            <p className="mt-4 text-xs leading-6 text-white/45">Only the four mid-year subjects clearly aligned in the supplied school result row are shown with grades. The other mid-year entries are left blank rather than guessed. SPM grade boundaries vary by subject and examination year, so these end-year conversions are estimates, not official SPM results. <a href="https://parlimen.gov.my/files/jindex/pdf/JDR26062024.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">KPM explanation of SPM grade setting</a>.</p>
           </div>
-          <p className="mt-5 text-xs leading-6 text-white/40">These figures are a personal summary of my school results. They are not a replacement for an official school transcript.</p>
         </div>
       </section>
 
-       
-      <section id="school-activities" className="border-y border-white/10 bg-white/[0.015]">
+            <section id="school-activities" className="border-y border-white/10 bg-white/[0.015]">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">03 / School and co-curricular</p>
@@ -264,7 +264,7 @@ export default function ScholarshipPage() {
               <h3 className="text-lg font-semibold">Scouting and team recognition</h3>
               <ul className="mt-3 space-y-3 text-sm leading-7 text-white/65">
                 <li>At the school&apos;s annual M.A.S.T.E.R. recognition ceremony in Form 3, I received recognition for district-level Pengakap Kawad Kaki and state-level Pengakap Kem participation.</li>
-                <li>In 2026, our Pengakap Kawad Kaki team placed first at an earlier competition level and second at state level.</li>
+                <li>In 2026, our Pengakap Kawad Kaki team placed first at school level and second at state level.</li>
               </ul>
             </article>
             <article className="border border-white/10 p-6 sm:p-7">
@@ -423,7 +423,7 @@ export default function ScholarshipPage() {
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">09 / What comes next</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">I&apos;m still at the beginning. That&apos;s the point.</h2>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">I have more to learn.</h2>
           </div>
           <div>
             <p className="text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
