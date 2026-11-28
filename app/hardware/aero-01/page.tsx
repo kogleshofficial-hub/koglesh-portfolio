@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -293,12 +294,100 @@ export default function Aero01CaseStudy() {
           <SectionLabel>07 / Evidence record</SectionLabel>
           <h2 className="mt-4 text-3xl font-medium tracking-[-0.05em]">Original documentation.</h2>
           <p className="mt-5 max-w-3xl text-sm leading-7 text-white/70">
-            Construction photographs, a handwritten experiment page and four
-            original test videos were recorded on 28 November 2026. The public
-            page currently records the observations and calculations; the
-            original media files still need to be hosted before they can be
-            embedded here. No replacement or synthetic evidence has been used.
+            These photographs and excerpts come from the physical build and test
+            recordings made on 28 November 2026. They show the handwritten
+            calculations, the actual elastic-band arrangement, both movement
+            configurations and the two recorded settling-time readings. The
+            images are resized copies of the builder&apos;s original files; no
+            synthetic or stock evidence has been used.
           </p>
+
+          <div className="mt-9 grid gap-5 md:grid-cols-2">
+            <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
+              <Image
+                src="/aero-01/engineering-notebook.webp"
+                alt="Original handwritten AERO-01 experiment notebook page with the design sketch, physics notes and preliminary measurements."
+                width={472}
+                height={620}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="border-t border-white/[0.1] px-4 py-3">
+                <p className="text-xs font-medium text-white/85">Handwritten engineering notes</p>
+                <p className="mt-1 text-[10px] leading-5 text-white/50">The builder&apos;s original page documenting dimensions, physics concepts and preliminary calculations.</p>
+              </figcaption>
+            </figure>
+
+            <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
+              <Image
+                src="/aero-01/suspension-detail.webp"
+                alt="Close-up photograph of orange elastic-band strands attached around the small pink inner container."
+                width={520}
+                height={232}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="border-t border-white/[0.1] px-4 py-3">
+                <p className="text-xs font-medium text-white/85">Four-point elastic attachment detail</p>
+                <p className="mt-1 text-[10px] leading-5 text-white/50">A close-up from the actual V2 build, showing the orange elastic strands and inner container.</p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-12">
+            <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/55">Movement recordings</p>
+            <h3 className="mt-3 text-xl font-medium tracking-[-0.04em]">Control configuration vs suspended configuration.</h3>
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
+                <video className="aspect-video w-full bg-black object-contain" controls preload="metadata" playsInline poster="/aero-01/control-motion-poster.webp">
+                  <source src="/aero-01/control-motion.mp4" type="video/mp4" />
+                  Your browser does not support embedded video.
+                </video>
+                <figcaption className="border-t border-white/[0.1] px-4 py-3">
+                  <p className="text-xs font-medium text-white/85">Without suspension / control</p>
+                  <p className="mt-1 text-[10px] leading-5 text-white/50">Short excerpt from the original recording showing the container resting on and sliding across the basket floor.</p>
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
+                <video className="aspect-video w-full bg-black object-contain" controls preload="metadata" playsInline poster="/aero-01/suspension-motion-poster.webp">
+                  <source src="/aero-01/suspension-motion.mp4" type="video/mp4" />
+                  Your browser does not support embedded video.
+                </video>
+                <figcaption className="border-t border-white/[0.1] px-4 py-3">
+                  <p className="text-xs font-medium text-white/85">With four-point suspension</p>
+                  <p className="mt-1 text-[10px] leading-5 text-white/50">Short excerpt from the original recording showing the inner container moving within the elastic suspension.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/55">Timekeeping evidence</p>
+            <h3 className="mt-3 text-xl font-medium tracking-[-0.04em]">Two exploratory settling-time readings.</h3>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
+                <Image src="/aero-01/settling-30-47.webp" alt="Frame from the original stopwatch video showing a recorded time of 30.47 seconds." width={300} height={534} className="mx-auto h-[300px] w-auto object-contain" sizes="(max-width: 640px) 100vw, 50vw" />
+                <figcaption className="border-t border-white/[0.1] px-4 py-3">
+                  <p className="text-xs font-medium text-white/85">Reading 01 / 30.47 seconds</p>
+                  <p className="mt-1 text-[10px] leading-5 text-white/50">Still frame extracted from one of the original stopwatch recordings.</p>
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
+                <Image src="/aero-01/settling-10-83.webp" alt="Frame from the original stopwatch video showing a recorded time of 10.83 seconds." width={360} height={203} className="h-[300px] w-full object-contain" sizes="(max-width: 640px) 100vw, 50vw" />
+                <figcaption className="border-t border-white/[0.1] px-4 py-3">
+                  <p className="text-xs font-medium text-white/85">Reading 02 / 10.83 seconds</p>
+                  <p className="mt-1 text-[10px] leading-5 text-white/50">Still frame extracted from the second original stopwatch recording.</p>
+                </figcaption>
+              </figure>
+            </div>
+            <p className="mt-5 max-w-3xl text-xs leading-7 text-white/50">
+              The two movement videos are short, compressed excerpts for web
+              playback. The full original recordings remain with the builder.
+              The stopwatch images are frames from the two additional original
+              videos, included so the displayed readings are legible without
+              uploading very large source files.
+            </p>
+          </div>
         </div>
       </section>
 
