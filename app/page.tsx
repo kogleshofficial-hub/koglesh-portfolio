@@ -115,6 +115,13 @@ const moreProjects = [
     github: "https://github.com/kogleshofficial-hub/one-next-step",
     stack: "Next.js · TypeScript",
   },
+  {
+    name: "AERO-01",
+    description: "A physical engineering proof-of-concept exploring how a four-point elastic suspension changes the movement of an inner container. Built with household materials and documented through preliminary testing.",
+    live: "/hardware/aero-01",
+    github: undefined,
+    stack: "Physical engineering · Experimental Physics · Elastic suspension",
+  },
 ];
 
 const buildLog = [
@@ -452,8 +459,7 @@ export default function Home() {
             <span>Koglesh</span>
           </a>
           <nav className="site-nav" aria-label="Main navigation">
-            <a href="#work">Software</a>
-            <a href="/hardware">Hardware</a>
+            <a href="#work">Work</a>
             <a href="#about">About</a>
             <a href="#build-log">Build Log</a>
             <a href="/scholarship">Scholarship Profile</a>
@@ -465,11 +471,11 @@ export default function Home() {
       <div id="top" className="site-shell">
         <section className="hero">
           <div className="hero-main">
-            <p className="eyebrow"><span className="availability-dot" /> Software &amp; hardware project builder based in Malaysia</p>
+            <p className="eyebrow"><span className="availability-dot" /> Student developer based in Malaysia</p>
             <div className="hero-status"><span className="status-pulse" /> Currently building Kyrqen</div>
             <h1>I build useful things <span>for real people.</span></h1>
             <p className="hero-copy">
-              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student in Negeri Sembilan, Malaysia. I study Physics, Chemistry, Additional Mathematics and Computer Science. Alongside school, I build software products and hands-on physical engineering prototypes, while documenting personal growth through AERO.
+              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student in Negeri Sembilan, Malaysia. I study Physics, Chemistry, Additional Mathematics and Computer Science. Alongside school, I build web app prototypes and make videos about self-improvement through AERO.
             </p>
             <div className="hero-bottom">
               <div className="hero-actions">
@@ -479,7 +485,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="stack-focus">
-                <span className="stack-focus-label">Software tools I have used</span>
+                <span className="stack-focus-label">Tools I have used</span>
                 <div className="stack-focus-items">
                   {["Next.js", "TypeScript", "PostgreSQL", "Supabase", "Product Design"].map((item) => (
                     <span key={item}>{item}</span>
@@ -515,9 +521,9 @@ export default function Home() {
         <section id="work" className="page-section work-section">
           <div className="section-heading">
             <div>
-              <p className="section-kicker">Software engineering</p>
-              <h2>Software projects</h2>
-              <p className="section-intro">Web applications, product prototypes and tools built around practical problems.</p>
+              <p className="section-kicker">Selected work</p>
+              <h2>Projects</h2>
+              <p className="section-intro">Products and experiments I&apos;ve been building, with a look at how each one works.</p>
             </div>
             <span className="section-count">06 featured projects</span>
           </div>
@@ -527,8 +533,8 @@ export default function Home() {
           </div>
 
           <div className="more-projects-heading">
-            <div><p className="section-kicker">More software</p><h3>Additional software projects</h3></div>
-            <span>Other digital products and experiments</span>
+            <div><p className="section-kicker">Also in the workshop</p><h3>More projects</h3></div>
+            <span>Other things I&apos;ve made</span>
           </div>
           <div className="more-projects-grid">
             {moreProjects.map((project) => (
@@ -548,64 +554,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section id="hardware" className="page-section hardware-section">
-          <div className="section-heading">
-            <div>
-              <p className="section-kicker">Physical engineering</p>
-              <h2>Hardware projects</h2>
-              <p className="section-intro">
-                Hands-on builds and experiments: measuring real materials, testing a physical design,
-                documenting what happened and revising the prototype when something did not fit.
-              </p>
-            </div>
-            <span className="section-count">01 documented project</span>
-          </div>
-
-          <article className="hardware-feature-card">
-            <a
-              className="hardware-feature-image"
-              href="/aero-01/suspension-detail.webp"
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Open the full-size AERO-01 suspension photograph"
-            >
-              <Image
-                src="/aero-01/suspension-detail.webp"
-                alt="Original close-up photograph of the orange elastic-band suspension strands attached to the small pink inner container in the AERO-01 physical prototype."
-                width={520}
-                height={232}
-                sizes="(max-width: 760px) 100vw, 45vw"
-                className="hardware-feature-photo"
-              />
-              <span className="hardware-image-hint">Open evidence image ↗</span>
-            </a>
-            <div className="hardware-feature-copy">
-              <p className="hardware-project-index">01 / PHYSICAL PROTOTYPE</p>
-              <p className="section-kicker">Experimental physics · Elastic suspension</p>
-              <h3>AERO-01 — Passive Elastic Suspension Carrier</h3>
-              <p>
-                A four-point elastic suspension prototype made with household materials.
-                The first container did not fit the available clearance, so I measured and
-                revised the design around a smaller inner container. Preliminary observations
-                compared how far the container moved with and without suspension.
-              </p>
-              <div className="hardware-feature-tags" aria-label="AERO-01 project topics">
-                <span>Physical prototyping</span>
-                <span>Design iteration</span>
-                <span>Experimental physics</span>
-                <span>RM0 materials</span>
-              </div>
-              <div className="hardware-feature-links">
-                <a href="/hardware/aero-01">Read the AERO-01 build and test record <ExternalArrow /></a>
-                <a href="/hardware">Browse hardware projects <ExternalArrow /></a>
-              </div>
-            </div>
-          </article>
-          <p className="hardware-section-note">
-            This is a developing hardware portfolio. Only completed builds with documented evidence are listed.
-          </p>
         </section>
 
         <section id="about" className="page-section about-section">

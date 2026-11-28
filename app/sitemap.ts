@@ -10,31 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/projects/mirror", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/projects/gridpulse", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/projects/pace", priority: 0.9, changeFrequency: "monthly" as const },
-    {
-      path: "/hardware",
-      priority: 0.9,
-      changeFrequency: "monthly" as const,
-      images: [`${baseUrl}/aero-01/suspension-detail.webp`],
-    },
-    {
-      path: "/hardware/aero-01",
-      priority: 0.9,
-      changeFrequency: "monthly" as const,
-      images: [
-        `${baseUrl}/aero-01/engineering-notebook.webp`,
-        `${baseUrl}/aero-01/suspension-detail.webp`,
-        `${baseUrl}/aero-01/control-motion-poster.webp`,
-        `${baseUrl}/aero-01/suspension-motion-poster.webp`,
-        `${baseUrl}/aero-01/settling-30-47.webp`,
-        `${baseUrl}/aero-01/settling-10-83.webp`,
-      ],
-    },
+    { path: "/hardware/aero-01", priority: 0.85, changeFrequency: "monthly" as const }
   ];
-  return paths.map(({ path, priority, changeFrequency, images }) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency,
-    priority,
-    ...(images ? { images } : {}),
+  return paths.map(({ path, priority, changeFrequency }) => ({
+    url: `${baseUrl}${path}`, lastModified: new Date(), changeFrequency, priority
   }));
 }
