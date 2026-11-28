@@ -236,20 +236,20 @@ export default function ScholarshipPage() {
                   <tr><th scope="row" className="px-4 py-3 font-medium text-white">Moral Education</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A+</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
                   <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
                   <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil Literature</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Physics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Chemistry</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Additional Mathematics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Computer Science</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C+</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Physics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Chemistry</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Additional Mathematics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Computer Science</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C+</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
                   <tr><th scope="row" className="px-4 py-3 font-medium text-white">Physical Education</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">B</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs leading-6 text-white/45">Only the four mid-year subjects clearly aligned in the supplied school result row are shown with grades. The other mid-year entries are left blank rather than guessed. SPM grade boundaries vary by subject and examination year, so these end-year conversions are estimates, not official SPM results. <a href="https://parlimen.gov.my/files/jindex/pdf/JDR26062024.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">KPM explanation of SPM grade setting</a>.</p>
+            <p className="mt-4 text-xs leading-6 text-white/45">Only the four mid-year subjects clearly aligned in the supplied school result row are shown with grades. Other subjects are marked "Not listed" rather than guessed. SPM grade boundaries vary by subject and examination year, so these end-year conversions are estimates, not official SPM results. <a href="https://parlimen.gov.my/files/jindex/pdf/JDR26062024.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">KPM explanation of SPM grade setting</a>.</p>
           </div>
         </div>
       </section>
 
-            <section id="school-activities" className="border-y border-white/10 bg-white/[0.015]">
+      <section id="school-activities" className="border-y border-white/10 bg-white/[0.015]">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">03 / School and co-curricular</p>

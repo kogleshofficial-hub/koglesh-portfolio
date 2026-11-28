@@ -57,16 +57,17 @@ export default function ResumePage() {
                 <tr><td className="border-b border-white/10 py-2">Moral Education</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A+</td></tr>
                 <tr><td className="border-b border-white/10 py-2">Tamil</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A</td></tr>
                 <tr><td className="border-b border-white/10 py-2">Tamil Literature</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A-</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Physics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Chemistry</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Additional Mathematics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Computer Science</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C+</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Physics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Chemistry</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Additional Mathematics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Computer Science</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C+</td></tr>
                 <tr><td className="py-2">Physical Education</td><td className="py-2">Not listed</td><td className="py-2">B</td></tr>
               </tbody>
             </table>
           </div>
           <p>My stronger subjects at present are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics are my main areas for improvement. This is a personal results summary, not an official transcript.</p>
-        </section>        <section className="resume-section">
+        </section>
+        <section className="resume-section">
           <h2>Tools used in projects</h2>
           <p><strong>Web technologies:</strong> React, Next.js, TypeScript, JavaScript and Tailwind CSS.</p>
           <p><strong>Data and services:</strong> Supabase, PostgreSQL, Appwrite and Zod.</p>
