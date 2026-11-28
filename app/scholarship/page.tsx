@@ -80,6 +80,8 @@ const otherWork = [
   },
 ] as const;
 
+const highlightedSubjects = new Set<string>(["Physics", "Chemistry", "Additional Mathematics", "Computer Science"]);
+
 const grades = [
   ["Bahasa Melayu", "A−", "A", "Improved"],
   ["English", "A", "A", "Maintained"],
@@ -189,7 +191,7 @@ export default function ScholarshipPage() {
                 <tbody>
                   {grades.map(([subject, midYear, endYear, progress]) => (
                     <tr key={subject} className="border-b border-[#eceeea]">
-                      <th scope="row" className={"py-3 pr-4 font-medium " + (["Physics", "Chemistry", "Additional Mathematics", "Computer Science"].includes(subject) ? "text-[#234d60]" : "text-[#303632]")}>{subject}</th>
+                      <th scope="row" className={"py-3 pr-4 font-medium " + (highlightedSubjects.has(subject) ? "text-[#234d60]" : "text-[#303632]")}>{subject}</th>
                       <td className="px-3 py-3 text-[#465049]">{midYear}</td>
                       <td className="px-3 py-3 text-[#465049]">{endYear}</td>
                       <td className="py-3 pl-3 text-xs text-[#667168]">{progress}</td>
