@@ -2115,8 +2115,8 @@ a:hover .external-arrow {
 
 /* Print layout for the clean résumé page. */
 @media print {
-  html,
-  body {
+  html:has(.resume-page),
+  body:has(.resume-page) {
     background: #fff !important;
     color: #171717 !important;
   }
