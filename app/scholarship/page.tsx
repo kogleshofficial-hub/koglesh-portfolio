@@ -5,12 +5,11 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Scholarship Profile",
   description:
-    "A student profile for Koglesh R. Murugan, covering school progress, co-curricular activities, martial arts, early software projects and AERO.",
+    "Koglesh R. Murugan is a Form 4 Science stream student in Negeri Sembilan, Malaysia. This page covers his education, projects and activities.",
   alternates: { canonical: "/scholarship" },
   openGraph: {
-    title: "Koglesh R. Murugan — Scholarship Profile",
-    description:
-      "Student developer in Malaysia. Building software, learning in public and growing through technical and creative work.",
+    title: "Koglesh R. Murugan | Scholarship Profile",
+    description: "Student profile, school results, projects and co-curricular activities.",
     url: "https://koglesh-portfolio.vercel.app/scholarship",
     type: "profile",
   },
@@ -19,43 +18,35 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    number: "01",
     name: "Kyrqen",
-    theme: "Reducing repeated work in freight documentation",
-    summary:
-      "A freight document workspace for Bills of Lading, Consignment Notes and commercial invoices. It extracts shipment details into draft records, checks container numbers and flags mismatches across documents. The extraction is a first pass; a person still reviews the source documents before approving a shipment.",
-    stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL"],
+    description:
+      "A freight document workspace for Bills of Lading, Consignment Notes and commercial invoices. It extracts shipment details into draft records, checks container numbers and flags mismatches across documents. A person reviews the source documents before approving a shipment.",
+    stack: "Next.js, TypeScript, Supabase, PostgreSQL",
     live: "https://kryqen.vercel.app/",
     source: "https://github.com/kogleshofficial-hub/kyrqen",
   },
   {
-    number: "02",
     name: "FoodLoop",
-    theme: "A practical problem, a phone, and a first version",
-    summary:
-      "A web app for listing surplus food and handling requests. I built the initial MVP entirely on a phone, then published the product and source code. It is a build milestone—not a claim of measured food saved or community adoption.",
-    stack: ["Next.js", "Supabase", "PostgreSQL"],
+    description:
+      "A web app for listing surplus food and handling requests. I built the first version entirely on a phone and kept it focused on the basic listing and request flow. It is an early project, not a claim of measured food saved or community adoption.",
+    stack: "Next.js, Supabase, PostgreSQL",
     live: "https://food-loop-app.vercel.app/",
     source: "https://github.com/kogleshofficial-hub/FoodLoop",
   },
   {
-    number: "03",
     name: "PACE",
-    theme: "Making a difficult week easier to plan",
-    summary:
-      "An academic workload planner that turns deadlines, task effort, priorities and available time into a seven-day plan. I built it with sign-in and per-user data permissions, and documented what should happen when a save cannot be confirmed.",
-    stack: ["Next.js", "TypeScript", "Appwrite"],
+    description:
+      "A study planner that turns deadlines, task effort and available time into a seven-day plan. It uses sign-in and per-user data permissions so each account has its own information. It is a planning aid, so the schedule still needs to be checked by the student.",
+    stack: "Next.js, TypeScript, Appwrite",
     live: "https://pace-nu-seven.vercel.app/",
     source: "https://github.com/kogleshofficial-hub/PACE",
     details: "https://koglesh-portfolio.vercel.app/projects/pace",
   },
   {
-    number: "04",
     name: "MIRROR",
-    theme: "Exploring how changing constraints changes outcomes",
-    summary:
-      "A simulation tool for resource-constrained scenarios. It lets a user change inputs and compare outcomes, with repeatable results for the same supported scenario and clear limits on what the model represents.",
-    stack: ["Next.js", "React", "TypeScript"],
+    description:
+      "A simulation tool for trying different demand and capacity settings and comparing how they affect a workflow. The model runs locally and gives repeatable results for the same inputs. It only covers the scenarios included in the model.",
+    stack: "Next.js, React, TypeScript",
     live: "https://mirror-simulation-engine.vercel.app/",
     source: "https://github.com/kogleshofficial-hub/mirror-simulation-engine",
     details: "https://koglesh-portfolio.vercel.app/projects/mirror",
@@ -65,40 +56,44 @@ const projects = [
 const otherWork = [
   {
     name: "GRIDPULSE",
-    summary: "An infrastructure-monitoring concept that keeps the public demo's simulated telemetry clearly labelled.",
+    description:
+      "An infrastructure data review concept that keeps source records separate from optional automated analysis. The public demo uses simulated telemetry.",
     href: "https://koglesh-portfolio.vercel.app/projects/gridpulse",
   },
   {
     name: "QueueWise",
-    summary: "A community queue-tracking concept built around fresh reports and transparent estimates.",
+    description:
+      "A community queue-tracking concept based on recent reports and estimated waiting times.",
     href: "https://queuewise-app.vercel.app/",
   },
   {
     name: "One Next Step",
-    summary: "A focused tool designed to turn an overwhelming situation into one useful next action.",
+    description:
+      "A small tool designed to turn a difficult situation into one practical next action.",
     href: "https://one-next-step.vercel.app/",
   },
   {
     name: "Truth Checker",
-    summary: "An evidence-focused experience for examining online claims and their supporting sources.",
+    description:
+      "A tool for examining online claims alongside their sources and supporting context.",
     href: "https://truth-checker-app.vercel.app/",
   },
-];
+] as const;
 
-const skills = [
-  {
-    label: "Web tools encountered",
-    items: "React, Next.js, TypeScript, JavaScript and Tailwind CSS across my web projects and hands-on practice.",
-  },
-  {
-    label: "Data and app services",
-    items: "Supabase, PostgreSQL and Appwrite in projects, with more work still needed to understand the underlying systems independently.",
-  },
-  {
-    label: "Workflow and creative tools",
-    items: "Git, GitHub, Vercel, video editing and storytelling.",
-  },
-];
+const grades = [
+  ["Bahasa Melayu", "A−", "A", "Improved"],
+  ["English", "A", "A", "Maintained"],
+  ["Mathematics", "B+", "A−", "Improved"],
+  ["History", "A−", "B+", "Lower"],
+  ["Moral Education", "A−", "A+", "Improved"],
+  ["Tamil", "A−", "A", "Improved"],
+  ["Tamil Literature", "A−", "A−", "Maintained"],
+  ["Physics", "A−", "C", "Lower"],
+  ["Chemistry", "E", "G (Fail)", "Lower"],
+  ["Additional Mathematics", "G (Fail)", "G (Fail)", "Still not passed"],
+  ["Computer Science", "A", "C+", "Lower"],
+  ["Physical Education", "A−", "B", "Lower"],
+] as const;
 
 function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -106,349 +101,275 @@ function ExternalLink({ href, children }: { href: string; children: ReactNode })
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex min-h-10 items-center gap-2 text-sm text-white/75 underline decoration-white/25 underline-offset-4 transition hover:text-white hover:decoration-white/70"
+      className="text-sm text-[#315d73] underline decoration-[#9aafb9] underline-offset-4 hover:text-[#172e3a]"
     >
       {children} <span aria-hidden="true">↗</span>
     </a>
   );
 }
 
+function SectionHeading({ children }: { children: ReactNode }) {
+  return <h2 className="mb-5 text-xl font-semibold tracking-tight text-[#202522] sm:text-2xl">{children}</h2>;
+}
+
 export default function ScholarshipPage() {
   return (
-    <main id="main-content" className="min-h-screen overflow-x-hidden bg-[#070707] text-[#f5f5f5] selection:bg-cyan-100/25">
+    <main id="main-content" className="min-h-screen bg-[#fafaf8] text-[#303632]">
       <a href="#main-content" className="skip-link print-hide">Skip to content</a>
 
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 lg:px-10">
-          <Link href="/scholarship" aria-label="Koglesh R. Murugan — Scholarship Profile" className="flex min-h-11 items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/[0.04] text-sm font-semibold">K</span>
-            <span>
-              <span className="block text-sm font-medium text-white">Koglesh R. Murugan</span>
-              <span className="mt-1 block text-[10px] uppercase tracking-[0.17em] text-white/45">Scholarship profile</span>
-            </span>
+      <header className="border-b border-[#e4e6e1]">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8">
+          <Link href="/scholarship" className="text-sm font-semibold text-[#202522]">
+            Koglesh R. Murugan
+            <span className="mt-1 block text-xs font-normal text-[#788079]">Scholarship profile</span>
           </Link>
-          <nav aria-label="Page navigation" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/65">
-            <a href="#education" className="transition hover:text-white">Education</a>
-            <a href="#school-activities" className="transition hover:text-white">School &amp; activities</a>
-            <a href="#projects" className="transition hover:text-white">Projects</a>
-            <a href="#achievements" className="transition hover:text-white">Achievements</a>
-            <a href="#peer-learning" className="transition hover:text-white">Peer learning</a>
-            <a href="#about" className="transition hover:text-white">About</a>
-            <Link href="/resume" className="transition hover:text-white">Résumé</Link>
-            <Link href="/" className="inline-flex min-h-10 items-center rounded-full border border-white/20 bg-white/[0.04] px-4 transition hover:bg-white/[0.09] hover:text-white">Engineering portfolio ↗</Link>
+          <nav aria-label="Page navigation" className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#56615a]">
+            <a href="#education" className="hover:text-black">Education</a>
+            <a href="#projects" className="hover:text-black">Projects</a>
+            <a href="#activities" className="hover:text-black">Activities</a>
+            <a href="#achievements" className="hover:text-black">Achievements</a>
+            <Link href="/resume" className="hover:text-black">Résumé</Link>
+            <Link href="/" className="hover:text-black">Main portfolio</Link>
           </nav>
         </div>
       </header>
 
-      <section className="relative border-b border-white/10">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(165,243,252,0.09),transparent_45%)]" />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:py-28 lg:grid-cols-[1.35fr_.65fr] lg:items-end lg:px-10 lg:py-32">
-          <div>
-            <p className="mb-6 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-cyan-100/75">
-              <span className="h-px w-9 bg-cyan-100/60" />
-              Student developer · Malaysia
-            </p>
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[0.98] tracking-[-0.065em] sm:text-7xl lg:text-[5.5rem]">
-              I learn by
-              <br />
-              <span className="text-white/55">building things.</span>
-            </h1>
-            <p className="mt-8 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
-              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science. Outside class, I work on web app prototypes and run AERO, a YouTube channel about self-improvement and psychology. I am working on my programming fundamentals so I can explain, test and improve the code behind my projects.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#projects" className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-cyan-50">Explore selected projects ↓</a>
-              <Link href="/resume" className="inline-flex min-h-12 items-center rounded-full border border-white/20 px-6 py-3 text-sm text-white/85 transition hover:border-white/40 hover:bg-white/[0.05]">Résumé / Save as PDF</Link>
-            </div>
-          </div>
-
-          <aside className="border border-white/12 bg-white/[0.025] p-6 sm:p-7" aria-label="What guides my work">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/45">What guides my work</p>
-            <div className="mt-5 divide-y divide-white/10">
-              <div className="py-4">
-                <p className="text-sm font-medium text-white">Start with a real question</p>
-                <p className="mt-1 text-sm leading-6 text-white/55">Build because there is something worth understanding or improving.</p>
-              </div>
-              <div className="py-4">
-                <p className="text-sm font-medium text-white">Finish a version people can inspect</p>
-                <p className="mt-1 text-sm leading-6 text-white/55">Publish the project, document the choices and share the source when possible.</p>
-              </div>
-              <div className="py-4">
-                <p className="text-sm font-medium text-white">Be honest about the evidence</p>
-                <p className="mt-1 text-sm leading-6 text-white/55">Separate a working demo from proven real-world results.</p>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section id="about" className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">01 / A little about me</p>
-          <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Curiosity became a habit of shipping.</h2>
-        </div>
-        <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-          <p>
-            I started exploring software because I was curious about what I could make with a computer. That curiosity led me to build websites and early product prototypes, often by experimenting with tools and asking questions as I went. I am still learning the fundamentals behind the tools I use. I want to be able to explain how my projects work, debug them and make changes with more confidence.
+      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+        <section className="border-b border-[#e4e6e1] py-12 sm:py-16">
+          <p className="text-sm text-[#6d776f]">Form 4 Science stream student · Negeri Sembilan, Malaysia</p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[#202522] sm:text-4xl">
+            Koglesh R. Murugan
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-7 text-[#465049]">
+            I study Physics, Chemistry, Additional Mathematics and Computer Science. Outside school, I build web projects and run AERO, a YouTube channel about self-improvement and psychology. I am preparing for SPM in 2027 and working on my programming fundamentals.
           </p>
-          <p>
-            I have learned that publishing a project is only one step. A public link does not prove that a product has real users or has solved a problem at scale. I want to learn how to test properly, listen to feedback and understand the code well enough to maintain what I make.
-          </p>
-        </div>
-      </section>
-
-      <section id="education" className="border-y border-white/10 bg-white/[0.015]">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
-          <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">02 / Education</p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">School is part of the work.</h2>
-            </div>
-            <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-              <p>I study Form 4 Science at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science, alongside languages and humanities.</p>
-              <p>I am preparing for SPM in 2027 and completing my SPM Computer Science coursework. My stronger subjects at present are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics need the most attention.</p>
-              <p>I am sharing these results as a record of progress. Mathematics improved from B+ to A-. I also improved in Bahasa Melayu, Moral Education and Tamil. Chemistry and Additional Mathematics remain my main areas for improvement.</p>
-            </div>
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+            <ExternalLink href="https://github.com/kogleshofficial-hub">GitHub</ExternalLink>
+            <ExternalLink href="https://www.youtube.com/@ItsAero_Official">AERO / YouTube</ExternalLink>
+            <a href="mailto:koglesh.official@gmail.com" className="text-sm text-[#315d73] underline decoration-[#9aafb9] underline-offset-4">Email</a>
           </div>
-          <div className="mt-10">
-            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <h3 className="text-lg font-semibold">Examination grades</h3>
-                <p className="mt-1 text-xs leading-5 text-white/45">Grades only. End-year grades are estimates using the published 2024 SPM grade bands.</p>
-              </div>
-              <span className="text-xs text-white/40">Mid-year / End-year</span>
-            </div>
-            <div className="overflow-x-auto border border-white/10">
-              <table className="w-full min-w-[650px] border-collapse text-left text-sm">
-                <thead className="bg-white/[0.04] text-xs uppercase tracking-[0.12em] text-white/55">
-                  <tr>
-                    <th scope="col" className="px-4 py-3 font-medium">Subject</th>
-                    <th scope="col" className="px-4 py-3 font-medium">Mid-year</th>
-                    <th scope="col" className="px-4 py-3 font-medium">End-year</th>
-                    <th scope="col" className="px-4 py-3 font-medium">Progress</th>
+        </section>
+
+        <section id="about" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>About</SectionHeading>
+          <div className="max-w-3xl space-y-4 text-sm leading-7 text-[#465049] sm:text-base">
+            <p>
+              I started making websites because I wanted to understand how an idea could become something people could use. I have learned by trying things, reading documentation and working through problems as they come up.
+            </p>
+            <p>
+              Publishing a project is only one step. A public link does not prove that a product has real users or has solved a problem at scale. I want to keep improving how I test my work, respond to feedback and maintain what I build.
+            </p>
+          </div>
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-[#465049]">
+            When I build something, I try to start with a clear problem, keep the first version manageable and explain what it can and cannot do.
+          </p>
+        </section>
+
+        <section id="education" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>Education and examination results</SectionHeading>
+          <p className="max-w-3xl text-sm leading-7 text-[#465049]">
+            I attend Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan. I am in Form 4 and preparing for SPM in 2027. My Science stream subjects include Physics, Chemistry, Additional Mathematics and Computer Science.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#465049]">
+            I am also completing my SPM Computer Science coursework. English, Bahasa Melayu, Tamil and Mathematics are among my stronger subjects. Chemistry and Additional Mathematics need more attention.
+          </p>
+
+          <div className="mt-7">
+            <h3 className="mb-3 text-base font-semibold text-[#202522]">Examination grades</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[570px] border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-y border-[#dfe3dd] text-xs text-[#6d776f]">
+                    <th scope="col" className="py-3 pr-4 font-medium">Subject</th>
+                    <th scope="col" className="py-3 px-3 font-medium">Mid-year</th>
+                    <th scope="col" className="py-3 px-3 font-medium">End-year</th>
+                    <th scope="col" className="py-3 pl-3 font-medium">Progress</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/10 text-white/75">
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Bahasa Melayu</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">English</th><td className="px-4 py-3">A</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-white/55">Maintained</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Mathematics</th><td className="px-4 py-3">B+</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">History</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">B+</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Moral Education</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A+</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil Literature</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-white/55">Maintained</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Physics</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">C</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Chemistry</th><td className="px-4 py-3">E</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Additional Mathematics</th><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Still not passed</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Computer Science</th><td className="px-4 py-3">A</td><td className="px-4 py-3">C+</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Physical Education</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">B</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
+                <tbody>
+                  {grades.map(([subject, midYear, endYear, progress]) => (
+                    <tr key={subject} className="border-b border-[#eceeea]">
+                      <th scope="row" className={"py-3 pr-4 font-medium " + (["Physics", "Chemistry", "Additional Mathematics", "Computer Science"].includes(subject) ? "text-[#234d60]" : "text-[#303632]")}>{subject}</th>
+                      <td className="px-3 py-3 text-[#465049]">{midYear}</td>
+                      <td className="px-3 py-3 text-[#465049]">{endYear}</td>
+                      <td className="py-3 pl-3 text-xs text-[#667168]">{progress}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs leading-6 text-white/45">End-year grades are estimates using the published 2024 SPM bands: A+ (90–100), A (80–89), A- (70–79), B+ (65–69), B (60–64), C+ (55–59), C (50–54), D (45–49), E (40–44) and G (0–39). Internal school examinations may use different boundaries, so these are not official SPM grades. <a href="https://sinarbestari.sinarharian.com.my/buletin/takrifan-11-gred-dan-julat-pemarkahan-spm-2024" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">Published 2024 SPM grade bands</a>.</p>
+            <p className="mt-4 max-w-3xl text-xs leading-6 text-[#707970]">
+              End-year grades are estimates using published 2024 SPM grade bands. Internal school examinations may use different boundaries, so these are not official SPM grades. <a href="https://sinarbestari.sinarharian.com.my/buletin/takrifan-11-gred-dan-julat-pemarkahan-spm-2024" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">See the grade bands</a>.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="school-activities" className="border-y border-white/10 bg-white/[0.015]">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">03 / School and co-curricular</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Learning with people, not only screens.</h2>
-          </div>
-          <div className="space-y-6">
-            <article className="border border-white/10 p-6 sm:p-7">
-              <h3 className="text-lg font-semibold">School involvement</h3>
-              <p className="mt-3 text-sm leading-7 text-white/65">I take part in Pengakap (Scouts), the STEM Club and Seni Bela Diri. I am also a Pembimbing Rakan Sebaya (PRS) member, supporting peers in an ordinary student capacity.</p>
-            </article>
-            <article className="border border-white/10 p-6 sm:p-7">
-              <h3 className="text-lg font-semibold">Scouting and team recognition</h3>
-              <ul className="mt-3 space-y-3 text-sm leading-7 text-white/65">
-                <li>At the school&apos;s annual M.A.S.T.E.R. recognition ceremony in Form 3, I received recognition for district-level Pengakap Kawad Kaki and state-level Pengakap Kem participation.</li>
+        <section id="activities" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>School and co-curricular activities</SectionHeading>
+          <div className="space-y-6 text-sm leading-7 text-[#465049]">
+            <div>
+              <h3 className="font-semibold text-[#202522]">School involvement</h3>
+              <p className="mt-1">I take part in Pengakap (Scouts), the STEM Club and Seni Bela Diri. I am also a Pembimbing Rakan Sebaya (PRS) member.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#202522]">Scouting</h3>
+              <ul className="mt-1 list-disc space-y-1 pl-5">
+                <li>In Form 3, I received recognition at the school&apos;s M.A.S.T.E.R. ceremony for district-level Pengakap Kawad Kaki and state-level Pengakap Kem participation.</li>
                 <li>In 2026, our Pengakap Kawad Kaki team placed first at school level and second at state level.</li>
               </ul>
-            </article>
-            <article className="border border-white/10 p-6 sm:p-7">
-              <h3 className="text-lg font-semibold">Other school experiences</h3>
-              <ul className="mt-3 space-y-3 text-sm leading-7 text-white/65">
-                <li>First place with a partner in a primary-school solar-powered car challenge at age 12. We built the car using the materials provided by the school.</li>
-                <li>Participation certificates for the Spelling Bee and HIPPO Olympiad.</li>
-                <li>Currently completing my SPM Computer Science coursework as a school project.</li>
-              </ul>
-            </article>
-            <article className="border border-white/10 p-6 sm:p-7">
-              <h3 className="text-lg font-semibold">Silambam</h3>
-              <p className="mt-3 text-sm leading-7 text-white/65">I am currently at Brown-Black belt level and preparing for a grading in December 2026. This is my current level; I have not yet completed the next grading.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section id="projects" className="border-y border-white/10 bg-white/[0.015]">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
-          <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">04 / Selected work</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] sm:text-5xl">Ideas made tangible.</h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-white/55">Four projects that show different sides of how I think, build and learn.</p>
+            <div>
+              <h3 className="font-semibold text-[#202522]">Other school experiences</h3>
+              <ul className="mt-1 list-disc space-y-1 pl-5">
+                <li>I placed first with a partner in a primary-school solar-powered car challenge at age 12. We built the car using materials provided by the school.</li>
+                <li>I received participation certificates for the Spelling Bee and HIPPO Olympiad.</li>
+                <li>I am completing my SPM Computer Science coursework as a school project.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#202522]">Silambam</h3>
+              <p className="mt-1">I currently hold the Brown-Black belt level and am preparing for a grading in December 2026. I have not completed the next grading yet.</p>
+            </div>
           </div>
+        </section>
 
-          <div className="grid gap-4 lg:grid-cols-3">
+        <section id="projects" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>Selected projects</SectionHeading>
+          <p className="mb-6 max-w-3xl text-sm leading-7 text-[#465049]">
+            These are projects I have spent time building. Some are still early versions, and their limits are part of the work.
+          </p>
+          <div className="divide-y divide-[#e4e6e1]">
             {projects.map((project) => (
-              <article key={project.name} className="flex min-w-0 flex-col border border-white/10 bg-[#080808] p-6 sm:p-7">
-                <p className="font-mono text-[10px] tracking-[0.15em] text-cyan-100/65">PROJECT {project.number}</p>
-                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.045em]">{project.name}</h3>
-                <p className="mt-2 text-sm font-medium leading-6 text-white/80">{project.theme}</p>
-                <p className="mt-4 flex-1 text-sm leading-7 text-white/60">{project.summary}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.stack.map((item) => <span key={item} className="border border-white/10 px-2.5 py-1.5 text-[11px] text-white/55">{item}</span>)}
-                </div>
-                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/10 pt-5">
+              <article key={project.name} className="py-6 first:pt-0 last:pb-0">
+                <h3 className="text-lg font-semibold text-[#202522]">{project.name}</h3>
+                <p className="mt-2 max-w-3xl text-sm leading-7 text-[#465049]">{project.description}</p>
+                <p className="mt-2 text-xs text-[#7a837c]">{project.stack}</p>
+                <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                   <ExternalLink href={project.live}>Open project</ExternalLink>
                   <ExternalLink href={project.source}>Source code</ExternalLink>
-                  {"details" in project && <Link href={project.details} className="inline-flex min-h-10 items-center text-sm text-cyan-100/80 underline decoration-cyan-100/25 underline-offset-4 transition hover:text-cyan-50">How it works ↗</Link>}
+                  {"details" in project && <Link href={project.details} className="text-sm text-[#315d73] underline decoration-[#9aafb9] underline-offset-4">Project notes ↗</Link>}
                 </div>
               </article>
             ))}
           </div>
 
-          <div className="mt-10 border-t border-white/10 pt-8">
-            <p className="text-sm font-medium text-white/80">More work</p>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="mt-8 border-t border-[#e4e6e1] pt-6">
+            <h3 className="font-semibold text-[#202522]">Other projects</h3>
+            <ul className="mt-3 space-y-4">
               {otherWork.map((item) => (
-                <a key={item.name} href={item.href} className="group flex min-h-24 flex-col justify-between border border-white/10 p-4 transition hover:border-white/25 hover:bg-white/[0.025]">
-                  <span className="flex items-center justify-between text-sm font-medium text-white/85">{item.name}<span aria-hidden="true" className="text-white/40 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span></span>
-                  <span className="mt-2 text-sm leading-6 text-white/55">{item.summary}</span>
-                </a>
+                <li key={item.name} className="text-sm leading-6 text-[#465049]">
+                  <a href={item.href} className="font-medium text-[#315d73] underline decoration-[#9aafb9] underline-offset-4">{item.name}</a>
+                  <span> — {item.description}</span>
+                </li>
               ))}
-            </div>
-            <p className="mt-5 text-xs leading-6 text-white/40">The full engineering portfolio includes deeper case studies, architecture decisions, project limits and additional builds.</p>
-            <Link href="/" className="mt-3 inline-flex min-h-10 items-center text-sm text-cyan-100/80 underline decoration-cyan-100/25 underline-offset-4 transition hover:text-cyan-50">Explore the full engineering portfolio ↗</Link>
+            </ul>
           </div>
-        </div>
-      </section>
+          <p className="mt-6 text-xs leading-6 text-[#707970]">
+            The main engineering portfolio has additional project notes and links.
+            {" "}
+            <Link href="/" className="underline underline-offset-4">View the main portfolio</Link>.
+          </p>
+        </section>
 
-      <section id="achievements" className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
-        <div className="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">05 / Awards and activities</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-5xl">Practice, patience and showing up.</h2>
-            <p className="mt-5 text-sm leading-7 text-white/60">Taekwondo and creating videos give me different ways to practise, experiment and learn from results.</p>
-          </div>
-          <div className="space-y-4">
-            <article className="border border-white/10 p-6 sm:p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">Taekwondo</p>
-              <h3 className="mt-3 text-xl font-semibold">International competition experience</h3>
-              <ul className="mt-5 space-y-4 text-sm leading-6 text-white/70">
-                <li><span className="font-medium text-white">Gold medal · Poomsae, Taeguk 6</span> — VIFA Gewinn International Taekwondo Championship, India (2024).</li>
-                <li><span className="font-medium text-white">Bronze medal · Poomsae, Taeguk 7</span> — 10th MBC Cup International Open Taekwondo Championships, Korea (2025).</li>
-                <li><span className="font-medium text-white">2nd Dan Black Belt</span> — awarded in December 2025. I also received a certificate from Kukkiwon headquarters.</li>
+        <section id="achievements" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>Achievements and interests</SectionHeading>
+          <div className="space-y-7 text-sm leading-7 text-[#465049]">
+            <div>
+              <h3 className="font-semibold text-[#202522]">Taekwondo</h3>
+              <ul className="mt-1 list-disc space-y-1 pl-5">
+                <li>Gold medal in Poomsae, Taeguk 6, at the VIFA Gewinn International Taekwondo Championship in India (2024).</li>
+                <li>Bronze medal in Poomsae, Taeguk 7, at the 10th MBC Cup International Open Taekwondo Championships in Korea (2025).</li>
+                <li>2nd Dan Black Belt, awarded in December 2025. I also received a certificate from Kukkiwon headquarters.</li>
                 <li>I began Taekwondo at age six and now help teach younger students during training. I also participated in the 8th Gewinn Malaysia Open Taekwondo Championship in December 2025.</li>
               </ul>
-            </article>
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#202522]">AERO</h3>
+              <p className="mt-1">
+                AERO is my YouTube channel about self-improvement and psychology. I make content about mindset, habits, self-awareness and personal challenges. I paused uploads during exams and plan to return after the exam period.
+              </p>
+              <p className="mt-2 text-xs text-[#707970]">
+                Channel snapshot from 26 November 2026: 109 subscribers and 89,549 views.
+                {" "}
+                <ExternalLink href="https://www.youtube.com/@ItsAero_Official">Visit the channel</ExternalLink>.
+              </p>
+            </div>
+          </div>
+        </section>
 
-            <article className="border border-white/10 p-6 sm:p-7">
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">AERO / Creator project</p>
-                  <h3 className="mt-3 text-xl font-semibold">Learning to tell a story with real attempts</h3>
-                </div>
-                <ExternalLink href="https://www.youtube.com/@ItsAero_Official">Visit channel</ExternalLink>
+        <section id="submissions" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>Project submissions</SectionHeading>
+          <div className="space-y-5 text-sm leading-7 text-[#465049]">
+            <div>
+              <h3 className="font-semibold text-[#202522]">GRIDPULSE · NextStep Hacks 2026</h3>
+              <p>A public submission describing the infrastructure project and its approach.</p>
+              <div className="mt-2 flex flex-wrap gap-5">
+                <ExternalLink href="https://devpost.com/software/gridpulse-mqy46k">Project submission</ExternalLink>
+                <ExternalLink href="https://nextstep2026.devpost.com/">Hackathon page</ExternalLink>
               </div>
-              <p className="mt-3 text-sm leading-7 text-white/60">AERO is my main long-term creator project. Its current niche is Self-Improvement &amp; Personal Growth, with a focus on psychology, mindset, habits, self-awareness and personal challenges. I use real attempts and honest progress rather than presenting improvement as an overnight change. I paused uploads during exams and plan to return after the exam period.</p>
-              <p className="mt-5 text-xs leading-6 text-white/45">Channel page snapshot shared on 26 November 2026. Figures can change and are not a live counter.</p>
-              <dl className="mt-4 grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
-                <div><dt className="text-xs text-white/45">Subscribers</dt><dd className="mt-1 text-xl font-semibold tabular-nums">109</dd></div>
-                <div><dt className="text-xs text-white/45">Channel views</dt><dd className="mt-1 text-xl font-semibold tabular-nums">89,549</dd></div>
-              </dl>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.015]">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">06 / Public submissions</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Work shared beyond my own site.</h2>
-          </div>
-          <div className="space-y-5">
-            <div className="border-b border-white/10 pb-5">
-              <h3 className="font-medium text-white">GRIDPULSE · NextStep Hacks 2026</h3>
-              <p className="mt-2 text-sm leading-6 text-white/60">A public submission describing the infrastructure project and its approach.</p>
-              <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2"><ExternalLink href="https://devpost.com/software/gridpulse-mqy46k">Project submission</ExternalLink><ExternalLink href="https://nextstep2026.devpost.com/">Hackathon page</ExternalLink></div>
             </div>
-            <div className="pb-2">
-              <h3 className="font-medium text-white">PACE · CSC Back-to-School Hackathon</h3>
-              <p className="mt-2 text-sm leading-6 text-white/60">A public submission for an academic workload-planning product.</p>
-              <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2"><ExternalLink href="https://devpost.com/software/pace-a7ouxr">Project submission</ExternalLink><ExternalLink href="https://csc-back-to-school.devpost.com/">Hackathon page</ExternalLink></div>
-            </div>
-            <p className="text-xs leading-6 text-white/40">These links document project submissions and participation. They are not claims of winning, finalist status or judging outcomes.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="peer-learning" className="border-y border-white/10 bg-white/[0.015]">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">07 / Learning with others</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Helping other students get started.</h2>
-          </div>
-          <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-            <p>I have helped classmates get started with website building and personal portfolios. In one case, I walked a friend through the process of creating a first portfolio, which helped him make his own version. I found that explaining a process to someone else also showed me what I still needed to understand.</p>
-            <p>It is informal peer support rather than a formal teaching position. Explaining something to another person often shows me which parts I understand and which parts I still need to learn properly.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-10">
-        <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">08 / Tools used in projects</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">Tools, practice and an honest skill gap.</h2>
-          </div>
-          <div className="divide-y divide-white/10 border-y border-white/10">
-            {skills.map((skill) => (
-              <div key={skill.label} className="grid gap-2 py-5 sm:grid-cols-[190px_1fr] sm:gap-8">
-                <h3 className="text-sm font-medium text-white/85">{skill.label}</h3>
-                <p className="text-sm leading-6 text-white/60">{skill.items}</p>
+            <div>
+              <h3 className="font-semibold text-[#202522]">PACE · CSC Back-to-School Hackathon</h3>
+              <p>A public submission for an academic workload-planning product.</p>
+              <div className="mt-2 flex flex-wrap gap-5">
+                <ExternalLink href="https://devpost.com/software/pace-a7ouxr">Project submission</ExternalLink>
+                <ExternalLink href="https://csc-back-to-school.devpost.com/">Hackathon page</ExternalLink>
               </div>
-            ))}
+            </div>
+            <p className="text-xs text-[#707970]">These links document project submissions and participation. They are not claims of winning, finalist status or judging outcomes.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <p className="mx-auto mt-6 max-w-6xl px-6 text-xs leading-6 text-white/40 lg:px-10">These are tools I have used while building prototypes. This list is not a claim of professional or independent mastery. My current priority is learning programming fundamentals and understanding the code behind my projects.</p>
-
-      <section className="border-t border-white/10">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">09 / What comes next</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">I have more to learn.</h2>
+        <section id="peer-learning" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>Peer learning</SectionHeading>
+          <div className="max-w-3xl space-y-4 text-sm leading-7 text-[#465049]">
+            <p>I have helped classmates get started with website building and personal portfolios. In one case, I walked a friend through the process of making a first portfolio, and he later built his own version.</p>
+            <p>This was informal help between friends, not a formal teaching role. Explaining the steps also showed me which parts I needed to understand better.</p>
           </div>
-          <div>
-            <p className="text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-              My next academic milestone is SPM in 2027. After that, I hope to pursue Computer Science or an AI-related degree through a fully funded scholarship. The United States is my first-choice study destination, and I am also researching Australia. These are goals I am working toward, not offers or outcomes I have already secured.
-            </p>
-            <p className="mt-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-              I want to keep learning in public, become more capable through practice and use what I learn to make useful things. I also want to be known as someone who treats people with kindness. I am still a student, and there is a lot I have to learn.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="mailto:koglesh.official@gmail.com" className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-cyan-50">Contact me ↗</a>
-              <ExternalLink href="https://github.com/kogleshofficial-hub">GitHub</ExternalLink>
-              <ExternalLink href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/">LinkedIn</ExternalLink>
-              <ExternalLink href="https://www.youtube.com/@ItsAero_Official">AERO / YouTube</ExternalLink>
+        </section>
+
+        <section id="tools" className="border-b border-[#e4e6e1] py-10">
+          <SectionHeading>Tools I have used</SectionHeading>
+          <div className="space-y-4 text-sm leading-7 text-[#465049]">
+            <div>
+              <h3 className="font-semibold text-[#202522]">Web development</h3>
+              <p>React, Next.js, TypeScript, JavaScript and Tailwind CSS.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#202522]">Data and app services</h3>
+              <p>Supabase, PostgreSQL and Appwrite.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#202522]">Other tools</h3>
+              <p>Git, GitHub and Vercel.</p>
             </div>
           </div>
-        </div>
-      </section>
+          <p className="mt-4 max-w-3xl text-xs leading-6 text-[#707970]">
+            These are tools I have used in projects, not a claim of professional proficiency. I am still learning the fundamentals and improving my understanding of the code.
+          </p>
+        </section>
 
-      <footer className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-7 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <p>© 2026 Koglesh R. Murugan · Malaysia</p>
-          <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <Link href="/" className="transition hover:text-white/80">Engineering portfolio</Link>
-            <Link href="/resume" className="transition hover:text-white/80">Résumé</Link>
-            <a href="mailto:koglesh.official@gmail.com" className="transition hover:text-white/80">Email</a>
+        <section id="plans" className="py-10">
+          <SectionHeading>Plans</SectionHeading>
+          <div className="max-w-3xl space-y-4 text-sm leading-7 text-[#465049]">
+            <p>My next academic milestone is SPM in 2027. After that, I hope to study Computer Science or an AI-related subject through a fully funded scholarship. The United States is my first choice, and I am also researching Australia. These are goals I am working towards, not outcomes I have already secured.</p>
+            <p>I want to keep learning, make useful things and treat people with kindness. I know I still have a lot to learn.</p>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-5">
+            <a href="mailto:koglesh.official@gmail.com" className="text-sm font-medium text-[#315d73] underline decoration-[#9aafb9] underline-offset-4">Contact me</a>
+            <ExternalLink href="https://github.com/kogleshofficial-hub">GitHub</ExternalLink>
+            <ExternalLink href="https://www.linkedin.com/in/koglesh-r-murugan-020450430/">LinkedIn</ExternalLink>
+            <ExternalLink href="https://www.youtube.com/@ItsAero_Official">AERO / YouTube</ExternalLink>
+          </div>
+        </section>
+      </div>
+
+      <footer className="border-t border-[#e4e6e1]">
+        <div className="mx-auto flex max-w-4xl flex-col gap-2 px-5 py-6 text-xs text-[#7a837c] sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <span>Koglesh R. Murugan · Malaysia</span>
+          <div className="flex gap-5">
+            <Link href="/">Main portfolio</Link>
+            <Link href="/resume">Résumé</Link>
           </div>
         </div>
       </footer>
