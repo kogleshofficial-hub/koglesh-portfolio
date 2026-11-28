@@ -264,7 +264,7 @@ export default function Aero01CaseStudy() {
           <div><SectionLabel>05 / Materials and method</SectionLabel><h2 className="mt-4 text-3xl font-medium tracking-[-0.05em]">A simple physical build.</h2></div>
           <div className="space-y-6 text-sm leading-7 text-white/75">
             <div><h3 className="font-medium text-white">Materials used</h3><p className="mt-2">Plastic basket, small plastic inner container, eight small rubber bands connected into four strands, ruler and scissors.</p></div>
-            <div><h3 className="font-medium text-white">Control configuration</h3><p className="mt-2">The small container rested directly on the basket floor. The basket was moved and the container's displacement from its original centre position was observed and measured.</p></div>
+            <div><h3 className="font-medium text-white">Control configuration</h3><p className="mt-2">The small container rested directly on the basket floor. The basket was moved and the container&apos;s displacement from its original centre position was observed and measured.</p></div>
             <div><h3 className="font-medium text-white">Suspended configuration</h3><p className="mt-2">The container was supported by four elastic strands attached at separate basket points. It was gently disturbed, and its maximum displacement and return towards the centre were observed.</p></div>
             <div><h3 className="font-medium text-white">Physical authorship</h3><p className="mt-2">The prototype was physically assembled, modified, measured and tested by the builder using household materials. An AI assistant was used for explanatory guidance and report organisation; no AI-generated hardware or test footage is presented.</p></div>
           </div>
