@@ -9,22 +9,22 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Koglesh R. Murugan | Student Developer", template: "%s | Koglesh R. Murugan" },
-  description: "Portfolio of Koglesh R. Murugan, a student developer in Malaysia. Explore web apps, practical tools, and experiments built around real problems.",
-  keywords: ["Koglesh R. Murugan", "Koglesh Murugan", "web developer", "software developer", "product builder", "AI builder", "developer portfolio", "Malaysia developer", "GRIDPULSE", "MIRROR", "GRIDPULSE", "PACE", "SYNAPSE", "QueueWise", "BeforeYouGo", "FoodLoop", "One Next Step", "Truth Checker", "AERO", "Java"],
+  title: { default: "Software & Hardware Projects | Koglesh R. Murugan", template: "%s | Koglesh R. Murugan" },
+  description: "Portfolio of Koglesh R. Murugan, a student developer in Malaysia building software products and hands-on physical engineering prototypes. Explore web applications, hardware experiments and documented design work.",
+  keywords: ["Koglesh R. Murugan", "Koglesh Murugan", "software developer Malaysia", "student developer", "software and hardware projects", "hardware prototyping", "physical engineering projects", "engineering prototypes", "experimental physics", "mechanical design iteration", "web development", "software development", "product builder", "AI builder", "developer portfolio", "GRIDPULSE", "MIRROR", "PACE", "SYNAPSE", "QueueWise", "BeforeYouGo", "FoodLoop", "One Next Step", "Truth Checker", "AERO", "AERO-01"],
   authors: [{ name: "Koglesh R. Murugan", url: siteUrl }],
   creator: "Koglesh R. Murugan",
   publisher: "Koglesh R. Murugan",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Koglesh R. Murugan | Student Developer",
-    description: "Web apps, practical tools, and personal projects by Koglesh R. Murugan, a student developer in Malaysia. Explore GRIDPULSE, QueueWise, BeforeYouGo, FoodLoop and more.",
+    title: "Koglesh R. Murugan | Software & Hardware Project Builder",
+    description: "Software projects and hands-on physical engineering prototypes by Koglesh R. Murugan, a student developer in Malaysia. Explore web applications, hardware experiments, and the AERO-01 suspension carrier case study.",
     type: "website",
     locale: "en_US",
     siteName: "Koglesh R. Murugan",
     url: siteUrl,
   },
-  twitter: { card: "summary_large_image", title: "Koglesh R. Murugan | Student Developer", description: "Real products, AI experiences and creative work by Koglesh R. Murugan." },
+  twitter: { card: "summary_large_image", title: "Koglesh R. Murugan | Software & Hardware Projects", description: "Software products and hands-on physical engineering prototypes by Koglesh R. Murugan." },
   icons: { icon: "/favicon.ico" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   verification: { google: "LI6z3Avdq6RsVP2faZ6nlhcbRwvnMIdjJkrSBygvnZM" },
@@ -35,10 +35,10 @@ const personJsonLd = {
   "@id": `${siteUrl}/#person`,
   name: "Koglesh R. Murugan",
   url: siteUrl,
-  jobTitle: "Developer, Builder & Creator",
-  description: "Student developer in Malaysia building web apps, practical tools, and personal projects.",
+  jobTitle: "Student Developer & Project Builder",
+  description: "Student developer in Malaysia building software products and hands-on physical engineering prototypes, including documented hardware experiments.",
   sameAs: ["https://github.com/kogleshofficial-hub", "https://www.linkedin.com/in/koglesh-r-murugan-020450430/", "https://www.youtube.com/@ItsAero_Official"],
-  knowsAbout: ["Web development", "Artificial intelligence", "Product design", "User interface design", "Software development", "Supabase", "PostgreSQL", "Next.js", "Azure", "Content creation"],
+  knowsAbout: ["Software development", "Web development", "Software prototyping", "Artificial intelligence", "Product design", "User interface design", "Hardware prototyping", "Physical engineering", "Experimental physics", "Mechanical design iteration", "Supabase", "PostgreSQL", "Next.js", "Azure", "Content creation"],
 };
 
 const portfolioProjects = [
@@ -51,6 +51,7 @@ const portfolioProjects = [
   { "@type": "CreativeWork", name: "FoodLoop", url: "https://food-loop-app.vercel.app", description: "A food-rescue app for listing surplus food and letting people request available items." },
   { "@type": "CreativeWork", name: "One Next Step", url: "https://one-next-step.vercel.app", description: "A decision tool that helps turn a situation into one practical next action." },
   { "@type": "CreativeWork", name: "Truth Checker", url: "https://truth-checker-app.vercel.app", description: "A web app for examining online claims and reviewing the sources behind them." },
+  { "@type": "CreativeWork", name: "AERO-01 — Passive Elastic Suspension Carrier", url: "https://koglesh-portfolio.vercel.app/hardware/aero-01", description: "A physical engineering prototype built from household materials to compare observed inner-container movement with and without a four-point elastic suspension. The published case study documents design iteration, experimental observations, original photographs and test limitations.", creator: { "@id": "https://koglesh-portfolio.vercel.app/#person" }, keywords: ["hardware prototyping", "physical engineering", "experimental physics", "elastic suspension", "engineering design iteration"] },
   { "@type": "CreativeWork", name: "AERO", url: "https://www.youtube.com/@ItsAero_Official", description: "A YouTube channel for challenges, experiments, and documenting progress." },
 ];
 

@@ -10,12 +10,24 @@ export const metadata: Metadata = {
   description:
     "A small physical engineering prototype investigating how a four-point elastic suspension changes the movement of an inner container.",
   alternates: { canonical: "/hardware/aero-01" },
+  keywords: ["AERO-01", "hardware prototype", "hardware prototyping", "physical engineering", "experimental physics", "elastic suspension", "engineering design iteration", "passive suspension experiment", "Malaysia student developer"],
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   openGraph: {
     title: "AERO-01 — Passive Elastic Suspension Carrier",
     description:
       "A physical proof-of-concept built from household materials, with preliminary displacement observations and documented design iteration.",
     url: `${siteUrl}/hardware/aero-01`,
     type: "article",
+    images: [
+      { url: "/aero-01/engineering-notebook.webp", width: 472, height: 620, alt: "Original handwritten AERO-01 design notes and preliminary experiment calculations." },
+      { url: "/aero-01/suspension-detail.webp", width: 520, height: 232, alt: "Original close-up photograph of the four-point elastic suspension prototype." },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AERO-01 — Physical Engineering Prototype",
+    description: "A four-point elastic suspension prototype, documented through design iterations, preliminary observations and original evidence.",
+    images: ["/aero-01/suspension-detail.webp"],
   },
 };
 
@@ -302,34 +314,38 @@ export default function Aero01CaseStudy() {
             synthetic or stock evidence has been used.
           </p>
 
-          <div className="mt-9 grid gap-5 md:grid-cols-2">
+          <div className="mt-9 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
             <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
-              <Image
+              <a href="/aero-01/engineering-notebook.webp" target="_blank" rel="noreferrer noopener" className="block bg-[#0b0b0c] p-3" aria-label="Open the full-size AERO-01 handwritten notebook evidence">
+                <Image
                 src="/aero-01/engineering-notebook.webp"
                 alt="Original handwritten AERO-01 experiment notebook page with the design sketch, physics notes and preliminary measurements."
                 width={472}
                 height={620}
                 className="h-auto w-full object-contain"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+                sizes="(max-width: 768px) 100vw, 62vw"
+                />
+              </a>
               <figcaption className="border-t border-white/[0.1] px-4 py-3">
                 <p className="text-xs font-medium text-white/85">Handwritten engineering notes</p>
-                <p className="mt-1 text-[10px] leading-5 text-white/50">The builder&apos;s original page documenting dimensions, physics concepts and preliminary calculations.</p>
+                <p className="mt-1 text-[10px] leading-5 text-white/50">The builder&apos;s original page documenting dimensions, physics concepts and preliminary calculations. Open the image to inspect it at full displayed size ↗</p>
               </figcaption>
             </figure>
 
             <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
-              <Image
+              <a href="/aero-01/suspension-detail.webp" target="_blank" rel="noreferrer noopener" className="block bg-[#0b0b0c] p-3" aria-label="Open the full-size AERO-01 suspension attachment photograph">
+                <Image
                 src="/aero-01/suspension-detail.webp"
                 alt="Close-up photograph of orange elastic-band strands attached around the small pink inner container."
                 width={520}
                 height={232}
                 className="h-auto w-full object-contain"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+                sizes="(max-width: 768px) 100vw, 42vw"
+                />
+              </a>
               <figcaption className="border-t border-white/[0.1] px-4 py-3">
                 <p className="text-xs font-medium text-white/85">Four-point elastic attachment detail</p>
-                <p className="mt-1 text-[10px] leading-5 text-white/50">A close-up from the actual V2 build, showing the orange elastic strands and inner container.</p>
+                <p className="mt-1 text-[10px] leading-5 text-white/50">A close-up from the actual V2 build, showing the orange elastic strands and inner container. Open the image to inspect it at full displayed size ↗</p>
               </figcaption>
             </figure>
           </div>
