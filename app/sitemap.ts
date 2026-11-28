@@ -9,7 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/scholarship", priority: 0.95, changeFrequency: "monthly" as const },
     { path: "/projects/mirror", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/projects/gridpulse", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/projects/pace", priority: 0.9, changeFrequency: "monthly" as const }
+    { path: "/projects/pace", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/hardware/aero-01", priority: 0.85, changeFrequency: "monthly" as const }
   ];
   return paths.map(({ path, priority, changeFrequency }) => ({
     url: `${baseUrl}${path}`, lastModified: new Date(), changeFrequency, priority
