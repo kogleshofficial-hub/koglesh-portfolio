@@ -2111,3 +2111,56 @@ a:hover .external-arrow {
   font-size: 9px;
   line-height: 1.65;
 }
+
+
+/* Print layout for the clean résumé page. */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #171717 !important;
+  }
+
+  .resume-page {
+    min-height: 0 !important;
+    background: #fff !important;
+    color: #171717 !important;
+  }
+
+  .resume-page .print-hide {
+    display: none !important;
+  }
+
+  .resume-page .resume-content {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .resume-page h1,
+  .resume-page h2,
+  .resume-page h3,
+  .resume-page strong,
+  .resume-page th {
+    color: #171717 !important;
+  }
+
+  .resume-page p,
+  .resume-page li,
+  .resume-page td,
+  .resume-page span {
+    color: #333 !important;
+  }
+
+  .resume-page a {
+    color: #222 !important;
+    text-decoration: none !important;
+  }
+
+  .resume-page .resume-project {
+    break-inside: avoid;
+  }
+
+  .resume-page section {
+    border-color: #d8d8d8 !important;
+  }
+}
