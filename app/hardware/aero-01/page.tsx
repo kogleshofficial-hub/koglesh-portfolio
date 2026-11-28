@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 const siteUrl = "https://koglesh-portfolio.vercel.app";
 
@@ -47,7 +48,7 @@ const limitations = [
   "The prototype has not been validated as a protective carrier and should not be used to transport fragile or valuable equipment on the strength of these results.",
 ];
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/55">
       {children}
