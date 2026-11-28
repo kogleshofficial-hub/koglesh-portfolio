@@ -349,13 +349,17 @@ export default function Aero01CaseStudy() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden border border-white/[0.14] bg-[#080808]">
-                <video className="aspect-video w-full bg-black object-contain" controls preload="metadata" playsInline poster="/aero-01/suspension-motion-poster.webp">
-                  <source src="/aero-01/suspension-motion.mp4" type="video/mp4" />
-                  Your browser does not support embedded video.
-                </video>
+                <Image
+                  src="/aero-01/suspension-motion-poster.webp"
+                  alt="Still frame from the original suspended-configuration test recording."
+                  width={239}
+                  height={135}
+                  className="aspect-video w-full bg-black object-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <figcaption className="border-t border-white/[0.1] px-4 py-3">
                   <p className="text-xs font-medium text-white/85">With four-point suspension</p>
-                  <p className="mt-1 text-[10px] leading-5 text-white/50">Short excerpt from the original recording showing the inner container moving within the elastic suspension.</p>
+                  <p className="mt-1 text-[10px] leading-5 text-white/50">Original still frame from the suspended-configuration test recording. The full recording is retained by the builder.</p>
                 </figcaption>
               </figure>
             </div>
@@ -381,11 +385,12 @@ export default function Aero01CaseStudy() {
               </figure>
             </div>
             <p className="mt-5 max-w-3xl text-xs leading-7 text-white/50">
-              The two movement videos are short, compressed excerpts for web
-              playback. The full original recordings remain with the builder.
-              The stopwatch images are frames from the two additional original
-              videos, included so the displayed readings are legible without
-              uploading very large source files.
+              The control-configuration recording is included as a short, compressed
+              excerpt for web playback. The suspended-configuration visual is a
+              still frame from its original recording. The full original videos
+              remain with the builder. The stopwatch images are frames from the
+              two additional original videos, included so the displayed readings
+              are legible without uploading very large source files.
             </p>
           </div>
         </div>
