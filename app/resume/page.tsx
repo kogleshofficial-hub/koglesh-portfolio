@@ -45,27 +45,27 @@ export default function ResumePage() {
           <p><strong>Form 4 Science stream · Sekolah Menengah Kebangsaan Desa Cempaka · Negeri Sembilan, Malaysia</strong></p>
           <p>Preparing for SPM 2027. Current school work includes Computer Science coursework. My subject combination includes Physics, Chemistry, Additional Mathematics and Computer Science.</p>
           <p><strong>Examination grades</strong></p>
-          <p>End-year grades are SPM-style estimates for internal school exams. English is pending because I have not sat that paper yet. Only the four mid-year subjects clearly aligned in the supplied report row are shown. Other mid-year entries are marked as not listed rather than guessed.</p>
+          <p>End-year grades are estimates using the published 2024 SPM grade bands. Internal school examinations may use different boundaries, so these are not official SPM grades.</p>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[520px] border-collapse text-xs">
               <thead><tr><th className="border-b border-white/20 py-2 text-left">Subject</th><th className="border-b border-white/20 py-2 text-left">Mid-year</th><th className="border-b border-white/20 py-2 text-left">End-year</th></tr></thead>
               <tbody>
-                <tr><td className="border-b border-white/10 py-2">Bahasa Melayu</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">A</td></tr>
-                <tr><td className="border-b border-white/10 py-2">English</td><td className="border-b border-white/10 py-2">A</td><td className="border-b border-white/10 py-2">Pending</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Mathematics</td><td className="border-b border-white/10 py-2">B+</td><td className="border-b border-white/10 py-2">A-</td></tr>
-                <tr><td className="border-b border-white/10 py-2">History</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">B+</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Moral Education</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A+</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Tamil</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A</td></tr>
-                <tr><td className="border-b border-white/10 py-2">Tamil Literature</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">A-</td></tr>
-                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Physics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C</td></tr>
-                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Chemistry</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
-                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Additional Mathematics</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
-                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Computer Science</td><td className="border-b border-white/10 py-2">Not listed</td><td className="border-b border-white/10 py-2">C+</td></tr>
-                <tr><td className="py-2">Physical Education</td><td className="py-2">Not listed</td><td className="py-2">B</td></tr>
-              </tbody>
+                <tr><td className="border-b border-white/10 py-2 ">Bahasa Melayu</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">A</td></tr>
+                <tr><td className="border-b border-white/10 py-2 ">English</td><td className="border-b border-white/10 py-2">A</td><td className="border-b border-white/10 py-2">A</td></tr>
+                <tr><td className="border-b border-white/10 py-2 ">Mathematics</td><td className="border-b border-white/10 py-2">B+</td><td className="border-b border-white/10 py-2">A-</td></tr>
+                <tr><td className="border-b border-white/10 py-2 ">History</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">B+</td></tr>
+                <tr><td className="border-b border-white/10 py-2 ">Moral Education</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">A+</td></tr>
+                <tr><td className="border-b border-white/10 py-2 ">Tamil</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">A</td></tr>
+                <tr><td className="border-b border-white/10 py-2 ">Tamil Literature</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">A-</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Physics</td><td className="border-b border-white/10 py-2">A-</td><td className="border-b border-white/10 py-2">C</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Chemistry</td><td className="border-b border-white/10 py-2">E</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Additional Mathematics</td><td className="border-b border-white/10 py-2">G (Fail)</td><td className="border-b border-white/10 py-2">G (Fail)</td></tr>
+                <tr><td className="border-b border-white/10 py-2 font-semibold text-cyan-100">Computer Science</td><td className="border-b border-white/10 py-2">A</td><td className="border-b border-white/10 py-2">C+</td></tr>
+                <tr><td className="py-2 ">Physical Education</td><td className="py-2">A-</td><td className="py-2">B</td></tr>
+                </tbody>
             </table>
           </div>
-          <p>My stronger subjects at present are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics are my main areas for improvement. This is a personal results summary, not an official transcript.</p>
+          <p>My stronger subjects at present are English, Bahasa Melayu, Tamil and Mathematics. Chemistry and Additional Mathematics are my main areas for improvement. I am working to raise my Physics and Computer Science results as well. This is a personal results summary, not an official transcript.</p>
         </section>
         <section className="resume-section">
           <h2>Tools used in projects</h2>

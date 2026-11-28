@@ -207,14 +207,14 @@ export default function ScholarshipPage() {
             <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
               <p>I study Form 4 Science at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science, alongside languages and humanities.</p>
               <p>I am preparing for SPM in 2027 and completing my SPM Computer Science coursework. My stronger subjects at present are English, Bahasa Melayu, Tamil, Mathematics and Computer Science. Chemistry and Additional Mathematics need the most attention.</p>
-              <p>I am sharing these results as a record of progress. The end-of-year English paper is pending because I have not sat it yet.</p>
+              <p>I am sharing these results as a record of progress. Mathematics improved from B+ to A-. I also improved in Bahasa Melayu, Moral Education and Tamil. Chemistry and Additional Mathematics remain my main areas for improvement.</p>
             </div>
           </div>
           <div className="mt-10">
             <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
               <div>
                 <h3 className="text-lg font-semibold">Examination grades</h3>
-                <p className="mt-1 text-xs leading-5 text-white/45">Grades only. End-year grades are SPM-style estimates for internal school exams.</p>
+                <p className="mt-1 text-xs leading-5 text-white/45">Grades only. End-year grades are estimates using the published 2024 SPM grade bands.</p>
               </div>
               <span className="text-xs text-white/40">Mid-year / End-year</span>
             </div>
@@ -230,21 +230,21 @@ export default function ScholarshipPage() {
                 </thead>
                 <tbody className="divide-y divide-white/10 text-white/75">
                   <tr><th scope="row" className="px-4 py-3 font-medium text-white">Bahasa Melayu</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">English</th><td className="px-4 py-3">A</td><td className="px-4 py-3">Pending</td><td className="px-4 py-3 text-white/45">Not sat yet</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">English</th><td className="px-4 py-3">A</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-white/55">Maintained</td></tr>
                   <tr><th scope="row" className="px-4 py-3 font-medium text-white">Mathematics</th><td className="px-4 py-3">B+</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
                   <tr><th scope="row" className="px-4 py-3 font-medium text-white">History</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">B+</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Moral Education</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A+</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil Literature</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Physics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Chemistry</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Additional Mathematics</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Needs attention</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Computer Science</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">C+</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
-                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Physical Education</th><td className="px-4 py-3">Not listed</td><td className="px-4 py-3">B</td><td className="px-4 py-3 text-white/45">No comparison</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Moral Education</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A+</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A</td><td className="px-4 py-3 text-emerald-200">Improved</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Tamil Literature</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">A-</td><td className="px-4 py-3 text-white/55">Maintained</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Physics</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">C</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Chemistry</th><td className="px-4 py-3">E</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Additional Mathematics</th><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3">G (Fail)</td><td className="px-4 py-3 text-white/55">Still not passed</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-semibold text-cyan-100">Computer Science</th><td className="px-4 py-3">A</td><td className="px-4 py-3">C+</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
+                  <tr><th scope="row" className="px-4 py-3 font-medium text-white">Physical Education</th><td className="px-4 py-3">A-</td><td className="px-4 py-3">B</td><td className="px-4 py-3 text-white/55">Lower</td></tr>
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs leading-6 text-white/45">Only the four mid-year subjects clearly aligned in the supplied school result row are shown with grades. Other subjects are labelled Not listed rather than guessed. SPM grade boundaries vary by subject and examination year, so these end-year conversions are estimates, not official SPM results. <a href="https://parlimen.gov.my/files/jindex/pdf/JDR26062024.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">KPM explanation of SPM grade setting</a>.</p>
+            <p className="mt-4 text-xs leading-6 text-white/45">End-year grades are estimates using the published 2024 SPM bands: A+ (90–100), A (80–89), A- (70–79), B+ (65–69), B (60–64), C+ (55–59), C (50–54), D (45–49), E (40–44) and G (0–39). Internal school examinations may use different boundaries, so these are not official SPM grades. <a href="https://sinarbestari.sinarharian.com.my/buletin/takrifan-11-gred-dan-julat-pemarkahan-spm-2024" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">Published 2024 SPM grade bands</a>.</p>
           </div>
         </div>
       </section>
