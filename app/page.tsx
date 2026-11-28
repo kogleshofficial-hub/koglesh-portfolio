@@ -119,7 +119,7 @@ const moreProjects = [
     name: "AERO-01",
     description: "A physical engineering proof-of-concept exploring how a four-point elastic suspension changes the movement of an inner container. Built with household materials and documented through preliminary testing.",
     live: "/hardware/aero-01",
-    github: "https://github.com/kogleshofficial-hub/koglesh-portfolio",
+    github: undefined,
     stack: "Physical engineering · Experimental Physics · Elastic suspension",
   },
 ];
@@ -394,9 +394,11 @@ function ProjectCard({ project }: { project: Project }) {
           <a className="project-live-link" href={project.live} target="_blank" rel="noreferrer noopener">
             Visit live site <ExternalArrow />
           </a>
-          <a href={project.github} target="_blank" rel="noreferrer noopener">
-            GitHub <ExternalArrow />
-          </a>
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noreferrer noopener">
+              GitHub <ExternalArrow />
+            </a>
+          )}
         </div>
       </div>
     </article>
