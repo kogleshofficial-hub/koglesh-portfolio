@@ -115,9 +115,21 @@ const moreProjects = [
     github: "https://github.com/kogleshofficial-hub/one-next-step",
     stack: "Next.js · TypeScript",
   },
+  {
+    name: "AERO-01",
+    description: "A physical engineering proof-of-concept exploring how a four-point elastic suspension changes the movement of an inner container. Built with household materials and documented through preliminary testing.",
+    live: "/hardware/aero-01",
+    github: "https://github.com/kogleshofficial-hub/koglesh-portfolio",
+    stack: "Physical engineering · Experimental Physics · Elastic suspension",
+  },
 ];
 
 const buildLog = [
+  {
+    date: "28 NOV 2026",
+    project: "AERO-01",
+    note: "Built a four-point elastic suspension prototype, revised the inner container after a clearance problem, and recorded preliminary movement observations.",
+  },
   {
     date: "NOV 2026",
     project: "Kyrqen",
@@ -534,7 +546,7 @@ export default function Home() {
                 <p>{project.description}</p>
                 <span className="more-project-stack">{project.stack}</span>
                 <div className="more-project-links">
-                  <a href={project.live} target="_blank" rel="noreferrer noopener">Live Site</a>
+                  <a href={project.live} target="_blank" rel="noreferrer noopener">{project.live.startsWith("/") ? "Case study" : "Live Site"}</a>
                   <a href={project.github} target="_blank" rel="noreferrer noopener">GitHub</a>
                 </div>
               </article>
