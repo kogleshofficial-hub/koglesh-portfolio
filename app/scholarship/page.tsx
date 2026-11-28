@@ -244,7 +244,7 @@ export default function ScholarshipPage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs leading-6 text-white/45">Only the four mid-year subjects clearly aligned in the supplied school result row are shown with grades. Other subjects are marked "Not listed" rather than guessed. SPM grade boundaries vary by subject and examination year, so these end-year conversions are estimates, not official SPM results. <a href="https://parlimen.gov.my/files/jindex/pdf/JDR26062024.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">KPM explanation of SPM grade setting</a>.</p>
+            <p className="mt-4 text-xs leading-6 text-white/45">Only the four mid-year subjects clearly aligned in the supplied school result row are shown with grades. Other subjects are labelled Not listed rather than guessed. SPM grade boundaries vary by subject and examination year, so these end-year conversions are estimates, not official SPM results. <a href="https://parlimen.gov.my/files/jindex/pdf/JDR26062024.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/25 underline-offset-4 hover:text-white/80">KPM explanation of SPM grade setting</a>.</p>
           </div>
         </div>
       </section>
