@@ -22,7 +22,7 @@ const projects: Project[] = [
     name: "Kyrqen",
     category: "Freight workflow prototype",
     description:
-      "An early freight-document workflow prototype exploring how Bills of Lading, Consignment Notes and commercial invoices could be organised into draft shipment records. The project explores document checks and mismatch review. I used substantial AI assistance during development and am working through the code to understand the implementation properly.",
+      "An early freight-document workflow prototype exploring how Bills of Lading, Consignment Notes and commercial invoices could be organised into draft shipment records. The project explores document checks and mismatch review. A container check-digit rule and cross-document comparisons flag issues for human review before approval.",
     stack: ["Next.js", "TypeScript", "Supabase RLS", "AI Extraction", "Vercel"],
     live: "https://kryqen.vercel.app/",
     github: "https://github.com/kogleshofficial-hub/kyrqen",
@@ -461,7 +461,7 @@ export default function Home() {
             <div className="hero-status"><span className="status-pulse" /> Currently building Kyrqen</div>
             <h1>I build useful things <span>for real people.</span></h1>
             <p className="hero-copy">
-              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student in Negeri Sembilan, Malaysia. I study Physics, Chemistry, Additional Mathematics and Computer Science. Alongside school, I build AI-assisted web app prototypes and make videos about self-improvement through AERO.
+              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student in Negeri Sembilan, Malaysia. I study Physics, Chemistry, Additional Mathematics and Computer Science. Alongside school, I build web app prototypes and make videos about self-improvement through AERO.
             </p>
             <div className="hero-bottom">
               <div className="hero-actions">
@@ -473,7 +473,7 @@ export default function Home() {
               <div className="stack-focus">
                 <span className="stack-focus-label">Tools I have used</span>
                 <div className="stack-focus-items">
-                  {["Next.js", "TypeScript", "PostgreSQL", "AI Workflows", "Product Design"].map((item) => (
+                  {["Next.js", "TypeScript", "PostgreSQL", "Supabase", "Product Design"].map((item) => (
                     <span key={item}>{item}</span>
                   ))}
                 </div>

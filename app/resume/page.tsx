@@ -38,7 +38,7 @@ export default function ResumePage() {
         </header>
         <section className="resume-section">
           <h2>Profile</h2>
-          <p>I am a Form 4 Science stream student at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science. I explore ideas through early software prototypes and creative projects. I have used substantial AI assistance while coding, so I do not present my project stack as proof of independent mastery. I am working through programming fundamentals so I can understand, test and maintain more of my own code.</p>
+          <p>I am a Form 4 Science stream student at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science. I explore ideas through early software prototypes and creative projects. I am still strengthening my programming fundamentals so I can understand, test and maintain more of my own code.</p>
         </section>
         <section className="resume-section">
           <h2>Education</h2>
@@ -71,8 +71,8 @@ export default function ResumePage() {
           <h2>Tools used in projects</h2>
           <p><strong>Web technologies:</strong> React, Next.js, TypeScript, JavaScript and Tailwind CSS.</p>
           <p><strong>Data and services:</strong> Supabase, PostgreSQL, Appwrite and Zod.</p>
-          <p><strong>Workflow:</strong> Git, GitHub, Vercel and AI-assisted prototyping.</p>
-          <p>These are tools I have encountered while building projects, often with substantial AI assistance. They are not a claim of independent proficiency. I am working through the fundamentals so I can understand, debug and maintain my code myself.</p>
+          <p><strong>Workflow:</strong> Git, GitHub, Vercel and version control.</p>
+          <p>These are tools I have used across my projects, not a claim of independent proficiency. I am working through the fundamentals so I can understand, debug and maintain my code myself.</p>
         </section>
         <section className="resume-section">
           <h2>Selected project work</h2>

@@ -88,7 +88,7 @@ const otherWork = [
 const skills = [
   {
     label: "Web tools encountered",
-    items: "React, Next.js, TypeScript, JavaScript and Tailwind CSS through AI-assisted prototypes and guided experimentation.",
+    items: "React, Next.js, TypeScript, JavaScript and Tailwind CSS across my web projects and hands-on practice.",
   },
   {
     label: "Data and app services",
@@ -96,7 +96,7 @@ const skills = [
   },
   {
     label: "Workflow and creative tools",
-    items: "Git, GitHub, Vercel, AI tools, video editing and storytelling.",
+    items: "Git, GitHub, Vercel, video editing and storytelling.",
   },
 ];
 
@@ -154,7 +154,7 @@ export default function ScholarshipPage() {
               <span className="text-white/55">building things.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
-              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science. Outside class, I work on web app prototypes and run AERO, a YouTube channel about self-improvement and psychology. I have used AI coding tools in several projects, and I am now working to understand the programming behind them.
+              I&apos;m Koglesh R. Murugan, a Form 4 Science stream student at Sekolah Menengah Kebangsaan Desa Cempaka in Negeri Sembilan, Malaysia. My subjects include Physics, Chemistry, Additional Mathematics and Computer Science. Outside class, I work on web app prototypes and run AERO, a YouTube channel about self-improvement and psychology. I am working on my programming fundamentals so I can explain, test and improve the code behind my projects.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-cyan-50">Explore selected projects ↓</a>
@@ -189,7 +189,7 @@ export default function ScholarshipPage() {
         </div>
         <div className="space-y-5 text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
           <p>
-            I started exploring software because I was curious about what I could make with a computer. That curiosity led me to build websites and early product prototypes, often by experimenting with tools and asking questions as I went. I have used AI heavily in parts of this process, and I do not want to present that as the same thing as writing and understanding every line myself. I am going back through the fundamentals so I can explain, debug and improve my own work with more confidence.
+            I started exploring software because I was curious about what I could make with a computer. That curiosity led me to build websites and early product prototypes, often by experimenting with tools and asking questions as I went. I am still learning the fundamentals behind the tools I use. I want to be able to explain how my projects work, debug them and make changes with more confidence.
           </p>
           <p>
             I have learned that publishing a project is only one step. A public link does not prove that a product has real users or has solved a problem at scale. I want to learn how to test properly, listen to feedback and understand the code well enough to maintain what I make.
@@ -417,7 +417,7 @@ export default function ScholarshipPage() {
         </div>
       </section>
 
-      <p className="mx-auto mt-6 max-w-6xl px-6 text-xs leading-6 text-white/40 lg:px-10">These are tools I have encountered while building prototypes, often with AI assistance. This list is not a claim of professional or independent mastery. My current priority is learning programming fundamentals and understanding the code behind my projects.</p>
+      <p className="mx-auto mt-6 max-w-6xl px-6 text-xs leading-6 text-white/40 lg:px-10">These are tools I have used while building prototypes. This list is not a claim of professional or independent mastery. My current priority is learning programming fundamentals and understanding the code behind my projects.</p>
 
       <section className="border-t border-white/10">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:gap-20 lg:px-10">
